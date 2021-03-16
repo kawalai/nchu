@@ -50,24 +50,76 @@
             background-color: yellow;
             border: 1px solid black;
         }
+
+        .navbar {
+            width: 80%;
+            height: 100px;
+            background-color: rgba(154, 205, 50,0.7);
+            /* opacity: 0.8; */
+            position: fixed;
+            /* padding: 10px; */
+        }
+        .logo{
+            height: 100px;
+            width: 100px;
+            background-color: teal;
+            border-radius: 50%;
+            transform: translate(0%,0%);
+            float: left;
+        }
+        .menu{
+            background-color: rgba(255, 99, 71, 0);
+            /* width: calc(100% - 100px); */
+            width: 400px;
+            height: 100%;
+            float: right;
+        }
+        .change-page{
+            width: 120px;
+            height: 40px;
+            background-color: rgba(64, 224, 208, 0.5);
+            border: 1px solid black;
+            float: left;
+            margin: 50px 10px 0 0;
+            text-align: center;
+            transform: translate(0,-50%);
+            /* vertical-align: middle; */
+            
+            /* padding: 50px; */
+        }
+        .text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="main img1">
-            <div class="mask">
-                <div class="button"></div>
+        <div class="navbar">
+            <div class="logo"></div>
+            <div class="menu">
+                <a href="#page01"><div id="button-to-page1" class="change-page"><div class="text">頁面1</div></div></a>
+                <a href="#page02"><div id="button-to-page2" class="change-page"><div class="text">頁面2</div></div></a>
+                <a href="#page03"><div id="button-to-page3" class="change-page"><div class="text">頁面3</div></div></a>
             </div>
         </div>
-        <div class="main img2">
+        <div id="page01" class="main img1">
             <div class="mask">
-                <div class="button"></div>
+                <a href="#page02"><div class="button"></div></a>
             </div>
         </div>
-        <div class="main img3">
+        <div id="page02" class="main img2">
             <div class="mask">
-                <div class="button"></div>
+                <a href="#page03"><div class="button"></div></a>
+            </div>
+        </div>
+        <div id="page03" class="main img3">
+            <div class="mask">
+                <a href="#page01"><div class="button"></div></a>
             </div>
         </div>
     </div>
