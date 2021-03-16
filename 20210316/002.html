@@ -11,7 +11,7 @@
         }
 
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
 
@@ -33,13 +33,13 @@
         }
 
         .img3 {
-            background-image: url(https://www.webacg.com/wp-content/uploads/2020/07/651f2c646d06c1776d9edf5f8cb7828a7acd471c.jpg);
+            background-image: url(https://pbs.twimg.com/media/EeV6VDXUwAELspb.png);
         }
 
         .mask {
             width: calc(100% - 50% + 60px);
             height: calc(50vh - 25vh + 20px);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
             padding-top: calc(25vh - 20px);
             padding-left: calc(50% - 60px);
         }
@@ -54,27 +54,30 @@
         .navbar {
             width: 80%;
             height: 100px;
-            background-color: rgba(154, 205, 50,0.7);
+            background-color: rgba(154, 205, 50, 0);
             /* opacity: 0.8; */
             position: fixed;
             /* padding: 10px; */
         }
-        .logo{
+
+        .logo {
             height: 100px;
             width: 100px;
             background-color: teal;
             border-radius: 50%;
-            transform: translate(0%,0%);
+            transform: translate(0%, 0%);
             float: left;
         }
-        .menu{
+
+        .menu {
             background-color: rgba(255, 99, 71, 0);
             /* width: calc(100% - 100px); */
             width: 400px;
             height: 100%;
             float: right;
         }
-        .change-page{
+
+        .change-page {
             width: 120px;
             height: 40px;
             background-color: rgba(64, 224, 208, 0.5);
@@ -82,17 +85,22 @@
             float: left;
             margin: 50px 10px 0 0;
             text-align: center;
-            transform: translate(0,-50%);
+            transform: translate(0, -50%);
             /* vertical-align: middle; */
-            
             /* padding: 50px; */
+
         }
-        .text{
+
+        .change-page:hover {
+            background-color: rgba(0, 0, 0, 1);
+            color: rgba(255, 255, 255, 1)
+        }
+
+        .text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
         }
     </style>
 </head>
@@ -102,24 +110,42 @@
         <div class="navbar">
             <div class="logo"></div>
             <div class="menu">
-                <a href="#page01"><div id="button-to-page1" class="change-page"><div class="text">頁面1</div></div></a>
-                <a href="#page02"><div id="button-to-page2" class="change-page"><div class="text">頁面2</div></div></a>
-                <a href="#page03"><div id="button-to-page3" class="change-page"><div class="text">頁面3</div></div></a>
+                <a href="#page01">
+                    <div id="button-to-page1" class="change-page">
+                        <div class="text">頁面1</div>
+                    </div>
+                </a>
+                <a href="#page02">
+                    <div id="button-to-page2" class="change-page">
+                        <div class="text">頁面2</div>
+                    </div>
+                </a>
+                <a href="#page03">
+                    <div id="button-to-page3" class="change-page">
+                        <div class="text">頁面3</div>
+                    </div>
+                </a>
             </div>
         </div>
         <div id="page01" class="main img1">
             <div class="mask">
-                <a href="#page02"><div class="button"></div></a>
+                <a href="#page02">
+                    <div class="button"></div>
+                </a>
             </div>
         </div>
         <div id="page02" class="main img2">
             <div class="mask">
-                <a href="#page03"><div class="button"></div></a>
+                <a href="#page03">
+                    <div class="button"></div>
+                </a>
             </div>
         </div>
         <div id="page03" class="main img3">
             <div class="mask">
-                <a href="#page01"><div class="button"></div></a>
+                <a href="#page01">
+                    <div class="button"></div>
+                </a>
             </div>
         </div>
     </div>
