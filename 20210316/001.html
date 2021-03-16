@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #all {
+            width: 80%;
+            margin: auto;
+        }
+
+        #main_a {
+            height: 100vh - 50vh;
+            width: 100%;
+            background-image: url(https://pixiv.cat/83135931-3.jpg);
+            background-size: cover;
+            background-position: center;
+            padding-top: 50vh;
+        }
+
+        #mask {
+            width: calc(100% - 50% + 60px);
+            height: calc(50vh - 25vh + 20px);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: calc(25vh - 20px);
+            padding-left: calc(50% - 60px);
+        }
+        #button{
+            width: 120px;
+            height: 40px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <div id="main_a">
+            <div id="mask">
+                <div id="button"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .main {
+            height: 100vh - 50vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            padding-top: 50vh;
+            background-attachment: fixed;
+        }
+
+        .img1 {
+            background-image: url(https://pixiv.cat/83135931-3.jpg);
+        }
+
+        .img2 {
+            background-image: url(https://p2.bahamut.com.tw/HOME/creationCover/26/0004873026_B.JPG);
+        }
+
+        .img3 {
+            background-image: url(https://www.webacg.com/wp-content/uploads/2020/07/651f2c646d06c1776d9edf5f8cb7828a7acd471c.jpg);
+        }
+
+        .mask {
+            width: calc(100% - 50% + 60px);
+            height: calc(50vh - 25vh + 20px);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: calc(25vh - 20px);
+            padding-left: calc(50% - 60px);
+        }
+
+        .button {
+            width: 120px;
+            height: 40px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main img1">
+            <div class="mask">
+                <div class="button"></div>
+            </div>
+        </div>
+        <div class="main img2">
+            <div class="mask">
+                <div class="button"></div>
+            </div>
+        </div>
+        <div class="main img3">
+            <div class="mask">
+                <div class="button"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
