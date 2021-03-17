@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            width: 320px;
+            height: 100vh;
+            background-color: rgba(127, 255, 212, 0.5);
+            float: left;
+        }
+
+        .container {
+            width: calc(100% - 320px);
+            height: 100vh;
+            background-color: rgba(0,0,0,1);
+            float: left;
+            position: relative;
+        }
+
+        .content {
+            width: 960px;
+            height: auto;
+            background-color: rgba(165, 42, 42, 0.5);
+            float: left;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .area-X {
+            background-color: darkblue;
+            width: 320px;
+            height: 640px;
+            float: left;
+        }
+
+        .area-Y {
+            background-color: darkcyan;
+            width: 320px;
+            height: 640px;
+            float: left;
+        }
+
+        .area-Z {
+            background-color: darkmagenta;
+            width: 320px;
+            height: 640px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav-logo"></div>
+        <div class="nav-menu">
+            <div class="nav-menu-btn"></div>
+            <div class="nav-menu-btn"></div>
+            <div class="nav-menu-btn"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="area-X"></div>
+            <div class="area-Y"></div>
+            <div class="area-Z"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
