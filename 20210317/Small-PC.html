@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -45,22 +46,46 @@
             height: 33%;
             border: 1px solid darkblue;
         }
-        .container{
+
+        .container {
             width: calc(100% - 320px);
             height: 100vh;
             background-color: rgba(155, 55, 0, 0.5);
             float: left;
+            position: relative;
         }
-        .content{
 
+        .content {
+            width: auto;
+            height: auto;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
         }
-        .area-X{
+
+        .area-X {
             width: 448px;
             height: 100px;
             background-color: royalblue;
+            margin-bottom: 1px;
         }
-        .area-Y{}
-        .area-Z{}
+
+        .area-Y {
+            width: 223px;
+            height: 100px;
+            background-color: darkcyan;
+            float: left;
+            margin-right: 1px;
+        }
+
+        .area-Z {
+            width: 224px;
+            height: 100px;
+            background-color: darkmagenta;
+            float: left;
+        }
     </style>
 </head>
 
