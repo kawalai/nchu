@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -29,21 +30,36 @@
             height: 150px;
             /* border: 1px solid red; */
             background-color: rgba(255, 0, 0, 0.5);
-            margin: 0 auto;
+            margin: 0 auto 50px auto;
         }
 
         .nav-menu {
-            width: 100px;
-            height: 100px;
             /* border: 1px solid darkblue; */
             background-color: rgba(255, 255, 0, 0.5);
-            margin: 0 auto;
+        }
+
+        .nav-menu-link {
+            width: 100px;
+            height: 33%;
+            /* border: 1px solid darkblue; */
+            text-align: center;
+            margin: 0 auto 3px auto;
+        }
+
+        .link1 {
+            background-color: aqua;
+        }
+
+        .link2 {
+            background-color: darkgreen;
+        }
+
+        .link3 {
+            background-color: darkmagenta;
         }
 
         .nav-menu-btn {
-            width: 100px;
-            height: 33%;
-            border: 1px solid darkblue;
+            display: none;
         }
 
 
@@ -96,10 +112,28 @@
     <div class="nav">
         <div class="nav-logo"></div>
         <div class="nav-menu">
-            <div class="nav-menu-btn"></div>
-            <div class="nav-menu-btn"></div>
-            <div class="nav-menu-btn"></div>
+            <div class="nav-menu-link">
+                <a href="">
+                    <div class="nav-menu-link link1">AAAAA</div>
+                </a>
+            </div>
+            <!-- <div class="nav-menu-link"><a href="#">AAAAA</a></div> -->
+
+            <div class="nav-menu-link">
+                <a href="">
+                    <div class="nav-menu-link link2">BBBBB</div>
+                </a>
+            </div>
+            <div class="nav-menu-link">
+                <a href="">
+                    <div class="nav-menu-link link3">CCCCC</div>
+                </a>
+            </div>
+
         </div>
+        <div class="nav-menu-btn"></div>
+        <div class="nav-menu-btn"></div>
+        <div class="nav-menu-btn"></div>
     </div>
     <div class="container">
         <div class="content">
