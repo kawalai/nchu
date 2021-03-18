@@ -40,6 +40,22 @@
             left: 3%;
         }
 
+        .nav-menu-btn {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-menu:hover~.nav-menu-btn {
+            display: block;
+        }
+
+        .nav-menu-btn:hover {
+            display: block;
+        }
+
         .container {
             width: 100%;
             height: calc(100vh - 100px);
@@ -74,32 +90,15 @@
 <body>
 
     <div class="nav">
-        <div class="nav-logo"></div>
         <div class="nav-menu">
-            <!--  -->
-            <!-- <div class="nav-menu-link">
-                <a href="">
-                    <div class="nav-menu-link link1">AAAAA</div>
-                </a>
-            </div>            
-            <div class="nav-menu-link">
-                <a href="">
-                    <div class="nav-menu-link link2">BBBBB</div>
-                </a>
-            </div>
-            <div class="nav-menu-link">
-                <a href="">
-                    <div class="nav-menu-link link3">CCCCC</div>
-                </a>
-            </div> -->
-            <!--  -->
-            <div class="nav-menu-link"><a href="#">AAAAA</a></div>
+            <!-- <div class="nav-menu-link"><a href="#">AAAAA</a></div>
             <div class="nav-menu-link"><a href="#">BBBBB</a></div>
-            <div class="nav-menu-link"><a href="#">CCCCC</a></div>
+            <div class="nav-menu-link"><a href="#">CCCCC</a></div> -->
         </div>
-        <div class="nav-menu-btn"></div>
-        <div class="nav-menu-btn"></div>
-        <div class="nav-menu-btn"></div>
+        <div class="nav-logo"></div>
+        <div class="nav-menu-btn"><a href="#">AAAAA</a></div>
+        <div class="nav-menu-btn"><a href="#">BBBBB</a></div>
+        <div class="nav-menu-btn"><a href="#">CCCCC</a></div>
     </div>
     <div class="container">
         <div class="content">
