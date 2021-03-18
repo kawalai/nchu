@@ -35,7 +35,7 @@
 
         .nav-menu {
             /* border: 1px solid darkblue; */
-            background-color: rgba(255, 255, 0, 0.5);
+            background-color: rgba(255, 255, 0, 0);
         }
 
         .nav-menu-link {
@@ -46,16 +46,20 @@
             margin: 0 auto 3px auto;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         .link1 {
-            background-color: aqua;
+            background-color: rgba(0, 255, 255, 0);
         }
 
         .link2 {
-            background-color: darkgreen;
+            background-color: rgba(0, 100, 0, 0);
         }
 
         .link3 {
-            background-color: darkmagenta;
+            background-color: rgba(139, 0, 139, 0);
         }
 
         .nav-menu-btn {
@@ -66,7 +70,7 @@
         .container {
             width: calc(100% - 320px);
             height: 100vh;
-            background-color: rgba(0, 0, 0, 1);
+            background-color: rgba(0, 0, 0, 0.3);
             float: left;
             /* 使用定位達到置中的目的 */
             position: relative;
@@ -86,23 +90,26 @@
 
         .area-X {
             background-color: darkblue;
-            width: 320px;
+            width: 318px;
             height: 640px;
             float: left;
+            margin: 0 2px 0 0;
         }
 
         .area-Y {
             background-color: darkcyan;
-            width: 320px;
+            width: 318px;
             height: 640px;
             float: left;
+            margin: 0 1px;
         }
 
         .area-Z {
             background-color: darkmagenta;
-            width: 320px;
+            width: 318px;
             height: 640px;
             float: left;
+            margin: 0 0 0 2px;
         }
     </style>
 </head>
@@ -112,13 +119,12 @@
     <div class="nav">
         <div class="nav-logo"></div>
         <div class="nav-menu">
-            <div class="nav-menu-link">
+            <!--  -->
+            <!-- <div class="nav-menu-link">
                 <a href="">
                     <div class="nav-menu-link link1">AAAAA</div>
                 </a>
-            </div>
-            <!-- <div class="nav-menu-link"><a href="#">AAAAA</a></div> -->
-
+            </div>            
             <div class="nav-menu-link">
                 <a href="">
                     <div class="nav-menu-link link2">BBBBB</div>
@@ -128,8 +134,11 @@
                 <a href="">
                     <div class="nav-menu-link link3">CCCCC</div>
                 </a>
-            </div>
-
+            </div> -->
+            <!--  -->
+            <div class="nav-menu-link"><a href="#">AAAAA</a></div>
+            <div class="nav-menu-link"><a href="#">BBBBB</a></div>
+            <div class="nav-menu-link"><a href="#">CCCCC</a></div>
         </div>
         <div class="nav-menu-btn"></div>
         <div class="nav-menu-btn"></div>
