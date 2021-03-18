@@ -72,20 +72,14 @@
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.3);
             float: left;
-            /* 使用定位達到置中的目的 */
-            position: relative;
+            padding-top: calc((100vh - 640px) / 2);
         }
 
         .content {
             width: 960px;
             height: auto;
             background-color: rgba(165, 42, 42, 0.5);
-            float: left;
-            /* 使用定位達到置中的目的 */
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            margin: 0 auto;
         }
 
         .area-X {
