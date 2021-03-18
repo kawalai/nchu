@@ -1,2 +1,6 @@
 css 渲染有優先度的坑
 id > class > tag
+
+line-height 可以調整文字高度(設定成該欄高度後)
+
+nth-child(x) 偽元素 https://www.w3schools.com/css/css_pseudo_classes.asp

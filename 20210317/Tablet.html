@@ -31,19 +31,18 @@
         }
 
         .nav-menu {
-            width: auto;
-            height: auto;
-            background-color: blue;
+            background-color: rgba(0, 0, 255, 0);
             float: right;
-            margin-top: 25px;
+            /* margin-top: 25px; */
+
+            transform: translateY(200%);
         }
 
         .nav-menu-link {
-            width: 120px;
-            height: 40px;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             float: left;
-            background-color: yellow;
+            background-color: rgba(255, 255, 0, 0);
+            margin-right: 20px;
         }
 
         .nav-menu-btn {
@@ -60,7 +59,7 @@
 
         .content {
             width: 100%;
-            height: auto;
+            height: 700px;
             position: absolute;
             top: 50%;
             transform: translate(0, -50%)
@@ -68,25 +67,35 @@
 
         .area-X {
             width: 100%;
-            height: 350px;
+            height: 50%;
             background-color: rgb(104, 6, 6);
-            padding: 1px;
-            margin-bottom: 1px;
+            /* padding: 1px; */
+            margin-bottom: 10px;
+            /* background-image: url(https://pixiv.cat/83135931-3.jpg);
+            background-size: cover;
+            background-position: center; */
         }
 
+
         .area-Y {
-            width: calc(50% - 1px);
-            height: 350px;
+            width: calc(50% - 5px);
+            height: 50%;
             background-color: rgb(4, 94, 4);
             float: left;
-            margin-right: 1px;
+            margin-right: 10px;
+            /* background-image: url(https://p2.bahamut.com.tw/HOME/creationCover/26/0004873026_B.JPG);
+            background-size: cover;
+            background-position: center; */
         }
 
         .area-Z {
-            width: 50%;
-            height: 350px;
+            width: calc(50% - 5px);
+            height: 50%;
             background-color: rgb(4, 4, 134);
             float: left;
+            /* background-image: url(https://pbs.twimg.com/media/EeV6VDXUwAELspb.png);
+            background-size: cover;
+            background-position: center; */
         }
     </style>
 </head>
