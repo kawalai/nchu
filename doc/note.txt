@@ -6,3 +6,17 @@ line-height 可以調整文字高度(設定成該欄高度後)
 nth-child(x) 偽元素 https://www.w3schools.com/css/css_pseudo_classes.asp
 
 css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
+
+20210319
+    
+    @media 英文單字 : 指定裝置(ex: screen...)
+        ex @media print : 指定列印的版面
+        !!! 改變頁面尺寸時 會繼承上一個尺寸的設定 會導致多了這個size沒設定的值
+    
+    css檔用引入的方式帶入html
+        <link rel="stylesheet" href="路徑">
+        對應版面建立css檔案
+
+
+
+    material icon
