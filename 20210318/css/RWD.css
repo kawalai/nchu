@@ -29,6 +29,7 @@ body {
 }
 
 .nav-menu-link {
+    background-color: rgba(255, 255, 0, 0);
     text-align: center;
     margin: 0 auto 10px auto;
 }
@@ -82,7 +83,7 @@ a {
     width: 318px;
     height: 640px;
     background-color: rgba(96, 143, 19, 0.877);
-    background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/04/Desktop-picture-puppies-dogs-dowload.jpg);
+    background-image: url(https://wallpaper2017.files.wordpress.com/2016/12/husky-dog-winter-hd-1920x1080.jpg);
     background-position: center;
     background-size: cover;
     float: left;
@@ -93,29 +94,20 @@ a {
     .nav {
         width: 320px;
         height: 100vh;
-        background-color: rgba(127, 255, 212, 0.5);
         float: left;
         padding-top: 100px;
     }
     .nav-logo {
         width: 150px;
         height: 150px;
-        background-color: rgba(255, 0, 0, 0.5);
         margin: 0 auto 50px auto;
     }
     .nav-menu {
-        background-color: rgba(255, 255, 0, 0);
         margin: 0 auto;
     }
     .nav-menu-link {
         text-align: center;
         margin: 0 auto 10px auto;
-    }
-    a {
-        text-decoration: none;
-    }
-    .nav-menu-btn {
-        display: none;
     }
     .container {
         width: calc(100% - 320px);
@@ -157,33 +149,23 @@ a {
     .nav {
         width: 100%;
         height: 100px;
-        background-color: rgba(127, 255, 212, 0.5);
         float: none;
         padding: 5px 5%;
     }
     .nav-logo {
         width: 90px;
         height: 90px;
-        background-color: black;
         margin: auto;
         float: left;
     }
     .nav-menu {
-        background-color: rgba(0, 0, 255, 0);
         margin: auto;
         float: right;
-        transform: translateY(150%);
-    }
-    a {
-        text-decoration: none;
     }
     .nav-menu-link {
+        text-align: initial;
         float: left;
-        background-color: rgba(255, 255, 0, 0);
-        margin-right: 20px;
-    }
-    .nav-menu-btn {
-        display: none;
+        margin-right: auto 20px auto auto;
     }
     .container {
         width: 90%;
@@ -225,7 +207,6 @@ a {
     .nav {
         width: 100%;
         height: 100px;
-        background-color: rgba(127, 255, 212, 0.5);
         float: none;
         padding: 5px 5%;
         position: relative;
@@ -233,37 +214,34 @@ a {
     .nav-logo {
         width: 90px;
         height: 90px;
-        background-color: black;
         margin: auto;
         float: none;
     }
     .nav-menu {
         width: 80px;
         height: 80px;
-        background-color: black;
+        background-color: rgba(255, 255, 0, 0.384);
         float: none;
         transform: none;
         position: absolute;
         top: 10px;
         left: 3%;
     }
-    .nav-menu-btn {
+    /* .nav-menu-btn {
+        display: none;
+    } */
+    .nav-menu-link {
         display: none;
     }
-    a {
-        text-decoration: none;
-    }
-    .nav-menu-link {
-        float: none;
-        background-color: rgba(255, 255, 0, 0);
-        margin-right: auto;
-    }
-    .nav-menu:hover~.nav-menu-btn {
+    .nav-menu:hover .nav-menu-link {
+        /* width: 100px; */
+        /* height: 100px; */
+        /* background-color: black; */
         display: block;
     }
-    .nav-menu-btn:hover {
+    /* .nav-menu-btn:hover {
         display: block;
-    }
+    } */
     .container {
         width: 100%;
         height: calc(100vh - 100px);
