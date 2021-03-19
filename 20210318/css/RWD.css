@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    transition: all 0.5s linear;
 }
 
 body {
@@ -58,7 +59,10 @@ a {
 .area-X {
     width: 318px;
     height: 640px;
-    background-color: darkblue;
+    background-color: rgba(255, 99, 71, 0.856);
+    background-image: url(https://lh4.googleusercontent.com/proxy/cE_1QXTh69tnGrc8_NPiZZX-FVKF9W1m-x7o7qmaxtgO3yLgmA-ax6WEHnUxUBcWfTvY6gLpnus_q_x31d2TgW6FGS2aIywHM-Gv6-u4zwu6BpW7=s0-d);
+    background-position: center;
+    background-size: cover;
     float: left;
     margin: 0 2px 0 0;
 }
@@ -66,27 +70,26 @@ a {
 .area-Y {
     width: 318px;
     height: 640px;
-    background-color: darkcyan;
+    background-color: rgba(31, 137, 163, 0.849);
+    background-image: url(https://lh3.googleusercontent.com/proxy/V987Wt4OfIlOVQ8t_cb7OcyP3s_Ja4QOWDjLu_K0e9E_mtuYAF0vAGf-jvR0ZoAQDJnvAHu7omXc8pz74E5uUfCmFxwHjI1mMMtt21XYduWw6fA=s0-d);
+    background-position: center;
+    background-size: cover;
     float: left;
     margin: 0 1px;
 }
 
 .area-Z {
-    background-color: darkmagenta;
     width: 318px;
     height: 640px;
+    background-color: rgba(96, 143, 19, 0.877);
+    background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/04/Desktop-picture-puppies-dogs-dowload.jpg);
+    background-position: center;
+    background-size: cover;
     float: left;
     margin: 0 0 0 2px;
 }
 
 @media (max-width:1280px) {
-    * {
-        box-sizing: border-box;
-    }
-    body {
-        margin: 0;
-        padding: 0;
-    }
     .nav {
         width: 320px;
         height: 100vh;
@@ -117,47 +120,40 @@ a {
     .container {
         width: calc(100% - 320px);
         height: 100vh;
-        background-color: rgba(155, 55, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.3);
         float: left;
         padding-top: calc((100vh - 570px) / 2);
     }
     .content {
         width: 448px;
         height: 570px;
-        background-color: rgba(255, 0, 0, 0);
+        background-color: rgba(165, 42, 42, 0.5);
         margin: 0 auto;
     }
     .area-X {
         width: 100%;
         height: calc(50% - 10px);
-        background-color: royalblue;
+        background-color: rgba(255, 99, 71, 0.856);
         float: none;
         margin: 0 0 10px 0;
     }
     .area-Y {
         width: calc(50% - 5px);
         height: 50%;
-        background-color: royalblue;
+        background-color: rgba(31, 137, 163, 0.849);
         float: left;
         margin: 0 10px 0 0;
     }
     .area-Z {
         width: calc(50% - 5px);
         height: 50%;
-        background-color: royalblue;
+        background-color: rgba(96, 143, 19, 0.877);
         float: left;
         margin: auto;
     }
 }
 
 @media (max-width:768px) {
-    * {
-        box-sizing: border-box;
-    }
-    body {
-        margin: 0;
-        padding: 0;
-    }
     .nav {
         width: 100%;
         height: 100px;
@@ -192,7 +188,7 @@ a {
     .container {
         width: 90%;
         height: calc(100vh - 100px);
-        background-color: rgba(229, 175, 178, 0);
+        background-color: rgba(0, 0, 0, 0.3);
         float: none;
         margin: auto;
         padding-top: calc((100vh - 100px - 700px) / 2);
@@ -200,37 +196,32 @@ a {
     .content {
         width: 100%;
         height: 700px;
+        background-color: rgba(165, 42, 42, 0.5);
         margin: 0 auto;
     }
     .area-X {
         width: 100%;
-        height: 50%;
-        background-color: rgb(104, 6, 6);
+        height: calc(50% - 10px);
+        background-color: rgba(255, 99, 71, 0.856);
+        float: none;
         margin: 0 0 10px 0;
     }
     .area-Y {
         width: calc(50% - 5px);
         height: 50%;
-        background-color: rgb(4, 94, 4);
+        background-color: rgba(31, 137, 163, 0.849);
         float: left;
         margin-right: 10px;
     }
     .area-Z {
         width: calc(50% - 5px);
         height: 50%;
-        background-color: rgb(4, 4, 134);
+        background-color: rgba(96, 143, 19, 0.877);
         float: left;
     }
 }
 
 @media (max-width:375px) {
-    * {
-        box-sizing: border-box;
-    }
-    body {
-        margin: 0;
-        padding: 0;
-    }
     .nav {
         width: 100%;
         height: 100px;
@@ -276,7 +267,7 @@ a {
     .container {
         width: 100%;
         height: calc(100vh - 100px);
-        background-color: rgba(238, 130, 238, 1);
+        background-color: rgba(0, 0, 0, 0.3);
         float: none;
         margin: auto;
         padding-top: 0;
@@ -284,25 +275,26 @@ a {
     .content {
         width: 100%;
         height: 100%;
+        background-color: rgba(165, 42, 42, 0.5);
         margin: 0 auto;
     }
     .area-X {
         width: 100%;
         height: 34%;
-        background-color: tomato;
+        background-color: rgba(255, 99, 71, 0.856);
         margin: 0;
     }
     .area-Y {
         width: 100%;
         height: 33%;
-        background-color: rgb(31, 137, 163);
+        background-color: rgba(31, 137, 163, 0.849);
         float: none;
         margin-right: 0;
     }
     .area-Z {
         width: 100%;
         height: 33%;
-        background-color: rgb(95, 143, 19);
+        background-color: rgba(96, 143, 19, 0.877);
         float: none;
     }
 }
