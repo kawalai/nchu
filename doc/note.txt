@@ -30,6 +30,10 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         inline-block
             可設定寬高
             不會佔滿父層
+    flex
+        flex froggy 練習網站
+        主軸 align-items
+        切軸 justify-content
 
 
     material icon
