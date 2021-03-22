@@ -52,3 +52,9 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
     ms官網仿切
     https://www.microsoft.com/zh-tw
 
+    rwd-flex 解題
+        margin auto 對有寬高的才有用
+
+        display: table;
+        text-align: center;
+        以上兩個一起用能讓文字置中
