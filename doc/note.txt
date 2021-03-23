@@ -58,3 +58,6 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         display: table;
         text-align: center;
         以上兩個一起用能讓文字置中
+
+20210323
+    swipe : slide效果

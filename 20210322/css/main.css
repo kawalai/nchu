@@ -12,47 +12,54 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-nav.layer1>div.layer2 {
-    width: 1600px;
-    height: 54px;
-    display: flex;
+nav.layer1>div.container{
+    max-width: 1600px;
     margin: 0 auto;
 }
 
-nav.layer1>div.layer2>a#logo {
+nav.layer1>div.container>div.layer2 {
+    /* max-width: 1600px; */
+    /* height: 54px; */
+    display: flex;
+    /* margin: 0 auto; */
+}
+
+nav.layer1>div.container>div.layer2>a#logo {
     display: flex;
 }
 
-nav.layer1>div.layer2>a#logo {
+nav.layer1>div.container>div.layer2>a#logo {
     /* width: 100%; */
     /* height: 100%; */
     margin: 1px 0 0 0;
     padding: 16px 6px 16px 10px;
 }
 
-nav.layer1>div.layer2>a#logo>img {
+nav.layer1>div.container>div.layer2>a#logo>img {
     display: flex;
     margin: -3px 15px 0 0;
     width: 108px;
     height: 23px;
 }
 
-nav.layer1>div.layer2>ul.product-bar {    
-    width: 55%;
+nav.layer1>div.container>div.layer2>ul.product-bar {
+    width: 100%;
     display: flex;
+    margin: 0;
     padding: 0;
     /* background-color: coral; */
     flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
-
-nav.layer1>div.layer2>ul.product-bar>li {
+nav.layer1>div.container>div.layer2>ul.product-bar>li {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-nav.layer1>div.layer2>ul.product-bar>li>a {
+
+nav.layer1>div.container>div.layer2>ul.product-bar>li>a {
     /* background-color: cornsilk; */
     text-decoration: none;
     border: 1px solid #FFF;
@@ -62,22 +69,92 @@ nav.layer1>div.layer2>ul.product-bar>li>a {
     font-family: '微軟正黑體';
 }
 
-nav.layer1>div.layer2>ul.product-bar>li>a:visited {
+nav.layer1>div.container>div.layer2>ul.product-bar>li>a:visited {
     color: black;
     text-decoration: none;
 }
 
-nav.layer1>div.layer2>.menu {
-    width: 100%;
+nav.layer1>div.container>div.layer2>ul.product-bar>li:nth-child(7){
+    height: 100%;
+    /* background-color: aqua; */
+    line-height: 54px;
+    font-size: 12px;
+    font-family: '微軟正黑體';
+    position: absolute;
+    right: 0;
+}
+
+nav.layer1>div.container>div.layer2>.menu {
+    width: 25%;
     height: 54px;
     /* background-color: cornflowerblue; */
     display: flex;
     font-size: 14px;
     font-family: '微軟正黑體';
     justify-content: flex-end;
-    align-items: center;    
+    align-items: center;
+    justify-content: space-around;
 }
-main{
+
+nav.layer1>div.container>div.layer2>div.sub-menu{
+    display: none;
+}
+
+nav.layer1>div.container>div.layer2>div.sub-menu>ul{
+    display: flex;
+    background-color: aquamarine;
+}
+
+nav.layer1>div.container>div.slide{
+    width: 100%;
+    height: 600px;
+    background-color: aquamarine;
+}
+
+nav.layer1>div.container>div.option-buy{
+    width: 100%;
+    height: 129px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.layer1>div.container>div.option-buy>ul{
+    padding: 48px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav.layer1>div.container>div.option-buy>ul>li{
+    list-style-type: none;
+}
+
+nav.layer1>div.container>div.option-buy>ul>li:nth-child(1){
+    margin: 0 100px 0 0;
+}
+
+nav.layer1>div.container>div.option-buy>ul>li:nth-child(2){
+    margin: 0 100px 0 0;
+}
+
+nav.layer1>div.container>div.option-buy>ul>li>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: '微軟正黑體';
+    font-weight: bold;
+}
+
+nav.layer1>div.container>div.option-buy>ul>li>a>p{
+    margin: 0;
+    padding: 0;
+}
+
+main {
     width: 100%;
     height: 300vh;
+    /* background-color: antiquewhite; */
 }
