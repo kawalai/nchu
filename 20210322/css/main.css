@@ -165,7 +165,7 @@ main>div.container {
     margin: 0 auto;
 }
 
-main>div.container>ul {
+main div.container ul {
     width: 100%;
     margin: 48px 0 0 0;
     padding: 0;
@@ -190,19 +190,19 @@ main>div.container>ul>li:nth-child(3) {
     margin: 0 40px 0 0;
 }
 
-main>div.container>ul>li>a {
+main div.container ul li a {
     text-decoration: none;
     color: black;
     font-family: '微軟正黑體';
     font-size: 14px;
 }
 
-main>div.container>ul>li>a>p {
+main div.container ul li a p {
     display: flex;
     width: 100%;
 }
 
-main>div.container>ul>li>a>div.decide {
+main div.container ul li a div.decide {
     font-weight: bold;
     color: #005DA6;
 }
@@ -255,4 +255,39 @@ main>div.container>div.onedrive>.onedrive-btn>a{
 
 main>div.container>div.onedrive>.onedrive-btn>a:hover{
     text-decoration: underline;
+}
+
+main>div.container>div.for-bussiness{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main>div.container>div.for-bussiness>div.for-bussiness-title{
+    margin: 48px 0 0 0;
+    width: 100%;
+    display: block;
+    /* background-color: brown; */
+}
+
+main>div.container>div.for-bussiness>ul{
+    margin: 0;
+    font-family: '微軟正黑體';
+}
+
+/* main>div.container>div.for-bussiness>ul>li>a{
+    text-decoration: none;
+    color: black;
+} */
+
+main>div.container>div.for-bussiness>ul>li:nth-child(1){
+    margin-right: 40px;
+}
+
+main>div.container>div.for-bussiness>ul>li:nth-child(2){
+    margin-right: 40px;
+}
+
+main>div.container>div.for-bussiness>ul>li:nth-child(3){
+    margin-right: 40px;
 }
