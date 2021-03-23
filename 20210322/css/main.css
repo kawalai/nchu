@@ -12,7 +12,7 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-nav.layer1>div.container{
+nav.layer1>div.container {
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -74,7 +74,7 @@ nav.layer1>div.container>div.layer2>ul.product-bar>li>a:visited {
     text-decoration: none;
 }
 
-nav.layer1>div.container>div.layer2>ul.product-bar>li:nth-child(7){
+nav.layer1>div.container>div.layer2>ul.product-bar>li:nth-child(7) {
     height: 100%;
     /* background-color: aqua; */
     line-height: 54px;
@@ -96,22 +96,22 @@ nav.layer1>div.container>div.layer2>.menu {
     justify-content: space-around;
 }
 
-nav.layer1>div.container>div.layer2>div.sub-menu{
+nav.layer1>div.container>div.layer2>div.sub-menu {
     display: none;
 }
 
-nav.layer1>div.container>div.layer2>div.sub-menu>ul{
+nav.layer1>div.container>div.layer2>div.sub-menu>ul {
     display: flex;
     background-color: aquamarine;
 }
 
-nav.layer1>div.container>div.slide{
+nav.layer1>div.container>div.slide {
     width: 100%;
     height: 600px;
     background-color: aquamarine;
 }
 
-nav.layer1>div.container>div.option-buy{
+nav.layer1>div.container>div.option-buy {
     width: 100%;
     height: 129px;
     display: flex;
@@ -119,25 +119,25 @@ nav.layer1>div.container>div.option-buy{
     align-items: center;
 }
 
-nav.layer1>div.container>div.option-buy>ul{
+nav.layer1>div.container>div.option-buy>ul {
     padding: 48px 0 0 0;
     display: flex;
     justify-content: center;
 }
 
-nav.layer1>div.container>div.option-buy>ul>li{
+nav.layer1>div.container>div.option-buy>ul>li {
     list-style-type: none;
 }
 
-nav.layer1>div.container>div.option-buy>ul>li:nth-child(1){
+nav.layer1>div.container>div.option-buy>ul>li:nth-child(1) {
     margin: 0 100px 0 0;
 }
 
-nav.layer1>div.container>div.option-buy>ul>li:nth-child(2){
+nav.layer1>div.container>div.option-buy>ul>li:nth-child(2) {
     margin: 0 100px 0 0;
 }
 
-nav.layer1>div.container>div.option-buy>ul>li>a{
+nav.layer1>div.container>div.option-buy>ul>li>a {
     width: 100%;
     height: 100%;
     display: block;
@@ -148,7 +148,7 @@ nav.layer1>div.container>div.option-buy>ul>li>a{
     font-weight: bold;
 }
 
-nav.layer1>div.container>div.option-buy>ul>li>a>p{
+nav.layer1>div.container>div.option-buy>ul>li>a>p {
     margin: 0;
     padding: 0;
 }
@@ -157,4 +157,102 @@ main {
     width: 100%;
     height: 300vh;
     /* background-color: antiquewhite; */
+}
+
+main>div.container {
+    display: flex;
+    width: 1600px;
+    margin: 0 auto;
+}
+
+main>div.container>ul {
+    width: 100%;
+    margin: 48px 0 0 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+main>div.container>ul>li {
+    width: 100%;
+}
+
+main>div.container>ul>li:nth-child(1) {
+    margin: 0 40px 0 0;
+}
+
+main>div.container>ul>li:nth-child(2) {
+    margin: 0 40px 0 0;
+}
+
+main>div.container>ul>li:nth-child(3) {
+    margin: 0 40px 0 0;
+}
+
+main>div.container>ul>li>a {
+    text-decoration: none;
+    color: black;
+    font-family: '微軟正黑體';
+    font-size: 14px;
+}
+
+main>div.container>ul>li>a>p {
+    display: flex;
+    width: 100%;
+}
+
+main>div.container>ul>li>a>div.decide {
+    font-weight: bold;
+    color: #005DA6;
+}
+
+main>div.container>div.onedrive {
+    width: 100%;
+    padding: 48px 0 0 0;
+    margin: 0;
+    position: relative;
+}
+
+main>div.container>div.onedrive:hover{
+    cursor: pointer;
+}
+
+main>div.container>div.onedrive>img {
+    width: 100%;
+}
+
+main>div.container>div.onedrive>.onedrive-text {
+    /* width: 100px; */
+    /* height: 100px; */
+    /* background-color: blueviolet; */
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    font-family: '微軟正黑體';
+}
+
+main>div.container>div.onedrive>.onedrive-btn{
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    top: 58%;
+    left: 5%;
+}
+
+main>div.container>div.onedrive>.onedrive-btn>a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: #FFFFFF;
+    background-color: #000000;
+    position: absolute;
+    top: 58%;
+    left: 5%;
+    text-decoration: none;
+}
+
+main>div.container>div.onedrive>.onedrive-btn>a:hover{
+    text-decoration: underline;
 }
