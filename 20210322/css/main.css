@@ -161,7 +161,9 @@ main {
 
 main>div.container {
     display: flex;
-    width: 1600px;
+    /* width: 100%; */
+    /* width: 1600px; */
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -172,6 +174,7 @@ main div.container ul {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
+    position: relative;
 }
 
 main>div.container>ul>li {
