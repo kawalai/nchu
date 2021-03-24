@@ -163,7 +163,7 @@ main>div.container {
     display: flex;
     /* width: 100%; */
     /* width: 1600px; */
-    max-width: 1600px;
+    max-width: 83.333333vw;
     margin: 0 auto;
 }
 
@@ -198,6 +198,10 @@ main div.container ul li a {
     color: black;
     font-family: '微軟正黑體';
     font-size: 14px;
+}
+
+main div.container ul li a img{
+    width: 100%;
 }
 
 main div.container ul li a p {
@@ -297,10 +301,12 @@ main>div.container>div.for-bussiness>ul>li:nth-child(3) {
 
 main>div.container>div.social {
     display: flex;
+    width: 100%;
     /* background-color: #000000; */
 }
 
 main>div.container>div.social>div.social-title {
     /* background-color: #000000; */
-    width: 500px;
+    width: 120px;
+    /* margin: 0 5px 0 0; */
 }
