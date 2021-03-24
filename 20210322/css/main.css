@@ -175,10 +175,13 @@ main div.container ul {
     display: flex;
     justify-content: space-between;
     position: relative;
+    flex-wrap: wrap;
 }
 
-main>div.container>ul>li {
-    width: 100%;
+/* 控制四欄產品列 */
+/* 120px是左右margin總和 */
+main>div.container ul.box4 li {
+    width: calc((100% - 120px)/4);
 }
 
 main>div.container>ul>li:nth-child(1) {
@@ -262,6 +265,7 @@ main>div.container>div.onedrive>.onedrive-btn>a:hover {
 }
 
 main>div.container>div.for-bussiness {
+    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -330,6 +334,7 @@ footer>div.container {
 
 footer>div.container>div.footer-menu {
     display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -365,7 +370,7 @@ footer>div.container>div.footer-info {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 0 0 20px;
+    margin: 20px 0 20px;
     color: rgb(97, 97, 97);
     font-size: 11px;
 }
@@ -376,4 +381,44 @@ footer>div.container>div.footer-info>div.copyright>ul {
 
 footer>div.container>div.footer-info>div.copyright>ul>li {
     margin: 0 24px 0 0;
+}
+
+@media screen and (max-width: 1083px) {
+
+    main>div.container ul.box4 li {
+        width: calc((100% - 20px)/2);
+    }
+
+    main>div.container ul.box4 li:nth-child(1) {
+        margin: 0 20px 0 0;
+    }
+    
+    main>div.container ul.box4 li:nth-child(2) {
+        margin: 0;
+    }
+    
+    main>div.container ul.box4 li:nth-child(3) {
+        margin: 0 20px 0 0;
+    }
+    main>div.container>div.for-bussiness>ul>li:nth-child(1) {
+        margin-right: 20px;
+    }
+    
+    main>div.container>div.for-bussiness>ul>li:nth-child(2) {
+        margin-right: 0;
+    }
+    
+    main>div.container>div.for-bussiness>ul>li:nth-child(3) {
+        margin-right: 20px;
+    }
+    footer>div.container>div.footer-menu>div.footer-menu-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    footer>div.container>div.footer-menu>div.footer-menu-enterprise {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
 }
