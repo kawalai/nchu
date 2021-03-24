@@ -12,14 +12,12 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-.container,
-.container-full {
+.container, .container-full {
     max-width: 83.333333vw;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
-
 
 /* nav.layer1>div.container-full {
     display: flex;
@@ -30,6 +28,7 @@ nav.layer1 {
 nav.layer1>div.container-full>div.layer2 {
     width: 100%;
     display: flex;
+    position: relative;
 }
 
 nav.layer1>div.container-full>div.layer2>a#logo {
@@ -58,12 +57,11 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar {
     position: relative;
 }
 
-nav.layer1>div.container-full>div.layer2>div.menu>div.search::after{
+nav.layer1>div.container-full>div.layer2>div.menu>div.search::after {
     content: "\1F50D";
 }
 
-ul,
-li {
+ul, li {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -81,7 +79,6 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar>li>a {
     margin: 1px 6px 0;
     padding: 16px 8px 10px;
     font-size: 12px;
-
 }
 
 nav.layer1>div.container-full>div.layer2>ul.product-bar>li>a:visited {
@@ -93,7 +90,6 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar>li:nth-child(7) {
     height: 100%;
     line-height: 54px;
     font-size: 12px;
-
     position: absolute;
     right: 0;
 }
@@ -103,7 +99,6 @@ nav.layer1>div.container-full>div.layer2>.menu {
     height: 54px;
     display: flex;
     font-size: 14px;
-
     justify-content: flex-end;
     align-items: center;
     justify-content: space-around;
@@ -157,7 +152,6 @@ nav.layer1>div.container-full>div.slide-parent>div.option-buy>ul>li>a {
     text-align: center;
     text-decoration: none;
     color: black;
-
     font-weight: bold;
 }
 
@@ -187,7 +181,9 @@ main div.container ul {
 }
 
 /* 控制四欄產品列 */
+
 /* 120px是左右margin總和 */
+
 main>div.container ul.box4 li {
     width: calc((100% - 120px)/4);
 }
@@ -207,7 +203,6 @@ main>div.container>ul>li:nth-child(3) {
 main div.container ul li a {
     text-decoration: none;
     color: black;
-
     font-size: 14px;
 }
 
@@ -241,13 +236,14 @@ main>div.container>div.onedrive>img {
 }
 
 main>div.container>div.onedrive>.onedrive-text {
+    width: 100%;
     position: absolute;
     top: 40%;
     left: 5%;
-
 }
 
 main>div.container>div.onedrive>.onedrive-btn {
+    width: 100%;
     width: 120px;
     height: 40px;
     position: absolute;
@@ -286,7 +282,6 @@ main>div.container>div.for-bussiness>div.for-bussiness-title {
 
 main>div.container>div.for-bussiness>ul {
     margin: 0;
-
 }
 
 main>div.container>div.for-bussiness>ul>li:nth-child(1) {
@@ -315,7 +310,6 @@ main>div.container-full>div.social>ul.social-link {
     display: flex;
     margin: 0;
     justify-content: flex-start;
-
 }
 
 main>div.container-full>div.social>ul.social-link>li:nth-child(1) {
@@ -339,7 +333,6 @@ footer>div.container-full>div.footer-menu {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 footer>div.container-full>div.footer-menu>div.footer-menu-info {
@@ -388,48 +381,38 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 }
 
 @media screen and (max-width: 1083px) {
-
     .container-full {
         max-width: 95vw;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
     }
-
     main>div.container ul.box4 li {
         width: calc((100% - 20px)/2);
     }
-
     main>div.container ul.box4 li:nth-child(1) {
         margin: 0 20px 0 0;
     }
-
     main>div.container ul.box4 li:nth-child(2) {
         margin: 0;
     }
-
     main>div.container ul.box4 li:nth-child(3) {
         margin: 0 20px 0 0;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(1) {
         margin-right: 20px;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(2) {
         margin-right: 0;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(3) {
         margin-right: 20px;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
@@ -439,6 +422,23 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 
 @media screen and (max-width:859px) {
     /* 最上面的navbar 縮起來 */
+    nav.layer1>div.container-full>div.layer2>div.menu {
+        width: 100%;
+        justify-content: space-between;
+        /* flex-direction: column; */
+    }
+    nav.layer1>div.container-full>div.layer2>div.menu>:nth-child(2) {
+        align-self: flex-end;
+    }
+    nav.layer1>div.container-full>div.layer2>ul.product-bar {
+        display: none;
+    }
+    nav.layer1>div.container-full>div.layer2>a#logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 @media screen and (max-width:539px) {
