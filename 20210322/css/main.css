@@ -12,7 +12,8 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-.container, .container-full {
+.container,
+.container-full {
     max-width: 83.333333vw;
     margin: 0 auto;
     display: flex;
@@ -55,6 +56,10 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar {
     flex-direction: row;
     align-items: center;
     position: relative;
+}
+
+nav.layer1>div.container-full>div.layer2>div.menu>div.search::after{
+    content: "\1F50D";
 }
 
 ul,
@@ -113,7 +118,7 @@ nav.layer1>div.container-full>div.layer2>div.sub-menu>ul {
     background-color: aquamarine;
 }
 
-nav.layer1>div.container-full>div.slide-parent{
+nav.layer1>div.container-full>div.slide-parent {
     width: 100%;
 }
 
@@ -384,7 +389,7 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 
 @media screen and (max-width: 1083px) {
 
-    .container-full{
+    .container-full {
         max-width: 95vw;
         margin: 0 auto;
         display: flex;
@@ -398,33 +403,45 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
     main>div.container ul.box4 li:nth-child(1) {
         margin: 0 20px 0 0;
     }
-    
+
     main>div.container ul.box4 li:nth-child(2) {
         margin: 0;
     }
-    
+
     main>div.container ul.box4 li:nth-child(3) {
         margin: 0 20px 0 0;
     }
+
     main>div.container>div.for-bussiness>ul>li:nth-child(1) {
         margin-right: 20px;
     }
-    
+
     main>div.container>div.for-bussiness>ul>li:nth-child(2) {
         margin-right: 0;
     }
-    
+
     main>div.container>div.for-bussiness>ul>li:nth-child(3) {
         margin-right: 20px;
     }
+
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
+
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
+}
+
+@media screen and (max-width:859px) {
+    /* 最上面的navbar 縮起來 */
+}
+
+@media screen and (max-width:539px) {
+    /* box4一欄變成100% */
+    /* footer 一欄變成100% */
 }
