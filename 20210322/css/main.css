@@ -217,7 +217,7 @@ main>div.container>div.onedrive {
     position: relative;
 }
 
-main>div.container>div.onedrive:hover{
+main>div.container>div.onedrive:hover {
     cursor: pointer;
 }
 
@@ -235,7 +235,7 @@ main>div.container>div.onedrive>.onedrive-text {
     font-family: '微軟正黑體';
 }
 
-main>div.container>div.onedrive>.onedrive-btn{
+main>div.container>div.onedrive>.onedrive-btn {
     width: 120px;
     height: 40px;
     position: absolute;
@@ -243,7 +243,7 @@ main>div.container>div.onedrive>.onedrive-btn{
     left: 5%;
 }
 
-main>div.container>div.onedrive>.onedrive-btn>a{
+main>div.container>div.onedrive>.onedrive-btn>a {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -256,24 +256,24 @@ main>div.container>div.onedrive>.onedrive-btn>a{
     text-decoration: none;
 }
 
-main>div.container>div.onedrive>.onedrive-btn>a:hover{
+main>div.container>div.onedrive>.onedrive-btn>a:hover {
     text-decoration: underline;
 }
 
-main>div.container>div.for-bussiness{
+main>div.container>div.for-bussiness {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-main>div.container>div.for-bussiness>div.for-bussiness-title{
+main>div.container>div.for-bussiness>div.for-bussiness-title {
     margin: 48px 0 0 0;
     width: 100%;
     display: block;
     /* background-color: brown; */
 }
 
-main>div.container>div.for-bussiness>ul{
+main>div.container>div.for-bussiness>ul {
     margin: 0;
     font-family: '微軟正黑體';
 }
@@ -283,14 +283,24 @@ main>div.container>div.for-bussiness>ul{
     color: black;
 } */
 
-main>div.container>div.for-bussiness>ul>li:nth-child(1){
+main>div.container>div.for-bussiness>ul>li:nth-child(1) {
     margin-right: 40px;
 }
 
-main>div.container>div.for-bussiness>ul>li:nth-child(2){
+main>div.container>div.for-bussiness>ul>li:nth-child(2) {
     margin-right: 40px;
 }
 
-main>div.container>div.for-bussiness>ul>li:nth-child(3){
+main>div.container>div.for-bussiness>ul>li:nth-child(3) {
     margin-right: 40px;
+}
+
+main>div.container>div.social {
+    display: flex;
+    /* background-color: #000000; */
+}
+
+main>div.container>div.social>div.social-title {
+    /* background-color: #000000; */
+    width: 500px;
 }
