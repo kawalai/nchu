@@ -53,10 +53,12 @@ nav.layer1>div.container>div.layer2>ul.product-bar {
     position: relative;
 }
 
-ul, li{
+ul,
+li {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    font-family: '微軟正黑體';
 }
 
 nav.layer1>div.container>div.layer2>ul.product-bar>li {
@@ -71,7 +73,7 @@ nav.layer1>div.container>div.layer2>ul.product-bar>li>a {
     margin: 1px 6px 0;
     padding: 16px 8px 10px;
     font-size: 12px;
-    font-family: '微軟正黑體';
+
 }
 
 nav.layer1>div.container>div.layer2>ul.product-bar>li>a:visited {
@@ -84,7 +86,7 @@ nav.layer1>div.container>div.layer2>ul.product-bar>li:nth-child(7) {
     /* background-color: aqua; */
     line-height: 54px;
     font-size: 12px;
-    font-family: '微軟正黑體';
+
     position: absolute;
     right: 0;
 }
@@ -95,7 +97,7 @@ nav.layer1>div.container>div.layer2>.menu {
     /* background-color: cornflowerblue; */
     display: flex;
     font-size: 14px;
-    font-family: '微軟正黑體';
+
     justify-content: flex-end;
     align-items: center;
     justify-content: space-around;
@@ -145,7 +147,7 @@ nav.layer1>div.container>div.option-buy>ul>li>a {
     text-align: center;
     text-decoration: none;
     color: black;
-    font-family: '微軟正黑體';
+
     font-weight: bold;
 }
 
@@ -194,11 +196,11 @@ main>div.container>ul>li:nth-child(3) {
 main div.container ul li a {
     text-decoration: none;
     color: black;
-    font-family: '微軟正黑體';
+
     font-size: 14px;
 }
 
-main div.container ul li a img{
+main div.container ul li a img {
     width: 100%;
 }
 
@@ -231,7 +233,7 @@ main>div.container>div.onedrive>.onedrive-text {
     position: absolute;
     top: 40%;
     left: 5%;
-    font-family: '微軟正黑體';
+
 }
 
 main>div.container>div.onedrive>.onedrive-btn {
@@ -273,7 +275,7 @@ main>div.container>div.for-bussiness>div.for-bussiness-title {
 
 main>div.container>div.for-bussiness>ul {
     margin: 0;
-    font-family: '微軟正黑體';
+
 }
 
 /* main>div.container>div.for-bussiness>ul>li>a{
@@ -296,25 +298,82 @@ main>div.container>div.for-bussiness>ul>li:nth-child(3) {
 main>div.container>div.social {
     display: flex;
     width: 100%;
+    margin: 0 0 48px;
 }
 
 main>div.container>div.social>div.social-title {
     width: 120px;
 }
 
-main>div.container>div.social>ul.social-link{
+main>div.container>div.social>ul.social-link {
     margin: 0;
     justify-content: flex-start;
 
 }
-main>div.container>div.social>ul.social-link>li:nth-child(1){
+
+main>div.container>div.social>ul.social-link>li:nth-child(1) {
     margin: 0 15px 0 0;
 }
 
-footer{
+footer {
     width: 100%;
-    height: 500px;
-    background-color: #005ea64b;
+    /* height: 500px; */
+    background-color: #eeeeee;
     margin: 0;
-    padding: 0;    
+    padding: 0;
+}
+
+footer>div.container {
+    max-width: 83.333333vw;
+    margin: 0 auto;
+}
+
+footer>div.container>div.footer-menu {
+    display: flex;
+
+}
+
+footer>div.container>div.footer-menu>div.footer-menu-info {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer>div.container>div.footer-menu ul {
+    width: 33.33%;
+}
+
+footer>div.container>div.footer-menu ul li {
+    margin: 0 0 19px;
+    font-size: 11px;
+    color: rgb(97, 97, 97);
+}
+
+footer>div.container>div.footer-menu ul li:nth-child(1) {
+    margin: 30px 0 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+footer>div.container>div.footer-menu>div.footer-menu-enterprise {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer>div.container>div.footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    color: rgb(97, 97, 97);
+    font-size: 11px;
+}
+
+footer>div.container>div.footer-info>div.copyright>ul {
+    display: flex;
+}
+
+footer>div.container>div.footer-info>div.copyright>ul>li {
+    margin: 0 24px 0 0;
 }
