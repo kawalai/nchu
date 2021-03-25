@@ -174,9 +174,43 @@ nav.layer1>div.container-full>div.slide-parent {
     width: 100%;
 }
 
+/* swipe start */
+/* slide 複製貼上的 https://www.itread01.com/content/1549551065.html */
+
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-wrap>figure {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+#slider {
+    max-width: 650px;
+    /* 設定最大的寬度 */
+    margin: 0px auto;
+    /* 居中對齊 */
+}
+
+figure {
+    margin: 0;
+    /* 對齊，四周寬度都為0，在輪播的時候，以整張圖片進行移動 */
+}
+
+/* swipe end */
+
 nav.layer1>div.container-full>div.slide-parent>div.slide {
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
     background-color: aquamarine;
 }
 
@@ -431,7 +465,7 @@ footer>div.container-full>div.footer-info {
     padding: 30px 24px 16px 24px;
 }
 
-footer>div.container-full>div.footer-info>div.language::before{
+footer>div.container-full>div.footer-info>div.language::before {
     content: "\25EF";
 }
 
@@ -567,8 +601,9 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 }
 
 @media screen and (max-width:767px) {
+
     /* language跟copyright分行 */
-    footer>div.container-full>div.footer-info>div.language{
+    footer>div.container-full>div.footer-info>div.language {
         width: 100%;
     }
 }
