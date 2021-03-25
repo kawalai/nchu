@@ -75,6 +75,7 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.
     background-color: rgb(243, 243, 243);
     font-family: '微軟正黑體';
     font-size: 13px;
+    z-index: 9;
 }
 
 nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul {
@@ -565,6 +566,7 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile>ul.product-bar-mobile {
         width: 100%;
+        z-index: 9;
     }
 
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile>ul.product-bar-mobile>li {
