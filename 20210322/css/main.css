@@ -513,18 +513,22 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         margin-right: 20px;
     }
 
+    main>div.container-full>div.social{
+        padding: 0 24px;
+    }
+
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        padding: 0 12px;
+        padding: 0 24px;
     }
 
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        padding: 0 12px;
+        padding: 0 24px;
     }
 }
 
@@ -605,6 +609,9 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
     /* language跟copyright分行 */
     footer>div.container-full>div.footer-info>div.language {
         width: 100%;
+    }
+    footer>div.container-full>div.footer-info>div.copyright>ul>li{
+        padding: 6px 0 0;
     }
 }
 
