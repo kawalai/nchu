@@ -73,14 +73,15 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: rgb(243, 243, 243);
+    font-family: '微軟正黑體';
+    font-size: 13px;
 }
 
 nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul {
-    font-family: '微軟正黑體';
     width: 200px;
 }
 
-nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul.sub-menu-blank{
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul.sub-menu-blank {
     width: 200px;
 }
 
@@ -88,12 +89,26 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.
     padding: 12px 0 12px 24px;
 }
 
-nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li:nth-child(1){
-    padding: 18px 30px 18px 24px;;
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li:nth-child(1) {
+    padding: 18px 30px 18px 24px;
+    font-weight: bold;
 }
 
 nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li>a {
     display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>div.site-map {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+    padding: 18px 0 18px 24px;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>div.site-map>a {
     color: black;
     text-decoration: none;
 }
@@ -412,6 +427,12 @@ footer>div.container-full>div.footer-info {
     margin: 20px 0 20px;
     color: rgb(97, 97, 97);
     font-size: 11px;
+    flex-wrap: wrap;
+    padding: 30px 24px 16px 24px;
+}
+
+footer>div.container-full>div.footer-info>div.language::before{
+    content: "\25EF";
 }
 
 footer>div.container-full>div.footer-info>div.copyright>ul {
@@ -462,12 +483,14 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         width: 100%;
         display: flex;
         justify-content: space-around;
+        padding: 0 12px;
     }
 
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
         justify-content: space-around;
+        padding: 0 12px;
     }
 }
 
@@ -485,7 +508,7 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
     }
 
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger::after {
-        content: "\21C4";
+        content: "\2630";
     }
 
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger>div.product-bar-for-mobile {
@@ -543,7 +566,43 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
     }
 }
 
+@media screen and (max-width:767px) {
+    /* language跟copyright分行 */
+    footer>div.container-full>div.footer-info>div.language{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:539px) {
-    /* box4一欄變成100% */
-    /* footer 一欄變成100% */
+    main>div.container ul.box4 li {
+        width: 100%;
+    }
+
+    main>div.container ul.box4 li:nth-child(1) {
+        margin: 0;
+    }
+
+    main>div.container ul.box4 li:nth-child(3) {
+        margin: 0;
+    }
+
+    footer>div.container-full>div.footer-menu>div.footer-menu-info {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    footer>div.container-full>div.footer-menu>div.footer-menu-info>ul {
+        width: 100%;
+    }
+
+    footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    footer>div.container-full>div.footer-menu>div.footer-menu-enterprise>ul {
+        width: 100%;
+    }
 }
