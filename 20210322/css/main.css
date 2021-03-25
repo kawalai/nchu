@@ -1,3 +1,4 @@
+html,
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +13,8 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-.container, .container-full {
+.container,
+.container-full {
     max-width: 83.333333vw;
     margin: 0 auto;
     display: flex;
@@ -47,6 +49,11 @@ nav.layer1>div.container-full>div.layer2>a#logo>img {
     height: 23px;
 }
 
+nav.layer1>div.container-full>div.layer2>div.product-bar-trigger,
+nav.layer1>div.container-full>div.layer2>div.product-bar-for-mobile {
+    display: none;
+}
+
 nav.layer1>div.container-full>div.layer2>ul.product-bar {
     width: 100%;
     display: flex;
@@ -61,7 +68,8 @@ nav.layer1>div.container-full>div.layer2>div.menu>div.search::after {
     content: "\1F50D";
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -387,32 +395,41 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         display: flex;
         flex-wrap: wrap;
     }
+
     main>div.container ul.box4 li {
         width: calc((100% - 20px)/2);
     }
+
     main>div.container ul.box4 li:nth-child(1) {
         margin: 0 20px 0 0;
     }
+
     main>div.container ul.box4 li:nth-child(2) {
         margin: 0;
     }
+
     main>div.container ul.box4 li:nth-child(3) {
         margin: 0 20px 0 0;
     }
+
     main>div.container>div.for-bussiness>ul>li:nth-child(1) {
         margin-right: 20px;
     }
+
     main>div.container>div.for-bussiness>ul>li:nth-child(2) {
         margin-right: 0;
     }
+
     main>div.container>div.for-bussiness>ul>li:nth-child(3) {
         margin-right: 20px;
     }
+
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
+
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
@@ -422,17 +439,52 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 
 @media screen and (max-width:859px) {
     /* 最上面的navbar 縮起來 */
+
+
+    nav.layer1>div.container-full>div.layer2>div.product-bar-trigger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #005DA6; */
+        width: 44px;
+        position: relative;
+    }
+
+    nav.layer1>div.container-full>div.layer2>div.product-bar-trigger::after{
+        content: "\21C4";
+    }
+
+    nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        position: absolute;
+        left: 0;
+        top: 54px;
+    }
+
+    /* nav.layer1>div.container-full>div.layer2>div.product-bar-for-mobile {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+    } */
+
     nav.layer1>div.container-full>div.layer2>div.menu {
         width: 100%;
         justify-content: space-between;
         /* flex-direction: column; */
     }
+
     nav.layer1>div.container-full>div.layer2>div.menu>:nth-child(2) {
         align-self: flex-end;
     }
+
     nav.layer1>div.container-full>div.layer2>ul.product-bar {
         display: none;
     }
+
     nav.layer1>div.container-full>div.layer2>a#logo {
         position: absolute;
         left: 50%;
