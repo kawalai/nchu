@@ -64,6 +64,40 @@ nav.layer1>div.container-full>div.layer2>ul.product-bar {
     position: relative;
 }
 
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu {
+    display: flex;
+    position: absolute;
+    max-width: 1228px;
+    width: 100%;
+    top: 54px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 243);
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul {
+    font-family: '微軟正黑體';
+    width: 200px;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul.sub-menu-blank{
+    width: 200px;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li {
+    padding: 12px 0 12px 24px;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li:nth-child(1){
+    padding: 18px 30px 18px 24px;;
+}
+
+nav.layer1>div.container-full>div.layer2>ul.product-bar>li.all-microsoft:hover+.sub-menu>ul>li>a {
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
 nav.layer1>div.container-full>div.layer2>div.menu>div.search::after {
     content: "\1F50D";
 }
@@ -112,13 +146,13 @@ nav.layer1>div.container-full>div.layer2>.menu {
     justify-content: space-around;
 }
 
-nav.layer1>div.container-full>div.layer2>div.sub-menu {
+nav.layer1>div.container-full>div.layer2>ul.product-bar>div.sub-menu {
     display: none;
 }
 
-nav.layer1>div.container-full>div.layer2>div.sub-menu>ul {
-    display: flex;
-    background-color: aquamarine;
+nav.layer1>div.container-full>div.layer2>ul.product-bar>div.sub-menu>ul {
+    /* display: flex;
+    background-color: aquamarine; */
 }
 
 nav.layer1>div.container-full>div.slide-parent {
