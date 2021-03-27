@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     background-color: #FFFFFF;
@@ -13,8 +12,7 @@ nav.layer1 {
     margin: 0 0 2px;
 }
 
-.container,
-.container-full {
+.container, .container-full {
     max-width: 83.333333vw;
     margin: 0 auto;
     display: flex;
@@ -49,8 +47,7 @@ nav.layer1>div.container-full>div.layer2>a#logo>img {
     height: 23px;
 }
 
-nav.layer1>div.container-full>div.layer2>div.product-bar-trigger,
-nav.layer1>div.container-full>div.layer2>div.product-bar-for-mobile {
+nav.layer1>div.container-full>div.layer2>div.product-bar-trigger, nav.layer1>div.container-full>div.layer2>div.product-bar-for-mobile {
     display: none;
 }
 
@@ -118,8 +115,7 @@ nav.layer1>div.container-full>div.layer2>div.menu>div.search::after {
     content: "\1F50D";
 }
 
-ul,
-li {
+ul, li {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -176,6 +172,7 @@ nav.layer1>div.container-full>div.slide-parent {
 }
 
 /* swipe start */
+
 /* slide 複製貼上的 https://www.itread01.com/content/1549551065.html */
 
 .swipe {
@@ -485,46 +482,36 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         display: flex;
         flex-wrap: wrap;
     }
-
     main>div.container ul.box4 li {
         width: calc((100% - 20px)/2);
     }
-
     main>div.container ul.box4 li:nth-child(1) {
         margin: 0 20px 0 0;
     }
-
     main>div.container ul.box4 li:nth-child(2) {
         margin: 0;
     }
-
     main>div.container ul.box4 li:nth-child(3) {
         margin: 0 20px 0 0;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(1) {
         margin-right: 20px;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(2) {
         margin-right: 0;
     }
-
     main>div.container>div.for-bussiness>ul>li:nth-child(3) {
         margin-right: 20px;
     }
-
-    main>div.container-full>div.social{
+    main>div.container-full>div.social {
         padding: 0 24px;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         width: 100%;
         display: flex;
         justify-content: space-around;
         padding: 0 24px;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         width: 100%;
         display: flex;
@@ -535,8 +522,21 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 
 @media screen and (max-width:859px) {
     /* 最上面的navbar 縮起來 */
-
-
+    nav.layer1>div.container-full>div.layer2>div.menu {
+        width: 100%;
+        display: block;
+    }
+    nav.layer1>div.container-full>div.layer2>div.menu>div.search {
+        float: left;
+        line-height: 54px;
+    }
+    nav.layer1>div.container-full>div.layer2>div.menu>div.shopping-cart, div.login {
+        float: right;
+        line-height: 54px;
+    }
+    /* nav.layer1>div.container-full>div.layer2>div.menu>div.login {
+        float: right;
+    } */
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger {
         display: flex;
         justify-content: center;
@@ -545,15 +545,13 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         width: 44px;
         position: relative;
     }
-
+    /* 貼上漢堡標 */
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger::after {
         content: "\2630";
     }
-
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger>div.product-bar-for-mobile {
         display: none;
     }
-
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile {
         display: flex;
         width: 100vw;
@@ -563,12 +561,10 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         left: 0;
         top: 54px;
     }
-
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile>ul.product-bar-mobile {
         width: 100%;
         z-index: 9;
     }
-
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile>ul.product-bar-mobile>li {
         display: flex;
         width: 100%;
@@ -578,26 +574,21 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
         font-family: '微軟正黑體';
         font-size: 14px;
     }
-
     nav.layer1>div.container-full>div.layer2>div.product-bar-trigger:hover div.product-bar-for-mobile>ul.product-bar-mobile>li>a {
         text-decoration: none;
         color: black;
     }
-
     nav.layer1>div.container-full>div.layer2>div.menu {
         width: 100%;
         justify-content: space-between;
         /* flex-direction: column; */
     }
-
     nav.layer1>div.container-full>div.layer2>div.menu>:nth-child(2) {
         align-self: flex-end;
     }
-
     nav.layer1>div.container-full>div.layer2>ul.product-bar {
         display: none;
     }
-
     nav.layer1>div.container-full>div.layer2>a#logo {
         position: absolute;
         left: 50%;
@@ -607,12 +598,25 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
 }
 
 @media screen and (max-width:767px) {
-
+    nav.layer1>div.container-full>div.slide-parent>div.option-buy>ul {
+        flex-wrap: wrap;
+        padding: 48px 10% 0;
+    }
+    nav.layer1>div.container-full>div.slide-parent>div.option-buy>ul>li {
+        display: flex;
+        width: 100%;
+    }
+    nav.layer1>div.container-full>div.slide-parent>div.option-buy>ul>li>a {
+        display: flex;
+    }
+    nav.layer1>div.container-full>div.slide-parent>div.option-buy>ul>li>a>p {
+        justify-content: center;
+    }
     /* language跟copyright分行 */
     footer>div.container-full>div.footer-info>div.language {
         width: 100%;
     }
-    footer>div.container-full>div.footer-info>div.copyright>ul>li{
+    footer>div.container-full>div.footer-info>div.copyright>ul>li {
         padding: 6px 0 0;
     }
 }
@@ -621,31 +625,25 @@ footer>div.container-full>div.footer-info>div.copyright>ul>li {
     main>div.container ul.box4 li {
         width: 100%;
     }
-
     main>div.container ul.box4 li:nth-child(1) {
         margin: 0;
     }
-
     main>div.container ul.box4 li:nth-child(3) {
         margin: 0;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-info {
         flex-wrap: wrap;
         width: 100%;
         padding: 0 12px;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-info>ul {
         width: 100%;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise {
         flex-wrap: wrap;
         width: 100%;
         padding: 0 12px;
     }
-
     footer>div.container-full>div.footer-menu>div.footer-menu-enterprise>ul {
         width: 100%;
     }
