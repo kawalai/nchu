@@ -64,3 +64,19 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 
 20210325
     css content code list https://www.w3schools.com/cssref/css_entities.asp
+
+20210329
+    企劃規劃 site map
+    design thinking
+
+    footer 組成元素
+        1. 版權聲明
+        2. 聯絡資訊
+        3. 網站架構
+        4. 隱私權政策
+        5. 退貨(款)條款 (電傷網站專屬)
+        6. 社群連結
+        7. 無障礙標章
+
+
+
