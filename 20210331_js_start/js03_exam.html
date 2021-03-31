@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input{
+            display: block;
+        }
+
+        .content {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-wrap:wrap;
+        }
+
+        .equal {
+            width: 120px;
+            height: 20px;
+            color: gray;
+            border: 1px solid black;
+            margin: 0 5px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <input class="value1" type="number" placeholder="輸入值1">
+        &nbsp;+&nbsp;
+        <input class="value2" type="number" placeholder="輸入值2">
+        &nbsp;=&nbsp;
+        <div class="equal">結果</div>
+        <button class="compute">計算</button>
+    </div>
+
+    <script>
+        var btn = document.querySelector('.compute');
+        var equal = document.querySelector('.equal');
+        btn.addEventListener('click', function () {
+            var value1 = parseInt(document.querySelector('.value1').value);
+            var value2 = parseInt(document.querySelector('.value2').value);
+            equal.innerHTML = value1 + value2;
+
+        });
+    </script>
+</body>
+
+</html>
