@@ -47,7 +47,13 @@ h1 {
     width: 300px;
     height: 20px;
     border: 1px dotted black;
-    margin: 0 0 20px;
+    margin: 0 10px 20px 0;
+}
+
+.status{
+    width: 100px;
+    height: 20px;
+    margin: 0 0 20px 0;
 }
 
 .container {
