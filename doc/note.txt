@@ -79,5 +79,10 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         7. 無障礙標章
         8. 投資人專區 (台灣公司法規定 上市櫃公司必備)
 
+20210331
+    ::before
+    ::after
+        一定要有content才有作用
 
+    fontawesome icon
 
