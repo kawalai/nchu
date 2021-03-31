@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .menu {
+            width: 120px;
+            height: 120px;
+            background-color: blue;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #FAA;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu"></div>
+    <div class="box">原本的文字</div>
+
+    <script>
+
+        x = document.querySelector('.box');
+        menu = document.querySelector('.menu');
+        x.addEventListener('click', function () {
+            // x.style.background = 'red';
+
+            // menu.style.display = 'none';
+
+            // menu.style.height = '300px';
+            // menu.style.width = '300px';
+            
+            this.style.backgroundColor = 'red';
+
+            this.innerHTML = '替換的文字';
+
+        })
+
+    </script>
+</body>
+
+</html>
