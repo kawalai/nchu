@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .result {
+            width: 150px;
+            height: 20px;
+            border: 1px solid black;
+        }
+
+        .end {
+            width: 150px;
+            height: 20px;
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p>國文分數<input class="chinese" type="number" name="" id=""></p>
+        <p>英文分數<input class="english" type="number" name="" id=""></p>
+        <p>數學分數<input class="math" type="number" name="" id=""></p>
+        <p>
+        <div class="result">平均</div>
+        </p>
+        <div class="end">及格與否</div>
+        <button>算平均</button>
+    </div>
+
+    <script>
+        var calc = document.querySelector('button');
+        // console.log(calc);
+        calc.addEventListener('click', function () {
+            var chinese = parseInt(document.querySelector('.chinese').value);
+            var english = parseInt(document.querySelector('.english').value);
+            var math = parseInt(document.querySelector('.math').value);
+            // console.log(chinese);
+            var result = document.querySelector('.result');
+            var score = Math.round((((chinese + english + math) / 3) * 100)) / 100;
+            result.innerHTML = score;
+            var end = document.querySelector('.end');
+            // if (score >= 60) {
+            //     end.innerHTML = '及格';
+            // } else if (score < 60) {
+            //     end.innerHTML = '不及格';
+            // }
+            if (score >= 90) {
+                end.innerHTML = 'A級';
+            } else if (score >= 80) {
+                end.innerHTML = 'B級';
+            } else if (score >= 70) {
+                end.innerHTML = 'C級';
+            } else if (score >= 60) {
+                end.innerHTML = 'D級';
+            } else {
+                end.innerHTML = '死當';
+            }
+        });
+    </script>
+</body>
+
+</html>

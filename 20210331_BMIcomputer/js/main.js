@@ -10,6 +10,7 @@ calc.addEventListener('click', function () {
     var result = Math.round((weight / ((height / 100) ** 2)) * 100) / 100;
     resultDiv.innerHTML = result;
 
+    console.log(height);
 
     var status = document.querySelector('.status');
     if (result < 20) {
