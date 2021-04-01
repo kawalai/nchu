@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
     <style>
-        .result{
+        *{
+            margin: 5px;
+            padding: 5px;
+        }
+        .result {
             width: 150px;
             height: 20px;
             border: 1px solid black;
@@ -41,37 +45,18 @@
             for (var i = 0; i < Total_Obj.length; i++) {
                 if (Total_Obj[i].type == "radio") {
                     if (Total_Obj[i].checked) {
-                        if (Str == "") {
-                            Str = "您勾選的項目 : " + Total_Obj[i].value;
-                            targetSex = Total_Obj[i].value;
-                        } else {
-                            Str += "\n您勾選的項目 : " + Total_Obj[i].value;
-                            targetSex = Total_Obj[i].value;
-                        }
+                        targetSex = Total_Obj[i].value;
                     }
                 }
             }
-            // alert(targetSex);
             var targetAge = Number(document.querySelector('.age').value);
-            // console.log(targetAge);
             var result = document.querySelector('.result');
-            if(targetAge>=18 && targetSex == 'male'){
+            if (targetAge >= 18 && targetSex == 'male') {
                 result.innerHTML = '祝賀當兵';
-            }else{
+            } else {
                 result.innerHTML = '可惜不用當兵';
             }
-
-
-            
         }
-
-
-
-
-        // sex.addEventListener('click', function(){
-        //     var sexValue = document.querySelector('[name=sex]').checked.value;
-        //     console.log(sexValue);
-        // });
 
     </script>
 </body>
