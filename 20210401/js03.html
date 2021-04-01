@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .result{
+            width: 150px;
+            height: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select class="age"></select>
+
+    <form name="form-sex">
+        請選擇性別<br>
+        <input type="radio" name="sex" value="male"> 男<br>
+        <input type="radio" name="sex" value="female"> 女<br>
+    </form>
+    <div class="result">結果</div>
+    <button onclick="submit();">按鈕</button>
+
+    <script>
+        var selectBar = document.querySelector('.age');
+        var options = '<option value="">請選擇年齡</option>'
+        for (let index = 0; index < 66; index++) {
+            options += '<option value="' + index + '">' + index + '</option>';
+        }
+        selectBar.innerHTML = options;
+
+        function submit() {
+            var Total_Obj = document.getElementsByTagName("input");
+            var Str = "";
+            var targetSex = '';
+            for (var i = 0; i < Total_Obj.length; i++) {
+                if (Total_Obj[i].type == "radio") {
+                    if (Total_Obj[i].checked) {
+                        if (Str == "") {
+                            Str = "您勾選的項目 : " + Total_Obj[i].value;
+                            targetSex = Total_Obj[i].value;
+                        } else {
+                            Str += "\n您勾選的項目 : " + Total_Obj[i].value;
+                            targetSex = Total_Obj[i].value;
+                        }
+                    }
+                }
+            }
+            // alert(targetSex);
+            var targetAge = Number(document.querySelector('.age').value);
+            // console.log(targetAge);
+            var result = document.querySelector('.result');
+            if(targetAge>=18 && targetSex == 'male'){
+                result.innerHTML = '祝賀當兵';
+            }else{
+                result.innerHTML = '可惜不用當兵';
+            }
+
+
+            
+        }
+
+
+
+
+        // sex.addEventListener('click', function(){
+        //     var sexValue = document.querySelector('[name=sex]').checked.value;
+        //     console.log(sexValue);
+        // });
+
+    </script>
+</body>
+
+</html>
