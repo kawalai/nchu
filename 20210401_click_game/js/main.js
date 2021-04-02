@@ -16,6 +16,9 @@ function insertBlock(count) {
     var colorG = Math.round(Math.random() * 255);
     var colorB = Math.round(Math.random() * 255);
     var colorRGB = 'rgb(' + colorR + ',' + colorG + ',' + colorB + ')'
+    // 隨機調整
+    var chosenOne = Math.round((gameBlock.length - 1) * Math.random());
+    // todo 在for 裡面 index 等於 chosenOne 的話 就不同的樣式
     for (let index = 0; index < gameBlock.length; index++) {
         var calculatedSize = Math.round((100 / count) * 10000) / 10000;
         var size = 'calc(' + calculatedSize + '% - 10px)';
@@ -23,8 +26,15 @@ function insertBlock(count) {
         gameBlock[index].style.height = size;
         gameBlock[index].style.margin = '5px';
         gameBlock[index].style.borderRadius = '5px';
-        // 調整顏色
-        gameBlock[index].style.backgroundColor = colorRGB;
+        console.log(chosenOne);
+        if (index == chosenOne) {
+            // 不同的樣式
+            gameBlock[index].style.backgroundColor = colorRGB;
+            gameBlock[index].style.opacity = '0.5';
+        } else {
+            // 調整顏色
+            gameBlock[index].style.backgroundColor = colorRGB;
+        }
     }
 }
 
