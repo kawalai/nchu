@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .init {
+    text-align: center;
+}
+
+.game-container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: none;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
