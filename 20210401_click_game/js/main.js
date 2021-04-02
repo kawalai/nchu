@@ -1,5 +1,7 @@
-
+// 難度參數
 var gameLevel = 0;
+// 格數參數
+var blockCount = 2;
 
 function insertBlock(count) {
     // 在game插入block
@@ -32,8 +34,9 @@ function insertBlock(count) {
             // 不同的樣式
             gameBlock[index].style.backgroundColor = colorRGB;
             gameBlock[index].style.opacity = '0.5';
-            gameBlock[index].setAttribute("onclick", `insertBlock(${gameLevel + 2});`)
+            gameBlock[index].setAttribute("onclick", `insertBlock(${Math.round(blockCount)});`)
             gameLevel += 1;
+            blockCount += 0.34;
         } else {
             // 調整顏色
             gameBlock[index].style.backgroundColor = colorRGB;
