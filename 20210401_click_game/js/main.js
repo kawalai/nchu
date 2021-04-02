@@ -1,4 +1,5 @@
 
+var gameLevel = 0;
 
 function insertBlock(count) {
     // 在game插入block
@@ -31,6 +32,8 @@ function insertBlock(count) {
             // 不同的樣式
             gameBlock[index].style.backgroundColor = colorRGB;
             gameBlock[index].style.opacity = '0.5';
+            gameBlock[index].setAttribute("onclick", `insertBlock(${gameLevel + 2});`)
+            gameLevel += 1;
         } else {
             // 調整顏色
             gameBlock[index].style.backgroundColor = colorRGB;
