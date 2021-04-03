@@ -32,7 +32,6 @@ function insertBlock(count) {
         gameBlock[index].style.height = size;
         gameBlock[index].style.margin = '5px';
         gameBlock[index].style.borderRadius = '5px';
-        console.log(chosenOne);
         if (index == chosenOne) {
             // 不同的樣式
             gameBlock[index].style.backgroundColor = colorRGB;
@@ -49,27 +48,28 @@ function insertBlock(count) {
 }
 
 function start() {
+    document.querySelector('.score').style.display = 'none';
+    document.querySelector('.re-start').style.display = 'none';
     // timer
-    // var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
     var countDownDate = new Date().getTime();
-    countDownDate += 60000;
-    // Update the count down every 1 second
+    countDownDate += 60 * 1000;
     var x = setInterval(function () {
-        // Get today's date and time
         var now = new Date().getTime();
-        // Find the distance between now and the count down date
         var distance = countDownDate - now;
-        // Time calculations for days, hours, minutes and seconds
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        // Display the result in the element with id="demo"
         document.querySelector('.timer').innerHTML = seconds + 's ';
-        // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
             document.querySelector('.timer').style.display = 'none';
             document.querySelector('.game-container').style.display = 'none';
             document.querySelector('.score').style.display = 'block';
+            document.querySelector('.re-start').style.display = 'block';
+            document.querySelector('.re-start').setAttribute("onclick", 'start();')
             document.querySelector('.score').innerHTML = `Score : ${gameLevel}`;
+            // 初始化
+            gameLevel = 0;
+            blockCount = 2;
+            difficulty = 0.5
         }
     }, 1000);
 

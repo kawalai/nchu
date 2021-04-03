@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #F06060;
     color: #FFF;
     position: relative;
@@ -23,6 +24,8 @@ h1 {
 }
 
 .timer {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +33,26 @@ h1 {
 }
 
 .score {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
     display: none;
+}
+
+.re-start {
+    width: 100%;
+    display: none;
+    width: 220px;
+    height: 50px;
+    border: none;
+    background-color: #FCAD26;
+    border-radius: 7px;
+    box-shadow: 0 5px #da9622;
+    font: 400 13.3333px Arial;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
 }
 
 .start {
