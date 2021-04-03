@@ -6,7 +6,7 @@ var blockCount = 2;
 // 難度參數
 var difficulty = 0.5;
 // 時間
-var timeS = 60;
+var timeS = 3;
 
 function insertBlock(count) {
     // 在game插入block
@@ -41,7 +41,7 @@ function insertBlock(count) {
             gameBlock[index].setAttribute("onclick", `insertBlock(${Math.round(blockCount)});`)
             gameLevel += 1;
             blockCount += 0.34;
-            difficulty = Math.min(0.90, (difficulty + gameLevel / 30))
+            difficulty = Math.min(0.90, (difficulty + gameLevel / 50))
         } else {
             // 調整顏色
             gameBlock[index].style.backgroundColor = colorRGB;
@@ -53,7 +53,7 @@ function insertBlock(count) {
 function start(level, block, diff, timeS) {
     document.querySelector('.score').style.display = 'none';
     document.querySelector('.re-start').style.display = 'none';
-    document.querySelector('.re-start').setAttribute("onclick", `start(${level}, ${block}, ${diff}, ${timeS}});`)
+    document.querySelector('.re-start').setAttribute("onclick", `start(${level}, ${block}, ${diff}, ${timeS});`)
     // timer
     var countDownDate = new Date().getTime();
     countDownDate += timeS * 1000;
@@ -97,7 +97,7 @@ function start(level, block, diff, timeS) {
     document.querySelector('.init').style.display = 'none';
     document.querySelector('.game-container').style.display = 'block';
     document.querySelector('.timer').style.display = 'block';
-    document.querySelector('.pause-start').style.display = 'block';
+    // document.querySelector('.pause-start').style.display = 'block';
     document.querySelector('.pause-end').style.display = 'none';
 
     // parament控制格數，填入總格數開根號
