@@ -1,3 +1,4 @@
+
 // 關卡參數
 var gameLevel = 0;
 // 格數參數
@@ -48,8 +49,33 @@ function insertBlock(count) {
 }
 
 function start() {
+    // timer
+    // var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    var countDownDate = new Date().getTime();
+    countDownDate += 60000;
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Display the result in the element with id="demo"
+        document.querySelector('.timer').innerHTML = seconds + 's ';
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.querySelector('.timer').style.display = 'none';
+            document.querySelector('.game-container').style.display = 'none';
+            document.querySelector('.score').style.display = 'block';
+            document.querySelector('.score').innerHTML = `Score : ${gameLevel}`;
+        }
+    }, 1000);
+
     document.querySelector('.init').style.display = 'none';
     document.querySelector('.game-container').style.display = 'block';
+    document.querySelector('.timer').style.display = 'block';
 
     // parament控制格數，填入總格數開根號
     insertBlock(2);

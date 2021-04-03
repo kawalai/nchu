@@ -11,6 +11,7 @@
     align-items: center;
     background-color: #F06060;
     color: #FFF;
+    position: relative;
 }
 
 h1 {
@@ -19,6 +20,17 @@ h1 {
 
 .main .init {
     text-align: center;
+}
+
+.timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.score {
+    display: none;
 }
 
 .start {
