@@ -4,7 +4,9 @@ var gameLevel = 0;
 // 格數參數
 var blockCount = 2;
 // 難度參數
-var difficulty = 0.5
+var difficulty = 0.5;
+// 時間
+var timeS = 60;
 
 function insertBlock(count) {
     // 在game插入block
@@ -45,39 +47,63 @@ function insertBlock(count) {
             gameBlock[index].style.backgroundColor = colorRGB;
         }
     }
+
 }
 
-function start() {
+function start(level, block, diff, timeS) {
     document.querySelector('.score').style.display = 'none';
     document.querySelector('.re-start').style.display = 'none';
+    document.querySelector('.re-start').setAttribute("onclick", `start(${level}, ${block}, ${diff}, ${timeS}});`)
     // timer
     var countDownDate = new Date().getTime();
-    countDownDate += 60 * 1000;
+    countDownDate += timeS * 1000;
     var x = setInterval(function () {
         var now = new Date().getTime();
         var distance = countDownDate - now;
+        var timeS = distance;
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         document.querySelector('.timer').innerHTML = seconds + 's ';
         if (distance < 0) {
             clearInterval(x);
             document.querySelector('.timer').style.display = 'none';
             document.querySelector('.game-container').style.display = 'none';
+            document.querySelector('.pause-start').style.display = 'none';
             document.querySelector('.score').style.display = 'block';
             document.querySelector('.re-start').style.display = 'block';
-            document.querySelector('.re-start').setAttribute("onclick", 'start();')
             document.querySelector('.score').innerHTML = `Score : ${gameLevel}`;
             // 初始化
-            gameLevel = 0;
-            blockCount = 2;
-            difficulty = 0.5
+            gameLevel = level;
+            blockCount = block;
+            difficulty = diff;
+            timeS = 60;
         }
     }, 1000);
+
+    // 暫停控制
+    var pauseStart = document.querySelector('.pause-start');
+    pauseStart.addEventListener('click', function () {
+        clearInterval(x);
+        document.querySelector('.game-container').style.display = 'none';
+        document.querySelector('.timer').style.display = 'none';
+        document.querySelector('.pause-start').style.display = 'none';
+
+        console.log(gameLevel);
+        console.log(blockCount);
+        console.log(difficulty);
+        document.querySelector('.pause-end').setAttribute("onclick", `start(${gameLevel}, ${blockCount}, ${difficulty}, ${timeS});`)
+        document.querySelector('.pause-end').style.display = 'block';
+    })
 
     document.querySelector('.init').style.display = 'none';
     document.querySelector('.game-container').style.display = 'block';
     document.querySelector('.timer').style.display = 'block';
+    document.querySelector('.pause-start').style.display = 'block';
+    document.querySelector('.pause-end').style.display = 'none';
 
     // parament控制格數，填入總格數開根號
-    insertBlock(2);
+    insertBlock(blockCount);
 
 }
+
+
+

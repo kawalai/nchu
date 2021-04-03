@@ -27,7 +27,7 @@ h1 {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     display: none;
 }
@@ -40,7 +40,7 @@ h1 {
     display: none;
 }
 
-.re-start {
+.re-start, .pause-start, .pause-end {
     width: 100%;
     display: none;
     width: 220px;
@@ -53,6 +53,28 @@ h1 {
     cursor: pointer;
     font-size: 20px;
     color: #FFF;
+}
+
+.pause-start {
+    width: 100%;
+    display: none;
+    width: 220px;
+    height: 50px;
+    border: none;
+    background-color: #FCAD26;
+    border-radius: 7px;
+    box-shadow: 0 5px #da9622;
+    font: 400 13.3333px Arial;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.pause-start::after {
+    content: '\2225';
 }
 
 .start {
