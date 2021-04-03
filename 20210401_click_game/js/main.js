@@ -6,7 +6,7 @@ var blockCount = 2;
 // 難度參數
 var difficulty = 0.5;
 // 時間
-var timeS = 3;
+var timeS = 60;
 
 function insertBlock(count) {
     // 在game插入block
@@ -41,6 +41,7 @@ function insertBlock(count) {
             gameBlock[index].setAttribute("onclick", `insertBlock(${Math.round(blockCount)});`)
             gameLevel += 1;
             blockCount += 0.34;
+            // 難度增幅
             difficulty = Math.min(0.90, (difficulty + gameLevel / 50))
         } else {
             // 調整顏色
