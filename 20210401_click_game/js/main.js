@@ -51,54 +51,58 @@ function insertBlock(count) {
 
 }
 
+var switchOfTimer = true;
+
 function start(level, block, diff, timeS) {
     document.querySelector('.score').style.display = 'none';
     document.querySelector('.re-start').style.display = 'none';
     document.querySelector('.re-start').setAttribute("onclick", `start(${level}, ${block}, ${diff}, ${timeS});`)
     // timer
-    var countDownDate = new Date().getTime();
-    countDownDate += timeS * 1000;
+    var countDown = timeS;
     var x = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var timeS = distance;
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.querySelector('.timer').innerHTML = seconds + 's ';
-        if (distance < 0) {
-            clearInterval(x);
-            document.querySelector('.timer').style.display = 'none';
-            document.querySelector('.game-container').style.display = 'none';
-            document.querySelector('.pause-start').style.display = 'none';
-            document.querySelector('.score').style.display = 'block';
-            document.querySelector('.re-start').style.display = 'block';
-            document.querySelector('.score').innerHTML = `Score : ${gameLevel}`;
-            // 初始化
-            gameLevel = level;
-            blockCount = block;
-            difficulty = diff;
-            timeS = 60;
+        if (switchOfTimer) {
+            document.querySelector('.timer').innerHTML = countDown + ' s';
+            countDown--;
+            if (countDown < 0) {
+                clearInterval(x);
+                document.querySelector('.timer').style.display = 'none';
+                document.querySelector('.game-container').style.display = 'none';
+                document.querySelector('.pause-start').style.display = 'none';
+                document.querySelector('.score').style.display = 'block';
+                document.querySelector('.re-start').style.display = 'block';
+                document.querySelector('.score').innerHTML = `Score : ${gameLevel}`;
+                // 初始化
+                gameLevel = level;
+                blockCount = block;
+                difficulty = diff;
+                timeS = 60;
+            }
         }
     }, 1000);
 
     // 暫停控制
     var pauseStart = document.querySelector('.pause-start');
+    document.querySelector('.pause-end').addEventListener('click', function () {
+        switchOfTimer = !switchOfTimer;
+        document.querySelector('.pause-end').style.display = 'none';
+        document.querySelector('.game-container').style.display = 'block';
+        document.querySelector('.timer').style.display = 'block';
+        document.querySelector('.pause-start').style.display = 'block';
+    });
     pauseStart.addEventListener('click', function () {
-        clearInterval(x);
+
+        switchOfTimer = !switchOfTimer;
         document.querySelector('.game-container').style.display = 'none';
         document.querySelector('.timer').style.display = 'none';
         document.querySelector('.pause-start').style.display = 'none';
 
-        console.log(gameLevel);
-        console.log(blockCount);
-        console.log(difficulty);
-        document.querySelector('.pause-end').setAttribute("onclick", `start(${gameLevel}, ${blockCount}, ${difficulty}, ${timeS});`)
         document.querySelector('.pause-end').style.display = 'block';
     })
 
     document.querySelector('.init').style.display = 'none';
     document.querySelector('.game-container').style.display = 'block';
     document.querySelector('.timer').style.display = 'block';
-    // document.querySelector('.pause-start').style.display = 'block';
+    document.querySelector('.pause-start').style.display = 'block';
     document.querySelector('.pause-end').style.display = 'none';
 
     // parament控制格數，填入總格數開根號

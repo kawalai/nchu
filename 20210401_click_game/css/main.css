@@ -41,7 +41,6 @@ h1 {
 }
 
 .re-start, .pause-start, .pause-end {
-    width: 100%;
     display: none;
     width: 220px;
     height: 50px;
@@ -56,7 +55,6 @@ h1 {
 }
 
 .pause-start {
-    width: 100%;
     display: none;
     width: 220px;
     height: 50px;
