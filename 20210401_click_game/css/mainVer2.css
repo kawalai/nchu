@@ -50,6 +50,12 @@ button {
     border-radius: 10px;
     padding: 5px;
     background-color: #ddd;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game:hover{
+    cursor: pointer;
 }
 
 .timer {
