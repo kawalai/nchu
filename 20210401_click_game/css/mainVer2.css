@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #F06060;
+    color: #FFF;
+    position: relative;
+    text-align: center;
+}
+
+/* 共通部份 */
+
+button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    background-color: #FCAD26;
+    border-radius: 7px;
+    box-shadow: 0 5px #da9622;
+    font: 400 13.3333px Arial;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
+}
+
+/* 一開始的頁面 */
+
+.page-index {
+    display: none;
+}
+
+/* 遊戲區塊 */
+
+.page-game {
+    display: none;
+}
+
+.game-container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #ddd;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.pause-start {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.pause-start::after {
+    content: '\2225';
+}
+
+/* 暫停 */
+
+.page-pause {
+    display: none;
+}
+
+/* 結算 */
+
+.page-result {
+    display: none;
+}
