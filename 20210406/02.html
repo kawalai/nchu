@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .inout {
+            display: flex;
+            height: auto;
+            width: 100%;
+            /* margin: 5px; */
+            flex-wrap: wrap;
+        }
+
+        .in {
+            width: calc(100% - 4px);
+            padding: 0;
+            margin: 0;
+        }
+
+        .out {
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 10px);
+            height: 20px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .func {
+            height: auto;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="inout">
+            <input type="text" class="in">
+            <div class="out"></div>
+        </div>
+        <div class="func">
+            <button class="add">加入</button>
+            <button class="remove">移除</button>
+            <button class="search">查詢</button>
+        </div>
+    </div>
+
+    <script>
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let search = document.querySelector('.search');
+        let arrays = Array();
+
+        add.addEventListener('click', function () {
+            var inputValue = document.querySelector('.in').value;
+            arrays.push(inputValue);
+            console.log(arrays);
+            var result = document.querySelector('.out');
+            result.innerHTML = arrays;
+        });
+
+        remove.addEventListener('click', function () {
+            var inputValue = document.querySelector('.in').value;
+            if (arrays.indexOf(inputValue) !== -1) {
+                console.log(arrays.indexOf(inputValue));
+                arrays.splice(arrays.indexOf(inputValue), 1)
+                console.log(arrays);
+            } else {
+                console.log('不存在');
+                console.log(arrays);
+            }
+            var result = document.querySelector('.out');
+            result.innerHTML = arrays;
+        });
+
+        search.addEventListener('click', function () {
+            var inputValue = document.querySelector('.in').value;
+            var result = document.querySelector('.out');
+            if (arrays.indexOf(inputValue) !== -1) {
+                result.innerHTML = `arrays index = ${arrays.indexOf(inputValue)}`;
+            } else {
+                result.innerHTML = '不存在';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

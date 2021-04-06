@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+
+
+    <script>
+        let boxsArray = document.querySelectorAll('div');
+        boxsArray.forEach(element => {
+            let colorR = Math.round(Math.random() * 255);
+            let colorG = Math.round(Math.random() * 255);
+            let colorB = Math.round(Math.random() * 255);
+            element.style.width = '150px';
+            element.style.height = '150px';
+            element.innerHTML = `rgb(${colorR}, ${colorG}, ${colorB})`;
+            element.style.backgroundColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
+            '123'
+            "123"
+            `12${element}3`
+        })
+
+
+    </script>
+</body>
+
+</html>
