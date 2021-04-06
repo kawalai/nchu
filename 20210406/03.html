@@ -32,8 +32,8 @@
             return result;
         }
 
-        function template(attrName, num) {
-            let target = document.querySelector(`.${attrName}`);
+        function template(className, num) {
+            let target = document.querySelector(`.${className}`);
             target.addEventListener('click', function () {
                 alert(addOneByOne(num));
             });
