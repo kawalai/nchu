@@ -5,75 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .chat-target-box {
-            /* width: 100%; */
-            /* position: relative; */
-            border-radius: 10px;
-            background-color: gray;
-        }
-
-        .chat-target-box-title {
-            width: 100%;
-            height: 8vh;
-            display: flex;
-            /* position: absolute; */
-            background-color: bisque;
-        }
-
-        .chat-target-box-title-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: hotpink;
-            margin: 10px;
-        }
-
-        .chat-target-box-title-name {
-            width: 200px;
-            height: 30px;
-            background-color: green;
-        }
-
-        .chat-target-box-title-status {
-            width: 150px;
-            height: 20px;
-            background-color: hotpink;
-        }
-
-        .chat-target-box-content {
-            width: 100%;
-            height: 86vh;
-            display: flex;
-            overflow-y: scroll;
-        }
-
-        .chat-target-box-input {
-            width: 100%;
-            height: 6vh;
-            background-color: aqua;
-            /* position: absolute; */
-            bottom: 0;
-            display: flex;
-        }
-
-        .chat-target-box-input-message {
-            width: 90%;
-            margin: 5px;
-            border-radius: 10px;
-        }
-
-        .chat-target-box-input-send {
-            width: 10%;
-            margin: 5px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/chat_box.css">
 </head>
 
 <body>
@@ -81,20 +13,25 @@
         <div class="chat-target-box">
             <div class="chat-target-box-title">
                 <div class="chat-target-box-title-icon"></div>
-                <div class="chat-target-box-title-name"></div>
-                <div class="chat-target-box-title-status"></div>
+                <div class="chat-target-box-title-data">
+                    <div class="chat-target-box-title-data-name"></div>
+                    <div class="chat-target-box-title-data-status"></div>
+                </div>
             </div>
             <div class="chat-target-box-content">
-                
+                <div class="chat-target-box-content-another">another</div>
+                <div class="chat-target-box-content-me">me</div>
+
+
             </div>
             <div class="chat-target-box-input">
-                <input type="text" class="chat-target-box-input-message">
+                <input type="text" class="chat-target-box-input-message" placeholder="Type your message...">
                 <button class="chat-target-box-input-send"></button>
             </div>
         </div>
     </div>
 
-    <script>
+    <script src="./js/chat_box.js">
     </script>
 </body>
 
