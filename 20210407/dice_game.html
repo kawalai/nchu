@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .function-bar {
+            display: flex;
+            width: 100%;
+        }
+
+        button {
+            width: 120px;
+            height: 20px;
+            margin: 5px;
+        }
+
+        .result {
+            width: 120px;
+            height: 20px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="function-bar">
+        <button>開始</button>
+    </div>
+    <div class="processes">過程</div>
+
+
+
+    <script>
+        const start = document.querySelector('button');
+        const processes = document.querySelector('.processes');
+        let times = 0;
+
+        start.addEventListener('click', function () {
+            let openSwitch = true;
+            processes.innerHTML = '';
+            dataArray = [];
+            while (openSwitch) {
+                times++;
+                let dice1 = (Math.floor(Math.random() * 6)) + 1;
+                let dice2 = (Math.floor(Math.random() * 6)) + 1;
+                let dice3 = (Math.floor(Math.random() * 6)) + 1;
+                dataArray.push(`<div>第 ${times} 次 ${dice1} ${dice2} ${dice3} </div>`);
+
+                if (dice1 == dice2 && dice1 == dice3) {
+                    openSwitch = !openSwitch;
+                    times = 0;
+                    for (let index = dataArray.length - 1; -1 < index; index--) {
+                        processes.innerHTML += dataArray[index];
+                    }
+                }
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
