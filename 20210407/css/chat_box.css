@@ -60,6 +60,10 @@
     display: flex;
 }
 
+.chat-target-box-content-avatar{
+    border-radius: 50%;
+}
+
 .chat-target-box-content-me {
     display: flex;
     flex-direction: column;
