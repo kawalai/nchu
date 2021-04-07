@@ -26,13 +26,6 @@
             height: 20px;
             margin: 5px;
         }
-
-        .result {
-            width: 120px;
-            height: 20px;
-            border: 1px solid black;
-            margin: 5px;
-        }
     </style>
 </head>
 
@@ -47,9 +40,9 @@
     <script>
         const start = document.querySelector('button');
         const processes = document.querySelector('.processes');
-        let times = 0;
-
+        
         start.addEventListener('click', function () {
+            let times = 0;
             let openSwitch = true;
             processes.innerHTML = '';
             dataArray = [];
@@ -62,7 +55,6 @@
 
                 if (dice1 == dice2 && dice1 == dice3) {
                     openSwitch = !openSwitch;
-                    times = 0;
                     for (let index = dataArray.length - 1; -1 < index; index--) {
                         processes.innerHTML += dataArray[index];
                     }
