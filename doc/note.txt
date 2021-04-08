@@ -92,3 +92,12 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 20210407
     js 函式內使用到函式內未定義、未傳值的變數時，會往父層找
         此狀況發生時會改變父層的值
+
+20210408
+    google 整理的套件
+    https://developers.google.com/speed/libraries
+
+    popper
+
+    collapse 摺疊
+
