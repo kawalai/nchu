@@ -31,7 +31,7 @@ function messageContent(dareNoClass, content) {
 for (let index = 0; index < 100; index++) {
     let percent = Math.floor(Math.random() * 100) + 1;
     if (percent > 50) {
-        text += messageContent(meClass, '這是內容文字');
+        text += messageContent(meClass, '這是我的文字');
     } else {
         text += messageContent(anotherClass, '這是內容文字');
     }
