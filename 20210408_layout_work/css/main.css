@@ -4,3 +4,11 @@
     list-style: none;
     box-sizing: border-box;
 }
+
+.logo-div{
+    padding: 16px;
+}
+
+.logo-img{
+    height: 60px;
+}
