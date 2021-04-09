@@ -34,6 +34,25 @@ main{
     text-align: left;
 }
 
+.main-map{
+    position: relative;
+}
+
+.main-map-div{
+    position: absolute;
+    top: 50%;
+    left: 63%;
+    width: 430px;
+    transform: translateY(-50%);
+    /* height: 450px; */
+    /* background-color: green; */
+}
+
+textarea {
+    overflow-y: scroll;
+    resize: none;
+}
+
 .brand-radio-black{
     background-color: black;
 }
