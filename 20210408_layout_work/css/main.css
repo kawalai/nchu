@@ -5,6 +5,56 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row{
+    text-align: center;
+}
+
+header{
+    width: 100%;
+}
+main{
+    width: 100%;
+}
+
+.main-mix{
+    padding: 96px 0;
+}
+
+.main-mix .col-6,.main-mix .col-12{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-Pitchfork .row{
+    text-align: left;
+}
+
+.brand-radio-black{
+    background-color: black;
+}
+
+img{
+    width: 100%;
+    /* height: 100%; */
+}
+
+.some-function {
+    margin-top: 64px;
+}
+
+.style-div{
+    border: 2px solid #007aff;
+}
+
+footer{
+    width: 100%;
+}
+
 .logo-div{
     padding: 16px;
 }
