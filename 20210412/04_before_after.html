@@ -15,21 +15,50 @@
 
         .left,
         .right {
+            color: #FFF;
             padding: 200px;
             position: relative;
             background-size: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
+            /* background-position: center; */
+            /* background-repeat: no-repeat; */
+            transition-duration: 1s;
         }
 
         .left {
-            background-image: url('https://wallpaperaccess.com/full/5595827.jpg');
+            /* background-image: url('https://wallpaperaccess.com/full/5595827.jpg'); */
         }
 
         .right {
-            background-image: url('https://wallpaperaccess.com/full/1919735.jpg');
+            /* background-image: url('https://wallpaperaccess.com/full/1919735.jpg'); */
         }
 
+
+        .left::after, .right::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition-duration: 1s;
+            overflow: hidden;
+        }
+
+        .left::after {
+            content: '';
+            background-image: url('https://wallpaperaccess.com/full/5595827.jpg');
+        }
+
+        .right::after {
+            content: '';
+            background-image: url('https://wallpaperaccess.com/full/1919735.jpg');
+        }
+        .left:hover::after, .right:hover::after{
+            background-size: 120%;
+        }
     </style>
 </head>
 
@@ -38,8 +67,14 @@
     <div class="box-img">
         <div class="container-fluid">
             <div class="row">
-                <div class="left col-6"></div>
-                <div class="right col-6"></div>
+                <div class="left col-6">
+                    <h1>Lorem, ipsum dolor.</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, soluta.</p>
+                </div>
+                <div class="right col-6">
+                    <h1>Lorem, ipsum dolor.</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, soluta.</p>
+                </div>
             </div>
         </div>
     </div>
