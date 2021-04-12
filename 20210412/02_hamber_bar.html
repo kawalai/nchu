@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .hamber-bar {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+
+        .hamber-bar:focus .line1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .hamber-bar:focus .line2 {
+            opacity: 0;
+        }
+
+        .hamber-bar:focus .line3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .line1 {
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+        }
+
+        .line2 {
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+        }
+
+        .line3 {
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hamber-bar" tabindex="1">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>
