@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .animation-box {
+            display: flex;
+
+        }
+
+        .right {
+            width: 100px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        span {
+            line-height: 30px;
+        }
+
+        .scroller {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            animation-name: eat;
+            animation-iteration-count: infinite;
+            animation-duration: 1.5s;
+            /* animation: eat 3s infinite; */
+        }
+
+        @keyframes eat {
+            0% {
+                margin-top: 0px;
+            }
+
+            33% {
+                margin-top: -30px;
+            }
+
+            66% {
+                margin-top: -60px;
+            }
+
+            /* 100% {
+                top: 0px;
+
+            } */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="animation-box">
+        <p>吃</p>
+        <div class="right">
+            <div class="scroller">
+                <span>飯</span>
+                <span>麵</span>
+                <span>水果</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>
