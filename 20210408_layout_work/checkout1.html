@@ -48,14 +48,14 @@
             top: 0;
             width: 50%;
             height: 100%;
-            background-color: royalblue;
+            background-color: rgb(65, 174, 225);
             border-radius: 10px;
         }
 
         .progess-bar-full {
             width: 20%;
             height: 10px;
-            background-color: royalblue;
+            background-color: rgb(65, 174, 225);
             border-radius: 10px;
         }
 
@@ -212,13 +212,13 @@
                                     </div>
                                     <div class="col-1">
                                         <p>
-                                            {{ item }}
+                                            {{ item.title }}
                                         </p>
-                                        副標題
+                                        #{{ item.hashId }}
                                     </div>
                                     <div class="col-1 ml-auto d-flex">
                                         <button>-</button>
-                                        <input type="number" name="" id="" size="4">
+                                        <input type="number" name="" id="">
                                         <button>+</button>
                                     </div>
                                     <div class="col-1">
@@ -357,17 +357,15 @@
         const vm = Vue.createApp({
             data() {
                 return {
+
                     arr: [
-                        '品項1',
-                        '品項2',
-                        '品項3',
-                        '品項3',
-                        '品項3',
-                        '品項3',
-                        '品項3',
-                        '品項3',
-                        '品項3'
+                        { title: '品項1', hashId: Math.floor(Math.random() * 1000000) },
+                        { title: '品項2', hashId: Math.floor(Math.random() * 1000000) },
+                        { title: '品項3', hashId: Math.floor(Math.random() * 1000000) },
+                        { title: '品項4', hashId: Math.floor(Math.random() * 1000000) },
+                        { title: '品項5', hashId: Math.floor(Math.random() * 1000000) }
                     ]
+
                 }
             }
         }).mount('#app');
