@@ -1,4 +1,23 @@
-// $(function(){
-//     $('.coverflow').css('max-width',$('.coverflow img').width());
-//     $('.coverflow').css('max-height',$('.coverflow img').height());
-//  });
+function oneMinus() {
+    // let nameValue = this.getAttribute('name').value;
+    // this.value;
+    console.log(this.attr);
+    let gotValue = document.querySelector(`input[name=${nameValue}]`).value;
+    if (gotValue == '') {
+        gotValue = 0;
+    }
+    console.log(gotValue);
+    gotValue--;
+    console.log(gotValue);
+}
+
+function onePlus() {
+    let nameValue = this.getAttribute('name').value;
+    let gotValue = document.querySelector(`input[name=${nameValue}]`).value;
+    if (gotValue == '') {
+        gotValue = 0;
+    }
+    console.log(gotValue);
+    gotValue++;
+    console.log(gotValue);
+}

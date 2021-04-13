@@ -217,8 +217,8 @@
                                         #{{ item.hashId }}
                                     </div>
                                     <div class="col-1 ml-auto d-flex">
-                                        <button>-</button>
-                                        <input type="number" name="" id="">
+                                        <button onclick="oneMinus();" :name="item.hashId">-</button>
+                                        <input type="number" :name="item.hashId" id="">
                                         <button>+</button>
                                     </div>
                                     <div class="col-1">
