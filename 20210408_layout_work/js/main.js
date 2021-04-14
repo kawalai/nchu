@@ -1,23 +1,17 @@
-function oneMinus(element) {
-    // let nameValue = this.getAttribute('name').value;
-    // this.value;
-    console.log(element.name);
-    // let gotValue = document.querySelector(`input[name=${nameValue}]`).value;
-    // if (gotValue == '') {
-    //     gotValue = 0;
-    // }
-    // console.log(gotValue);
-    // gotValue--;
-    // console.log(gotValue);
+function calcPlusMinusFunction(element, para = 'plus') {
+    let thisInputValue = document.querySelector(`input[name=${element.name}]`);
+    if (thisInputValue.value == '') {
+        thisInputValue.value = 0;
+    }
+    if (para == 'minus') {
+        thisInputValue.value--;
+    } else {
+        thisInputValue.value++;
+    }
+    thisInputValue.innerHTML = thisInputValue.value;
+
+    let thisSum = document.querySelector(`div.product-one-sum[name=${element.name}]`);
+    let price = 10;
+    thisSum.innerHTML = `$ ${thisInputValue.value * price}`;
 }
 
-function onePlus() {
-    let nameValue = this.getAttribute('name').value;
-    let gotValue = document.querySelector(`input[name=${nameValue}]`).value;
-    if (gotValue == '') {
-        gotValue = 0;
-    }
-    console.log(gotValue);
-    gotValue++;
-    console.log(gotValue);
-}

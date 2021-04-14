@@ -29,9 +29,14 @@
             box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         }
 
-        input[type=number] {
+        input.product-quantity {
             width: 50px;
             height: 3rem;
+            margin: auto 0.5rem;
+        }
+
+        button.product-quantity {
+            margin: auto auto;
         }
 
         .progess-bar {
@@ -217,12 +222,14 @@
                                         </p>
                                         #{{ item.hashId }}
                                     </div>
-                                    <div class="col-1 ml-auto d-flex">
-                                        <button onclick="oneMinus(this);" :name="item.hashId">-</button>
-                                        <input type="number" :name="item.hashId" id="">
-                                        <button>+</button>
+                                    <div class="col-1 offset-7 d-flex">
+                                        <button class="product-quantity" onclick="calcPlusMinusFunction(this, 'minus');"
+                                            :name="item.hashId">減</button>
+                                        <input class="product-quantity" type="number" :name="item.hashId" id="">
+                                        <button class="product-quantity" onclick="calcPlusMinusFunction(this);"
+                                            :name="item.hashId">加</button>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-1 offset-1 product-one-sum" :name="item.hashId">
                                         總價
                                     </div>
                                 </div>
@@ -360,11 +367,11 @@
                 return {
 
                     arr: [
-                        { title: '品項1', hashId: Math.floor(Math.random() * 1000000) },
-                        { title: '品項2', hashId: Math.floor(Math.random() * 1000000) },
-                        { title: '品項3', hashId: Math.floor(Math.random() * 1000000) },
-                        { title: '品項4', hashId: Math.floor(Math.random() * 1000000) },
-                        { title: '品項5', hashId: Math.floor(Math.random() * 1000000) }
+                        { title: '品項1', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                        { title: '品項2', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                        { title: '品項3', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                        { title: '品項4', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                        { title: '品項5', hashId: '_' + Math.floor(Math.random() * 1000000) }
                     ]
 
                 }
