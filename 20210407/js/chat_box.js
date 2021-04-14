@@ -37,3 +37,18 @@ for (let index = 0; index < 100; index++) {
     }
 }
 content.innerHTML = text;
+
+function sendMessage(){
+    let message = document.querySelector('input.chat-target-box-input-message').value;
+    text += messageContent(meClass, message);
+    content.innerHTML = text;
+    scrollToView();
+}
+
+function scrollToView () {
+    document.querySelector('input.chat-target-box-input-message').scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth'
+    })
+}
