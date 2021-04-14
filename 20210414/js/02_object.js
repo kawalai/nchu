@@ -20,9 +20,13 @@ function logFunction() {
 
 let dataShown = document.querySelector('.main-data>.row');
 
-function delData(index){
-    // delete data[index];
-    data.splice(index, 1);
+function delData(ind){
+    data.splice(ind, 1);
+
+    for (let index = ind; index < data.length; index++) {
+        data[index].arrayIndex--;
+        
+    }
     
     let dataShown = document.querySelector('.main-data>.row');
     dataShown.innerHTML = '';
