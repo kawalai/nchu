@@ -4,15 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>Weather Api</title>
+    <link rel="stylesheet" href="./css/main.css">
     <style>
+        #app {
+            display: flex;
+        }
+
+        .block {
+            padding: 100px;
+            border: 1px solid black;
+            background-color: #faa;
+        }
     </style>
 </head>
 
 <body>
 
-    <script>
-    </script>
+    <div id="app">
+        <div class="block" v-if="isShow"></div>
+        <div class="block"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

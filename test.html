@@ -10,28 +10,32 @@
 </head>
 
 <body>
-    
-    
-    data1<input type="text" class="data1">
-    <br>
-    data2<input type="text" class="data2">
-    <br>
-    data3<input type="text" class="data3">
-    <br>
-    <button class="get-data">拿資料</button>
+
+    <table>
+        
+    </table>
 
     <script>
-        let data1 = document.querySelector('.data1');
-        let data2 = document.querySelector('.data2');
-        let data3 = document.querySelector('.data3');
+        fetch('https://datacenter.taichung.gov.tw/swagger/OpenData/1c5e97c9-8232-419b-8109-e3b0ed585676')
+            .then(function (response) {
+                return response.text();
+            }).then(function (result) {
 
-        let btn = document.querySelector('.get-data');
-        btn.addEventListener('click', function(){
-            console.log(data1.value);
-            console.log(data2.value);
-            console.log(data3.value);
-        });
-        
+                let titleData = document.querySelector('table');
+                titleData.innerHTML = `<tr><td>區別</td><td>校名</td><td>時間</td></tr>`;
+
+                let jsonData = JSON.parse(result);
+
+                jsonData.forEach(element => {
+                    titleData.innerHTML += `<tr><td>${element['區別']}</td><td>${element['學校名稱']}</td><td>${element['上課日']}</td></tr>`;
+                    console.log(element);
+                });
+
+                // for (prop in jsonData){
+                //     console.log(prop);
+                //     // document.write(`obj.${prop} = ${jsonData[prop]} <br>`)
+                // }
+            })
 
     </script>
 </body>
