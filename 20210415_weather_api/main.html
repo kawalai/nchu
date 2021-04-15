@@ -22,8 +22,9 @@
 <body>
 
     <div id="app">
-        <div class="block" v-if="isShow"></div>
-        <div class="block"></div>
+        <ul>
+            <li v-for="item in resultJson">{{ item.locationName }}</li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
