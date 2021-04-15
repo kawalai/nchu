@@ -6,25 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Api</title>
     <link rel="stylesheet" href="./css/main.css">
-    <style>
-        #app {
-            display: flex;
-        }
-
-        .block {
-            padding: 100px;
-            border: 1px solid black;
-            background-color: #faa;
-        }
-    </style>
 </head>
 
 <body>
 
     <div id="app">
-        <ul>
-            <li v-for="item in resultJson">{{ item.locationName }}</li>
-        </ul>
+        <div class="card" v-for="item in resultJson">
+            <div class="anime-icon">
+                <!-- 天氣動畫待做 -->
+            </div>
+            <div class="location-name">
+                {{ item.locationName }}
+            </div>
+            <div class="wx">
+                {{wx}} : {{ item.weatherElement[0].time[0].parameter.parameterName }}
+            </div>
+            <div class="maxt">
+                {{maxt}} : {{ item.weatherElement[4].time[0].parameter.parameterName }}
+            </div>
+            <div class="mint">
+                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
+            </div>
+            <div class="ci">
+                {{ci}} : {{ item.weatherElement[3].time[0].parameter.parameterName }}
+            </div>
+            <div class="pop">
+                {{pop}} : {{ item.weatherElement[1].time[0].parameter.parameterName }}
+            </div>
+
+        </div>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

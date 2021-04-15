@@ -4,3 +4,23 @@
     list-style: none;
     box-sizing: border-box;
 }
+#app{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 300px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.location-name,.wx,.maxt,.mint,.ci,.pop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

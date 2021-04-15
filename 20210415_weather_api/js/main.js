@@ -9,7 +9,12 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
         const vm = Vue.createApp({
             data() {
                 return {
-                    resultJson
+                    resultJson,
+                    wx: '天氣',
+                    maxt: '最高溫度',
+                    mint: '最低溫度',
+                    ci: '舒適度',
+                    pop: '降雨機率'
                 }
             }
         }).mount('#app');
