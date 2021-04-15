@@ -6,25 +6,27 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
     .then(function (result) {
         let resultJson = JSON.parse(result).records.location;
 
-        // resultJson.forEach(element => {
-        //     element.weatherElement.forEach(el => {
-        //         el.time.forEach(e => {
-        //             if ((e.parameter.parameterName * 1) != Number) {
-        //                 console.log(e.parameter.parameterName);
-        //             }
-        //         })
-        //     })
-        // });
+        resultJson.forEach(element => {            
+            if (element.weatherElement[0].time[0].parameter.parameterName.indexOf('晴') != -1) {
+                element.weatherElement[5] = 'weather-sun';
+                if (element.weatherElement[0].time[0].parameter.parameterName.indexOf('雲') != -1) {
+                    element.weatherElement[5] = 'weather-sun-cloud';
+                    if (element.weatherElement[0].time[0].parameter.parameterName.indexOf('雨') != -1) {
+                        element.weatherElement[5] = 'weather-sun-cloud-rain';
+                    }
+                }
+            }else{
+                element.weatherElement[5] = 'weather-cloud-dark';
+                if (element.weatherElement[0].time[0].parameter.parameterName.indexOf('雨') != -1) {
+                    element.weatherElement[5] = 'weather-cloud-rain';
+                }
+            }
+        });
 
         const vm = Vue.createApp({
             data() {
                 return {
-                    resultJson,
-                    wx: '天氣',
-                    maxt: '最高溫度',
-                    mint: '最低溫度',
-                    ci: '舒適度',
-                    pop: '降雨機率'
+                    resultJson
                 }
             }
         }).mount('#app');

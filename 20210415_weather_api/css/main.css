@@ -22,7 +22,7 @@
     flex-wrap: wrap;
 }
 
-.anime-icon {
+.weather-sun {
     position: relative;
     width: 250px;
     height: 250px;
@@ -30,7 +30,7 @@
     
 }
 
-.anime-icon::before {
+.weather-sun::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -40,7 +40,86 @@
     height: 100%;
     background-image: url('../img/weather_sun.svg');
     background-size: cover;
-    /* background-color: #faa; */
+}
+
+.weather-sun-cloud {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    
+}
+
+.weather-sun-cloud::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/weather_sun_cloud.svg');
+    background-size: cover;
+}
+
+.weather-sun-cloud-rain {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    
+}
+
+.weather-sun-cloud-rain::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/weather_sun_cloud_rain.svg');
+    background-size: cover;
+}
+
+.weather-cloud-rain {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    
+}
+
+.weather-cloud-rain::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/weather_cloud_rain.svg');
+    background-size: cover;
+}
+
+.weather-cloud-dark {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    
+}
+
+.weather-cloud-dark::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/weather_cloud_dark.svg');
+    background-size: cover;
 }
 
 .location-name, .wx, .maxt, .mint, .ci, .pop {
