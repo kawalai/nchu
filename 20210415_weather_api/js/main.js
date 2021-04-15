@@ -6,6 +6,16 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
     .then(function (result) {
         let resultJson = JSON.parse(result).records.location;
 
+        // resultJson.forEach(element => {
+        //     element.weatherElement.forEach(el => {
+        //         el.time.forEach(e => {
+        //             if ((e.parameter.parameterName * 1) != Number) {
+        //                 console.log(e.parameter.parameterName);
+        //             }
+        //         })
+        //     })
+        // });
+
         const vm = Vue.createApp({
             data() {
                 return {
