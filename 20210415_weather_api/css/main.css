@@ -20,6 +20,7 @@
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .weather-sun {
