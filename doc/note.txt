@@ -110,5 +110,11 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 20210412
     在div 增加tabindex="1" 後，才可以focus到此div
 
+20210419    
+    https://www.qbittorrent.org/download.php
+    開啟搜尋功能>更新
+
+    https://gfxdomain.co/
+    學習用網站
 
 
