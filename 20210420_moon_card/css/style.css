@@ -7,7 +7,6 @@
   width: 100%;
   height: 100vh;
   background-color: #999;
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,8 +19,10 @@
 }
 
 .main .moon-card {
-  width: 400px;
-  height: 300px;
+  width: 800px;
+  height: 500px;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,5 +33,242 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #000;
+  position: relative;
+}
+
+.main .moon-card .name {
+  color: #fff;
+  font-size: 72px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.main .moon-card .moon-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-box-shadow: inset 0px 16px #ffcc33, inset 0px 16px 1px 1px #ffcc33;
+          box-shadow: inset 0px 16px #ffcc33, inset 0px 16px 1px 1px #ffcc33;
+}
+
+.main .moon-card .star1 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star2 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star3 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star4 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star5 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star6 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star7 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star8 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star9 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star10 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star11 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star12 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star13 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star14 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star15 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star16 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star17 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star18 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star19 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star20 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star21 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star22 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star23 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star24 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star25 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star26 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star27 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star28 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star29 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
+}
+
+.main .moon-card .star30 {
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #646464;
 }
 /*# sourceMappingURL=style.css.map */

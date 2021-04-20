@@ -1,25 +1,42 @@
 @import 'variable';
 @import 'template';
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
-.main{
+
+.main {
     width: 100%;
     height: 100vh;
     background-color: $main-bg-color;
-    color: $moon-card-color;
-
     @include flex();
-    .moon-card{
-        @include size(400px, 300px);
+
+
+    .moon-card {
+        @include size(800px, 500px);
         @include flex();
         background-color: $moon-card-bg-color;
-    }
-    @for $star from 1 to 31{
-        .star#{$star}{
-            
+        position: relative;
+
+        .name {
+            color: $name-color;
+            font-size: $name-size;
+            @include posAbs(50%, 50%, -50%, -50%);
+        }
+
+        .moon-icon {
+            @include size(50px, 50px, 50%, rgba(0, 0, 0, 0));
+            @include posAbs(10%, 10%);
+            transform: rotate(90deg);
+            box-shadow: inset 0px 16px #ffcc33, inset 0px 16px 1px 1px #ffcc33;
+        }
+
+        @for $star from 1 to 31 {
+            .star#{$star} {
+                @include size(10px, 100%, 5px, rgba(100, 100, 100, 1));
+            }
         }
     }
+
 }

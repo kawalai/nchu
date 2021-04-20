@@ -1,14 +1,24 @@
 $main-bg-color: #999;
 $moon-card-bg-color: #000;
-$moon-card-color: #fff;
+$name-color: #fff;
+$name-size: 72px;
 
-@mixin size($width, $height){
+@mixin size($width, $height, $border-radius: 0, $background-color: rgba(0, 0, 0, 0)) {
     width: $width;
     height: $height;
-};
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
 
-@mixin flex($justify-content: center, $align-items: center){
+@mixin flex($justify-content: center, $align-items: center) {
     display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
+}
+
+@mixin posAbs($top: 0, $left: 0, $translateX: 0, $translateY: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($translateX, $translateY);
 }
