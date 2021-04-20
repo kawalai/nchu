@@ -32,9 +32,33 @@
             box-shadow: inset 0px 16px #ffcc33, inset 0px 16px 1px 1px #ffcc33;
         }
 
+        @keyframes flying {
+			0%, 100% {
+				opacity: 0;
+			}
+
+			60% {
+				opacity: 1;
+			}
+
+			0% {
+				transform: translate(100px, 0);
+			}
+
+			100% {
+				transform: translate(0, 350px);
+			}
+		}
+
         @for $star from 1 to 31 {
             .star#{$star} {
-                @include size(10px, 100%, 5px, rgba(100, 100, 100, 1));
+                @include size(5px, 5px, 50%, rgb(random(255), random(255), random(255)));
+                @include posAbs(random()*30%, random()*800px);
+
+				animation-name: flying;
+				animation-delay: random() * -1s;
+				animation-duration: (random() * 3s) + 2s;
+				animation-iteration-count: infinite;
             }
         }
     }
