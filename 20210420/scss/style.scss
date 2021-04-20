@@ -1,0 +1,17 @@
+@import 'variable';
+@import 'template';
+
+.container {
+    @include size($containerSize, $containerSize);
+    border: 1px solid #000;
+
+    .box {
+        @include size($boxSize, $boxSize, $boxRadius);
+        border: 1px solid #000;
+        background-color: aqua;
+    }
+
+    button {
+        @extend .btn
+    }
+}

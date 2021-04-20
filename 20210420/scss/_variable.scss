@@ -1,0 +1,9 @@
+$containerSize: 500px;
+$boxSize: 250px;
+$boxRadius: 10px;
+
+@mixin size($width, $height, $border-radius: 0) {
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+}
