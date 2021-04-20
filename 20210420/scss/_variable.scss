@@ -7,3 +7,10 @@ $boxRadius: 10px;
     height: $height;
     border-radius: $border-radius;
 }
+
+@mixin flex($flex-wrap: wrap, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

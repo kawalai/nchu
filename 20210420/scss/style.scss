@@ -4,14 +4,29 @@
 .container {
     @include size($containerSize, $containerSize);
     border: 1px solid #000;
+    @include flex();
 
     .box {
         @include size($boxSize, $boxSize, $boxRadius);
         border: 1px solid #000;
-        background-color: aqua;
+        background-color: aqua;        
     }
+
+    ;
 
     button {
         @extend %btn
     }
+
+    ;
+
+    @for $i from 1 through 5 {
+        .for#{$i} {
+            @include size(floor(100px * $i * random()), 100px, 10px);
+            border: 1px solid #000;
+            @include flex();
+        }
+    }
+
+    ;
 }
