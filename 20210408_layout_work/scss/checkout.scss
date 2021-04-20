@@ -59,7 +59,22 @@ button.product-quantity {
         &::before {
             content: '';
             @include posAbsCenter();
-            @include size(50px, 50px, 50%, rgba(30, 210, 255, 0.651));
+            @include size(50px, 50px, 50%, rgb(30, 210, 255));
+            opacity: 0.7;
+        }
+    }
+}
+
+.progess-point-yet {
+    p {
+        color: #000;
+        position: relative;
+
+        &::before {
+            content: '';
+            @include posAbsCenter();
+            @include size(50px, 50px, 50%, rgb(0, 0, 0));
+            opacity: 0.5;
         }
     }
 }
