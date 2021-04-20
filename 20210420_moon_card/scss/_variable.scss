@@ -1,0 +1,14 @@
+$main-bg-color: #999;
+$moon-card-bg-color: #000;
+$moon-card-color: #fff;
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+};
+
+@mixin flex($justify-content: center, $align-items: center){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
