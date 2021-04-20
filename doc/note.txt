@@ -135,11 +135,15 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
             $自定義變數名稱: 值;
         mixin、include
             函數般的存在，參數預設值用:
-        $自定義元件名稱、@extend $自定義元件名稱
+        %自定義元件名稱、@extend %自定義元件名稱
             設定好的style元件
+            %(placeholder)，沒@extend的話就不會在css 裡面出現
         _自定義名稱.scss
             可將變數、函數、元件全部放置於此
             在最前面有_的話就不會被自動編譯
-
+        #{變數名稱}
+            差值
+        @for $變數名稱 from start to end (小於end)
+        @for $變數名稱 from start through end (小於等於end)
 
 
