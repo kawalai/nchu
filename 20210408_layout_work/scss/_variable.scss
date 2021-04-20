@@ -22,3 +22,10 @@ $name-size: 72px;
     left: $left;
     transform: translate($translateX, $translateY);
 }
+
+@mixin posAbsCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
