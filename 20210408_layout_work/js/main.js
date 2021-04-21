@@ -176,5 +176,7 @@ footer.component('shop-footer', {
     </div>`
 });
 
+// import testHeader from '../component/shop-header.html';
+
 header.mount('header');
 footer.mount('footer');

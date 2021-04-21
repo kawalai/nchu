@@ -1,0 +1,61 @@
+@import 'variable';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+        @include size(300px, 400px, 10px);
+        border: 1px solid black;
+        margin: 20px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+
+
+        .location-name,
+        .wx,
+        .maxt,
+        .mint,
+        .ci,
+        .pop {
+            @include weatherCardStatusText();
+        }
+    }
+}
+
+
+.weather-sun {
+    @include weatherIconStyle($weather-sun);
+}
+
+
+
+.weather-sun-cloud {
+    @include weatherIconStyle($weather-sun-cloud);
+}
+
+
+.weather-sun-cloud-rain {
+    @include weatherIconStyle($weather-sun-cloud-rain);
+}
+
+
+.weather-cloud-rain {
+    @include weatherIconStyle($weather-cloud-rain);
+}
+
+
+.weather-cloud-dark {
+    @include weatherIconStyle($weather-cloud-dark);
+}

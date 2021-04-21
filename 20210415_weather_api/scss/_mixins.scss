@@ -1,0 +1,47 @@
+@mixin size($width, $height, $border-radius: 0, $background-color: rgba(0, 0, 0, 0)) {
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+@mixin flex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin posAbs($top: 0, $left: 0, $translateX: 0, $translateY: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($translateX, $translateY);
+}
+
+@mixin posAbsCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin weatherCardStatusText() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@mixin weatherIconStyle($iconPath) {
+    position: relative;
+    @include size(250px, 250px);
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        @include posAbsCenter();
+        @include size(100%, 100%);
+        background-image: url($iconPath);
+        background-size: cover;
+    }
+}
