@@ -84,9 +84,11 @@ const vm = Vue.createApp({
 // </div>`
 // });
 
+import Logo from '../component/shop-header.Vue'
+
 // 子元件
 vm.component('shop-header', {
-    template: '#shop-header'
+    template: Logo
 }).mount('header');
 
 // vm.mount('header');
