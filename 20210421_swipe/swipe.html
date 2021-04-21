@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swipe.css">
+</head>
+
+<body>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <!-- <div class="swiper-slide">
+                <img src="https://resi.ze-robot.com/dl/ga/garlic-dog-1920%C3%971080.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://resi.ze-robot.com/dl/ga/garlic-dog-1920%C3%971080.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://resi.ze-robot.com/dl/ga/garlic-dog-1920%C3%971080.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://resi.ze-robot.com/dl/ga/garlic-dog-1920%C3%971080.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://resi.ze-robot.com/dl/ga/garlic-dog-1920%C3%971080.jpg" alt="">
+            </div> -->
+
+            <!-- ms官網 -->
+            <div class="swiper-slide">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWAx8d?ver=9954&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=300&s=3000&d=1125&aim=true"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4ntGe?ver=8414&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=182&y=223&s=1833&d=687&aim=true"
+                    alt="">
+            </div>
+
+
+
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // breakpoints: {
+            //     480: {
+            //         slidesPerView: 2,
+            //         spaceBetween: 20,
+            //     },
+            //     768: {
+            //         slidesPerView: 4,
+            //         spaceBetween: 40,
+            //     },
+            //     1024: {
+            //         slidesPerView: 5,
+            //         spaceBetween: 50,
+            //     },
+            // }
+        });
+    </script>
+</body>
+
+</html>
