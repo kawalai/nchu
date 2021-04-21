@@ -1,0 +1,30 @@
+.swiper-container {
+    // width: 90%;
+
+    &:hover {
+        .swiper-button-next {
+            display: block;
+        }
+
+        .swiper-button-prev {
+            display: block;
+        }
+    }
+
+    .swiper-wrapper {
+
+        .swiper-slide {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .swiper-button-next {
+        display: none;
+    }
+
+    .swiper-button-prev {
+        display: none;
+    }
+}
