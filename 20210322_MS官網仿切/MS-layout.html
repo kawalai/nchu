@@ -543,12 +543,10 @@
         btnPause.addEventListener('click', function () {
             if (swiper.autoplay.running) {
                 swiper.autoplay.stop();
-                btnPause.innerHTML = 'S';
-                pauseInfo.innerHTML = '繼續輪播';
+                btnPause.innerHTML = 'S<span class="pause-info">播放投影片</span>';
             } else {
                 swiper.autoplay.start();
-                btnPause.innerHTML = 'P';
-                pauseInfo.innerHTML = '暫停輪播';
+                btnPause.innerHTML = 'P<span class="pause-info">暫停投影片</span>';
             }
         });
 

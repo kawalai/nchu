@@ -31,21 +31,45 @@
     .swiper-pagination {
 
         .pause-slide {
+            width: 2rem;
+            height: 2rem;
             position: relative;
+            border: 0;
+            background-color: rgba(0, 0, 0, 0);
+
             &:hover {
-                .pause-info{
+                background-color: #000;
+                color: #fff;
+
+                .pause-info {
                     display: block;
                     width: 150px;
                     position: absolute;
                     left: 0;
-                    top: 0;
+                    // top: 0;
+                    color: #000;
                     // left: 0;
-                    // top: 50%;
-                    // transform: translate(0, -50%);
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            &:focus {
+                .pause-info {
+                    display: block;
+                    width: 150px;
+                    position: absolute;
+                    left: 0;
+                    // top: 0;
+                    color: #000;
+                    // left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
                 }
             }
         }
-        .pause-info{
+
+        .pause-info {
             display: none;
         }
     }
