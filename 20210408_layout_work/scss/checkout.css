@@ -2,9 +2,9 @@
   border-radius: 50%;
 }
 
-.col-1 input.product-quantity {
+input.product-quantity {
   width: 50px;
-  height: 2rem;
+  height: 1rem;
   margin: auto 0.5rem;
 }
 

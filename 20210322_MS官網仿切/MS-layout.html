@@ -524,7 +524,7 @@
                 clickable: true,
                 renderBullet: function (index, className) {
                     if (flag) {
-                        return '<span class="' + className + '"></span><button class="pause-slide">P</button>';
+                        return '<span class="' + className + '"></span><button class="pause-slide">P</button><span class="pause-info">暫停輪播</span>';
                     } else {
                         flag = !flag;
                         return '<span class="' + className + '"></span>';
@@ -539,13 +539,16 @@
         });
 
         let btnPause = document.querySelector('.pause-slide');
+        let pauseInfo = document.querySelector('.pause-info');
         btnPause.addEventListener('click', function () {
             if (swiper.autoplay.running) {
                 swiper.autoplay.stop();
                 btnPause.innerHTML = 'S';
+                pauseInfo.innerHTML = '繼續輪播';
             } else {
                 swiper.autoplay.start();
                 btnPause.innerHTML = 'P';
+                pauseInfo.innerHTML = '暫停輪播';
             }
         });
 

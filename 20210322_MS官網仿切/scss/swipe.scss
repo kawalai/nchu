@@ -27,4 +27,18 @@
     .swiper-button-prev {
         display: none;
     }
+
+    .swiper-pagination {
+
+        .pause-slide {
+            &:hover {
+                ~.pause-info{
+                    // display: flex;
+                }
+            }
+        }
+        .pause-info{
+            // display: none;
+        }
+    }
 }

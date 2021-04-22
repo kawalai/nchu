@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/fullpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css">
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section">
+            <img src="https://s1.1zoom.me/b6354/969/Dogs_Welsh_Corgi_Puppy_533344_1920x1080.jpg" alt="">
+        </div>
+        <div class="section">
+            <div class="slide">
+                <img src="https://www.polsloe-cranbrookvets.com/wp-content/uploads/2014/10/dog-1920x1080.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://i.pinimg.com/originals/fa/55/2b/fa552ba3281dd9028228d5aa200d331f.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://images5.alphacoders.com/466/thumb-1920-466168.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://i.sellphoto.ru/o/fn/cute-dog-animals.jpeg" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <img src="https://i.pinimg.com/originals/12/27/58/1227584fa6659647197cad7f90b9c2c0.jpg" alt="">
+        </div>
+        <div class="section">
+            <img src="https://images.hdqwalls.com/download/dog-swimming-zx-1920x1080.jpg" alt="">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"></script>
+    <!-- <script src="./js/fullpage.js"></script> -->
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            sectionsColor : ['#faa', '#ffa', '#fff', '#aaa'],
+        });
+
+        //methods
+        // fullpage_api.setAllowScrolling(false);
+    </script>
+</body>
+
+</html>
