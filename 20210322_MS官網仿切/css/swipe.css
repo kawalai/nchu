@@ -17,4 +17,20 @@
 .swiper-container .swiper-button-prev {
   display: none;
 }
+
+.swiper-container .swiper-pagination .pause-slide {
+  position: relative;
+}
+
+.swiper-container .swiper-pagination .pause-slide:hover .pause-info {
+  display: block;
+  width: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.swiper-container .swiper-pagination .pause-info {
+  display: none;
+}
 /*# sourceMappingURL=swipe.css.map */

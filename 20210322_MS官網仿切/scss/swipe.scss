@@ -31,14 +31,22 @@
     .swiper-pagination {
 
         .pause-slide {
+            position: relative;
             &:hover {
-                ~.pause-info{
-                    // display: flex;
+                .pause-info{
+                    display: block;
+                    width: 150px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    // left: 0;
+                    // top: 50%;
+                    // transform: translate(0, -50%);
                 }
             }
         }
         .pause-info{
-            // display: none;
+            display: none;
         }
     }
 }

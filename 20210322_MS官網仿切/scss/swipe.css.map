@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAIQ,iBAJS,AAGZ,MAAM,CACH,mBAAmB,CAAC;EAChB,OAAO,EAAE,KAAK;CACjB;;AANT,AAQQ,iBARS,AAGZ,MAAM,CAKH,mBAAmB,CAAC;EAChB,OAAO,EAAE,KAAK;CACjB;;AAVT,AAgBY,iBAhBK,CAab,eAAe,CAEX,aAAa,CACT,GAAG,CAAC;EACA,KAAK,EAAE,IAAI;CACd;;AAlBb,AAsBI,iBAtBa,CAsBb,mBAAmB,CAAC;EAChB,OAAO,EAAE,IAAI;CAChB;;AAxBL,AA0BI,iBA1Ba,CA0Bb,mBAAmB,CAAC;EAChB,OAAO,EAAE,IAAI;CAChB",
-    "sources": [
-        "swipe.scss"
-    ],
-    "names": [],
-    "file": "swipe.css"
-}
