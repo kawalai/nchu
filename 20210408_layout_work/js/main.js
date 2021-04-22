@@ -31,7 +31,7 @@ const footer = Vue.createApp({
     }
 });
 
-
+// import {headerString, footerString} from './component-test.js';
 
 
 // 子元件
@@ -49,7 +49,6 @@ header.component('shop-header', {
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
