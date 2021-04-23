@@ -31,9 +31,6 @@ const footer = Vue.createApp({
     }
 });
 
-// import {headerString, footerString} from './component-test.js';
-
-
 // 子元件
 header.component('shop-header', {
     template: `
@@ -175,7 +172,20 @@ footer.component('shop-footer', {
     </div>`
 });
 
-// import testHeader from '../component/shop-header.html';
-
 header.mount('header');
 footer.mount('footer');
+const vm = Vue.createApp({
+    data() {
+        return {
+
+            arr: [
+                { title: '品項1', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                { title: '品項2', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                { title: '品項3', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                { title: '品項4', hashId: '_' + Math.floor(Math.random() * 1000000) },
+                { title: '品項5', hashId: '_' + Math.floor(Math.random() * 1000000) }
+            ]
+
+        }
+    }
+}).mount('#app');
