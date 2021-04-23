@@ -16,68 +16,71 @@
 main {
     padding: 40px 0;
     background-color: rgb(210, 210, 210);
-}
 
-.checkout1 {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.4);
-}
-
-
-button.product-quantity {
-    margin: auto auto;
-}
-
-.progess-bar {
-    @include size(20%, 10px, 10px, gray);
-    position: relative;
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 50%;
-        height: 100%;
-        background-color: rgb(65, 174, 225);
+    .checkout1 {
+        background-color: #fff;
         border-radius: 10px;
+        box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.4);
     }
-}
 
+    button.product-quantity {
+        margin: auto auto;
+    }
 
-.progess-bar-full {
-    @include size(20%, 10px, 10px, rgb(65, 174, 225));
-}
-
-.progess-bar-empty {
-    @include size(20%, 10px, 10px, gray);
-}
-
-.progess-point {
-    p {
-        color: #000;
+    .progess-bar {
+        @include size(20%, 10px, 10px, gray);
         position: relative;
 
-        &::before {
+        &::after {
             content: '';
-            @include posAbsCenter();
-            @include size(50px, 50px, 50%, rgb(30, 210, 255));
-            opacity: 0.7;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(65, 174, 225);
+            border-radius: 10px;
         }
     }
-}
 
-.progess-point-yet {
-    p {
-        color: #000;
-        position: relative;
 
-        &::before {
-            content: '';
-            @include posAbsCenter();
-            @include size(50px, 50px, 50%, rgb(0, 0, 0));
-            opacity: 0.5;
+    .progess-bar-full {
+        @include size(20%, 10px, 10px, rgb(65, 174, 225));
+    }
+
+    .progess-bar-empty {
+        @include size(20%, 10px, 10px, gray);
+    }
+
+    .progess-point {
+        p {
+            color: #000;
+            position: relative;
+
+            &::before {
+                content: '';
+                @include posAbsCenter();
+                @include size(50px, 50px, 50%, rgb(30, 210, 255));
+                opacity: 0.7;
+            }
         }
+    }
+
+    .progess-point-yet {
+        p {
+            color: #000;
+            position: relative;
+
+            &::before {
+                content: '';
+                @include posAbsCenter();
+                @include size(50px, 50px, 50%, rgb(0, 0, 0));
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .btn-next{
+        @extend %btn-next;
     }
 }
