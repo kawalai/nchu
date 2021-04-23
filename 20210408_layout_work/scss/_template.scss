@@ -1,7 +1,24 @@
+%btn-previous {
+    padding: 0.7rem 3rem;
+    background-color: #fff;
+    color: #29f;
+    border: 2px solid #29f;
+    border-radius: 5px;
+    
+    &:hover{
+        color: #fff;
+        background-color: #29f;
+    }
+}
+
 %btn-next {
     padding: 0.7rem 3rem;
     background-color: #29f;
     color: #fff;
     border-radius: 5px;
     border-style: none;
+
+    &:hover{
+        background-color: #07f;
+    }
 }

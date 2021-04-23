@@ -1,9 +1,26 @@
+main .btn-previous {
+  padding: 0.7rem 3rem;
+  background-color: #fff;
+  color: #29f;
+  border: 2px solid #29f;
+  border-radius: 5px;
+}
+
+main .btn-previous:hover {
+  color: #fff;
+  background-color: #29f;
+}
+
 main .btn-next {
   padding: 0.7rem 3rem;
   background-color: #29f;
   color: #fff;
   border-radius: 5px;
   border-style: none;
+}
+
+main .btn-next:hover {
+  background-color: #07f;
 }
 
 .col-1 img {
@@ -19,6 +36,10 @@ main .btn-next {
 main {
   padding: 40px 0;
   background-color: #d2d2d2;
+}
+
+main a {
+  display: block;
 }
 
 main .checkout1 {
@@ -101,5 +122,10 @@ main .progess-point-yet p::before {
   border-radius: 50%;
   background-color: black;
   opacity: 0.5;
+}
+
+main .pay-way,
+main .deliver-way {
+  text-align: start;
 }
 /*# sourceMappingURL=checkout.css.map */
