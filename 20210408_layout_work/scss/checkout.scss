@@ -96,4 +96,16 @@ main {
     .deliver-way {
         text-align: start;
     }
+
+    .address-data{
+        text-align: start;
+
+        *{
+            padding: 10px;
+        }
+
+        input{
+            width: 100%;
+        }
+    }
 }

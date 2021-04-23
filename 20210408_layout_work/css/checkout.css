@@ -128,4 +128,16 @@ main .pay-way,
 main .deliver-way {
   text-align: start;
 }
+
+main .address-data {
+  text-align: start;
+}
+
+main .address-data * {
+  padding: 10px;
+}
+
+main .address-data input {
+  width: 100%;
+}
 /*# sourceMappingURL=checkout.css.map */
