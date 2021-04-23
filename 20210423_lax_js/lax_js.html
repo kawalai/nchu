@@ -6,36 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .container{
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/lax_js.css">
 </head>
 
 <body>
 
-    <div id="container" class="container">
-        <div id="scene" class="scene">
-            <div data-depth="1.00"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer1.png?raw=true"></div>
-            <div data-depth="0.80"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer2.png?raw=true"></div>
-            <div data-depth="0.60"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer3.png?raw=true"></div>
-            <div data-depth="0.40"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer4.png?raw=true"></div>
-            <div data-depth="0.20"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer5.png?raw=true"></div>
-            <div data-depth="0.00"><img src="https://github.com/wagerfield/parallax/blob/master/examples/assets/images/layer6.png?raw=true"></div>
-        </div>
-    </div>
+    <div class="selector">Hello</div>
+    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script>
-        // Pretty simple huh?
-        var scene = document.getElementById('scene');
-        var parallax = new Parallax(scene);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+    <script src="./js/lax_js.js"></script>
 </body>
 
 </html>

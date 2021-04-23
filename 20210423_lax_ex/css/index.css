@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://img.taste.com.au/f6_C_uDy/taste/2018/10/no-bake-rocky-road-cheesecake-143048-2.jpg");
+  /* Set a specific height */
+  min-height: 5000px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.parallax .parallax-window {
+  min-height: 5000px;
+  position: -webkit-sticky;
+  position: sticky;
+  overflow: hidden;
+}
+
+.parallax .parallax-window .star {
+  width: 500px;
+  height: 500px;
+  background-color: cyan;
+  position: absolute;
+  top: 10%;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 9;
+}
+
+.parallax .parallax-window .sub-img {
+  opacity: 0;
+  background-image: url("https://www.bhmpics.com/download/strawberry_cake-1920x1080.jpg");
+  /* Set a specific height */
+  min-height: 5000px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/*# sourceMappingURL=index.css.map */
