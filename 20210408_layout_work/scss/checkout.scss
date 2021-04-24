@@ -14,7 +14,7 @@
 }
 
 main {
-    a{
+    a {
         display: block;
     }
 
@@ -97,15 +97,29 @@ main {
         text-align: start;
     }
 
-    .address-data{
+    .address-data {
         text-align: start;
 
-        *{
+        * {
             padding: 10px;
         }
 
-        input{
+        input {
             width: 100%;
+        }
+    }
+
+    .order-end-title {
+        font-size: 3rem;
+        font-weight: 800;
+    }
+
+    .member-data {
+        text-align: start;
+        font-size: 1.5rem;
+
+        *{
+            padding: 5px 2rem;
         }
     }
 }
