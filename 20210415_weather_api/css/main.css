@@ -22,6 +22,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #app nav .tab {
@@ -34,17 +36,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 33.3333%;
+  width: calc(33.3333% - 20px);
   height: 3rem;
-  border: 1px solid #000;
+  background-color: #33f;
+  color: #dd0;
+  font-size: 1.5rem;
   margin: 10px;
   border-radius: 10px;
   cursor: pointer;
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 #app nav .tab:hover {
   background-color: blue;
   color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+  #app nav .tab {
+    width: 100%;
+  }
 }
 
 #app .card {
@@ -80,6 +98,15 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+#app .card:hover {
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .weather-sun {

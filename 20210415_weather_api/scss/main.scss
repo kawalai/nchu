@@ -9,23 +9,35 @@
 }
 
 #app {
-    nav{
+    nav {
         width: 100%;
         display: flex;
-        .tab{
+        flex-wrap: wrap;
+
+        .tab {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 33.3333%;
+            width: calc(33.3333% - 20px);
             height: 3rem;
-            border: 1px solid #000;
+            background-color: #33f;
+            color: #dd0;
+            font-size: 1.5rem;
             margin: 10px;
             border-radius: 10px;
             cursor: pointer;
+            box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 
-            &:hover{
+            &:hover {
                 background-color: blue;
                 color: #fff;
+                box-shadow: none;
+                transform: translate(5px, 5px);
+                transition-duration: 0.5s;
+            }
+
+            @media screen and (max-width:1000px) {
+                width: 100%;
             }
         }
     }
@@ -43,7 +55,6 @@
         flex-wrap: wrap;
         box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 
-
         .location-name,
         .wx,
         .maxt,
@@ -51,6 +62,12 @@
         .ci,
         .pop {
             @include weatherCardStatusText();
+        }
+
+        &:hover {
+            transform: translate(5px, 5px);
+            box-shadow: none;
+            transition-duration: 0.5s;
         }
     }
 }

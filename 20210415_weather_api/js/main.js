@@ -35,7 +35,8 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
                     resultJson,
                     flagTime0: true,
                     flagTime1: false,
-                    flagTime2: false
+                    flagTime2: false,
+                    tempTimeData: '14456'
                 }
             },
             methods: {
@@ -53,6 +54,15 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
                     this.flagTime0 = false;
                     this.flagTime1 = false;
                     this.flagTime2 = true;
+                },
+                mouseOverTime: function (timeIndex) {
+                    console.log(this.tempTimeData);
+                    this.tempTimeData = document.querySelectorAll('.tab')[timeIndex].innerHTML;
+                    document.querySelectorAll('.tab')[timeIndex].innerHTML = resultJson[0].weatherElement[0].time[timeIndex].startTime + ' ~ ' + resultJson[0].weatherElement[0].time[timeIndex].endTime;
+                },
+                mouseOutTime: function (timeIndex) {
+                    document.querySelectorAll('.tab')[timeIndex].innerHTML = this.tempTimeData;
+                    this.tempTimeData = '';
                 }
             }
         }).mount('#app');

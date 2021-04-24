@@ -12,20 +12,19 @@
 
     <div id="app">
         <nav>
-            <div class="tab" v-on:click="choiceTime0()">
-                {{resultJson[0].weatherElement[0].time[0].startTime}} ~ {{resultJson[0].weatherElement[0].time[0].endTime}}
+            <div class="tab" v-on:click="choiceTime0()" v-on:mouseover="mouseOverTime(0)" v-on:mouseout="mouseOutTime(0)">
+                當前
             </div>
-            <div class="tab" v-on:click="choiceTime1()">
-                {{resultJson[0].weatherElement[0].time[1].startTime}} ~ {{resultJson[0].weatherElement[0].time[1].endTime}}
+            <div class="tab" v-on:click="choiceTime1()" v-on:mouseover="mouseOverTime(1)" v-on:mouseout="mouseOutTime(1)">
+                稍晚
             </div>
-            <div class="tab" v-on:click="choiceTime2()">
-                {{resultJson[0].weatherElement[0].time[2].startTime}} ~ {{resultJson[0].weatherElement[0].time[2].endTime}}
+            <div class="tab" v-on:click="choiceTime2()" v-on:mouseover="mouseOverTime(2)" v-on:mouseout="mouseOutTime(2)">
+                更晚
             </div>
         </nav>
         
         <div class="card" v-if="flagTime0" v-for="item in resultJson">
             <div :class="item.weatherElement[0].time[0][5]">
-                <!-- 天氣動畫用class控制 -->
             </div>
             <div class="location-name">
                 {{ item.locationName }}
@@ -36,9 +35,6 @@
             <div class="maxt">
                 {{ item.weatherElement[2].time[0].parameter.parameterName }}°C ~ {{ item.weatherElement[4].time[0].parameter.parameterName }}°C
             </div>
-            <!-- <div class="mint">
-                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
-            </div> -->
             <div class="ci">
                 {{ item.weatherElement[3].time[0].parameter.parameterName }}
             </div>
@@ -48,7 +44,6 @@
         </div>
         <div class="card" v-if="flagTime1" v-for="item in resultJson">
             <div :class="item.weatherElement[0].time[1][5]">
-                <!-- 天氣動畫用class控制 -->
             </div>
             <div class="location-name">
                 {{ item.locationName }}
@@ -59,9 +54,6 @@
             <div class="maxt">
                 {{ item.weatherElement[2].time[1].parameter.parameterName }}°C ~ {{ item.weatherElement[4].time[0].parameter.parameterName }}°C
             </div>
-            <!-- <div class="mint">
-                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
-            </div> -->
             <div class="ci">
                 {{ item.weatherElement[3].time[1].parameter.parameterName }}
             </div>
@@ -71,7 +63,6 @@
         </div>
         <div class="card" v-if="flagTime2" v-for="item in resultJson">
             <div :class="item.weatherElement[0].time[2][5]">
-                <!-- 天氣動畫用class控制 -->
             </div>
             <div class="location-name">
                 {{ item.locationName }}
@@ -82,9 +73,6 @@
             <div class="maxt">
                 {{ item.weatherElement[2].time[2].parameter.parameterName }}°C ~ {{ item.weatherElement[4].time[0].parameter.parameterName }}°C
             </div>
-            <!-- <div class="mint">
-                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
-            </div> -->
             <div class="ci">
                 {{ item.weatherElement[3].time[2].parameter.parameterName }}
             </div>
