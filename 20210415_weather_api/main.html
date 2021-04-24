@@ -11,8 +11,20 @@
 <body>
 
     <div id="app">
-        <div class="card" v-for="item in resultJson">
-            <div :class="item.weatherElement[5]">
+        <nav>
+            <div class="tab" v-on:click="choiceTime0()">
+                {{resultJson[0].weatherElement[0].time[0].startTime}} ~ {{resultJson[0].weatherElement[0].time[0].endTime}}
+            </div>
+            <div class="tab" v-on:click="choiceTime1()">
+                {{resultJson[0].weatherElement[0].time[1].startTime}} ~ {{resultJson[0].weatherElement[0].time[1].endTime}}
+            </div>
+            <div class="tab" v-on:click="choiceTime2()">
+                {{resultJson[0].weatherElement[0].time[2].startTime}} ~ {{resultJson[0].weatherElement[0].time[2].endTime}}
+            </div>
+        </nav>
+        
+        <div class="card" v-if="flagTime0" v-for="item in resultJson">
+            <div :class="item.weatherElement[0].time[0][5]">
                 <!-- 天氣動畫用class控制 -->
             </div>
             <div class="location-name">
@@ -33,8 +45,54 @@
             <div class="pop">
                 {{ item.weatherElement[1].time[0].parameter.parameterName }} %
             </div>
-
         </div>
+        <div class="card" v-if="flagTime1" v-for="item in resultJson">
+            <div :class="item.weatherElement[0].time[1][5]">
+                <!-- 天氣動畫用class控制 -->
+            </div>
+            <div class="location-name">
+                {{ item.locationName }}
+            </div>
+            <div class="wx">
+                {{ item.weatherElement[0].time[1].parameter.parameterName }}
+            </div>
+            <div class="maxt">
+                {{ item.weatherElement[2].time[1].parameter.parameterName }}°C ~ {{ item.weatherElement[4].time[0].parameter.parameterName }}°C
+            </div>
+            <!-- <div class="mint">
+                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
+            </div> -->
+            <div class="ci">
+                {{ item.weatherElement[3].time[1].parameter.parameterName }}
+            </div>
+            <div class="pop">
+                {{ item.weatherElement[1].time[1].parameter.parameterName }} %
+            </div>
+        </div>
+        <div class="card" v-if="flagTime2" v-for="item in resultJson">
+            <div :class="item.weatherElement[0].time[2][5]">
+                <!-- 天氣動畫用class控制 -->
+            </div>
+            <div class="location-name">
+                {{ item.locationName }}
+            </div>
+            <div class="wx">
+                {{ item.weatherElement[0].time[2].parameter.parameterName }}
+            </div>
+            <div class="maxt">
+                {{ item.weatherElement[2].time[2].parameter.parameterName }}°C ~ {{ item.weatherElement[4].time[0].parameter.parameterName }}°C
+            </div>
+            <!-- <div class="mint">
+                {{mint}} : {{ item.weatherElement[2].time[0].parameter.parameterName }}
+            </div> -->
+            <div class="ci">
+                {{ item.weatherElement[3].time[2].parameter.parameterName }}
+            </div>
+            <div class="pop">
+                {{ item.weatherElement[1].time[2].parameter.parameterName }} %
+            </div>
+        </div>
+
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

@@ -9,6 +9,27 @@
 }
 
 #app {
+    nav{
+        width: 100%;
+        display: flex;
+        .tab{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33.3333%;
+            height: 3rem;
+            border: 1px solid #000;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: blue;
+                color: #fff;
+            }
+        }
+    }
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
