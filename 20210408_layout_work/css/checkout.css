@@ -154,4 +154,88 @@ main .member-data {
 main .member-data * {
   padding: 5px 2rem;
 }
+
+main .main-title {
+  padding: 245px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: 100vh;
+  background-color: #005;
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+}
+
+main .main-title .main-svg {
+  width: 245px;
+}
+
+main .main-title .main-social {
+  width: 100%;
+}
+
+main .main-title .main-social span {
+  position: relative;
+  color: #fff;
+  margin: 15px;
+}
+
+main .main-title .main-social span::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+main .main-title .account,
+main .main-title .password {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .main-title .account input,
+main .main-title .password input {
+  width: 60%;
+  background-color: #000;
+  margin: 10px;
+  border-style: none;
+}
+
+main .main-title .sign-in-btn {
+  width: 100%;
+  margin: 0 21%;
+  border-style: none;
+  border-radius: 50px;
+  background-color: #66f;
+  color: #fff;
+}
+
+main .main-title .sign-in-btn:hover {
+  background-color: #44f;
+}
+
+@media screen and (max-width: 1023px) {
+  main .main-title {
+    width: 100%;
+    left: 0;
+    padding: 100px auto 10px;
+  }
+}
 /*# sourceMappingURL=checkout.css.map */
