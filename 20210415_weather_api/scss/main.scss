@@ -9,6 +9,12 @@
 }
 
 #app {
+    background-image: url('https://images3.alphacoders.com/102/thumb-1920-1022105.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     nav {
         width: 100%;
         display: flex;
@@ -20,23 +26,27 @@
             align-items: center;
             width: calc(33.3333% - 20px);
             height: 3rem;
-            background-color: #33f;
+            font-family: '微軟正黑體';
+            background-color: rgb(214, 51, 255);
             color: #dd0;
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin: 10px;
             border-radius: 10px;
             cursor: pointer;
             box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 
             &:hover {
-                background-color: blue;
+                background-color: rgb(86, 0, 112);
                 color: #fff;
+                font-size: 1.5rem;
                 box-shadow: none;
                 transform: translate(5px, 5px);
-                transition-duration: 0.5s;
+                transition-duration: 0.4s;
+                // transition-property: font-size;
+                // transition-delay: 0.4s;
             }
 
-            @media screen and (max-width:1000px) {
+            @media screen and (max-width:1350px) {
                 width: 100%;
             }
         }
@@ -47,13 +57,17 @@
     justify-content: center;
 
     .card {
-        @include size(300px, 400px, 10px);
+        @include size(300px, 400px, 50px);
         border: 1px solid black;
         margin: 20px;
         text-align: center;
         display: flex;
         flex-wrap: wrap;
         box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+        background-color: rgb(182, 133, 42);
+        border-style: none;
+        color: #000;
+        font-family: '微軟正黑體';
 
         .location-name,
         .wx,
@@ -67,33 +81,45 @@
         &:hover {
             transform: translate(5px, 5px);
             box-shadow: none;
-            transition-duration: 0.5s;
+            transition-duration: 0.4s;
+            background-color: rgb(255, 166, 0);
+            color: rgb(98, 60, 168);
+            font-size: large;
+            font-weight: 900;
+
+            .weather-sun,
+            .weather-sun-cloud,
+            .weather-sun-cloud-rain,
+            .weather-cloud-rain,
+            .weather-cloud-dark {
+                transform: scale(1.3);
+                transition-duration: 0.4s;
+            }
         }
     }
-}
 
-
-.weather-sun {
-    @include weatherIconStyle($weather-sun);
-}
+    .weather-sun {
+        @include weatherIconStyle($weather-sun);
+    }
 
 
 
-.weather-sun-cloud {
-    @include weatherIconStyle($weather-sun-cloud);
-}
+    .weather-sun-cloud {
+        @include weatherIconStyle($weather-sun-cloud);
+    }
 
 
-.weather-sun-cloud-rain {
-    @include weatherIconStyle($weather-sun-cloud-rain);
-}
+    .weather-sun-cloud-rain {
+        @include weatherIconStyle($weather-sun-cloud-rain);
+    }
 
 
-.weather-cloud-rain {
-    @include weatherIconStyle($weather-cloud-rain);
-}
+    .weather-cloud-rain {
+        @include weatherIconStyle($weather-cloud-rain);
+    }
 
 
-.weather-cloud-dark {
-    @include weatherIconStyle($weather-cloud-dark);
+    .weather-cloud-dark {
+        @include weatherIconStyle($weather-cloud-dark);
+    }
 }
