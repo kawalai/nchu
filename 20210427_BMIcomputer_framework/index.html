@@ -67,7 +67,7 @@
                 this.heightProcess = this.heightProcess.bind(this);
                 this.weightProcess = this.weightProcess.bind(this);
                 this.bmiCalc = this.bmiCalc.bind(this);
-                this.resultStatus = this.resultStatus.bind(this);
+                this.resetFunction = this.resetFunction.bind(this);
             }
 
             heightProcess(event) {
@@ -80,23 +80,28 @@
 
             bmiCalc(el) {
                 el.preventDefault();
-                this.setState({ result: Math.round((this.state.weight / ((this.state.height / 100) ** 2)) * 100) / 100 });
-            }
-
-            resultStatus(el) {
-                el.preventDefault();
-                console.log(this.state.result);
-                if (this.state.result < 20) {
+                let bmiValue = Math.round((this.state.weight / ((this.state.height / 100) ** 2)) * 100) / 100;
+                this.setState({ result: bmiValue });
+                if (bmiValue < 20) {
                     this.setState({ resultStatus: '體重過輕' });
-                } else if (this.state.result >= 20 && this.state.result < 25) {
+                } else if (bmiValue >= 20 && bmiValue < 25) {
                     this.setState({ resultStatus: '正常範圍' });
-                } else if (this.state.result >= 25 && this.state.result < 30) {
+                } else if (bmiValue >= 25 && bmiValue < 30) {
                     this.setState({ resultStatus: '體重過重' });
-                } else if (this.state.result >= 30 && this.state.result < 40) {
+                } else if (bmiValue >= 30 && bmiValue < 40) {
                     this.setState({ resultStatus: '肥胖' });
-                } else if (this.state.result >= 40) {
+                } else if (bmiValue >= 40) {
                     this.setState({ resultStatus: '病態肥胖' });
                 }
+            }
+
+            resetFunction(el){
+                this.setState({
+                    height: Number,
+                    weight: Number,
+                    result: Number,
+                    resultStatus: String,
+                })
             }
 
             render() {
@@ -109,9 +114,9 @@
                             <p>我的身高 : <input id="he" className="height" type="number" value={this.state.height} onChange={this.heightProcess} />公分</p>
                             <p>我的體重 : <input id="we" className="weight" type="number" value={this.state.weight} onChange={this.weightProcess} />公斤</p>
                             <button className="calc-button" onClick={this.bmiCalc}>計算</button>
-                            <button className="reset">重新填寫</button>
+                            <button className="reset" onClick={this.resetFunction}>重新填寫</button>
                         </div>
-                        <div className="result" onChange={this.resultStatus}>{this.state.result}</div>
+                        <div className="result">{this.state.result}</div>
                         <div className="status">{this.state.resultStatus}</div>
                         <div className="container">
 
