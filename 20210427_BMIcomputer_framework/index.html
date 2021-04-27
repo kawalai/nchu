@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMIcomputer</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>BMI 計算機</h1>
+        <h3>身體質量指數 (Body Mass Index ，簡稱BMI)是公認用來估計肥胖程度的方法</h3>
+        <h3>BMI = 體重(公斤) / 身高的平方(公尺)</h3>
+        <div class="calc-block">
+            <p>我的身高 : <input class="height" type="number">公分</p>
+            <p>我的體重 : <input class="weight" type="number">公斤</p>
+            <button class="calc-button">計算</button>
+            <button class="reset">重新填寫</button>
+        </div>
+        <div class="result"></div>
+        <div class="status"></div>
+        <div class="container">
+            <table>
+                <tr>
+                    <td>BMI值</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>男性</td>
+                    <td>女性</td>
+                </tr>
+                <tr>
+                    <td>體重過輕</td>
+                    <td><20</td>
+                    <td><19</td>
+                </tr>
+                <tr>
+                    <td>正常範圍</td>
+                    <td>20-25</td>
+                    <td>19-25</td>
+                </tr>
+                <tr>
+                    <td>體重過重</td>
+                    <td>25-30</td>
+                    <td>25-30</td>
+                </tr>
+                <tr>
+                    <td>肥胖</td>
+                    <td>30-40</td>
+                    <td>30-40</td>
+                </tr>
+                <tr>
+                    <td>病態肥胖</td>
+                    <td>>40</td>
+                    <td>>40</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer>
+
+    </script>
+    <!-- <script src="./js/main.js">
+    </script> -->
+</body>
+
+</html>
