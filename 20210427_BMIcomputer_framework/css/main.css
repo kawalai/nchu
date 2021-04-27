@@ -6,9 +6,10 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.main {
+.main,#main {
     width: 60%;
     display: flex;
     flex-wrap: wrap;
