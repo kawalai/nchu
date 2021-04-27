@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .btn{
+        .btn {
             width: 100px;
             height: 50px;
         }
-        .box{
-            display: none;
+
+        .box {
             width: 200px;
             height: 200px;
             background-color: plum;
         }
-        .active{
-            display: block;
+
+        #box1 {
+            background-color: #faa;
+        }
+
+        #box2 {
+            background-color: #ffa;
         }
     </style>
 </head>
+
 <body>
-    
 
-    <button class="btn" data-id="#box1">按鈕1</button>
-    <button class="btn" data-id="#box2">按鈕2</button>
-    <button class="btn" data-id="#box3">按鈕3</button>
+    <div class="container" x-data="{ flag : 'btn1'}">
 
-    <div id="box1" class="box active">區塊一</div>
-    <div id="box2" class="box">區塊二</div>
-    <div id="box3" class="box">區塊三</div>
+        <div class="text">目前的資料是<span x-text="flag">按鈕1</span></div>
 
-    <script>
-        document.querySelectorAll('.btn').forEach(function (btn) {
-            btn.addEventListener('click',function () {
-                var id = this.getAttribute('data-id');
-                var box = document.querySelector(id);
+        <button class="btn" data-id="#box1" @click="flag = 'btn1'">按鈕1</button>
+        <button class="btn" data-id="#box2" @click="flag = 'btn2'">按鈕2</button>
+        <button class="btn" data-id="#box3" @click="flag = 'btn3'">按鈕3</button>
 
-                // 移除全部的active
-                document.querySelectorAll('.box').forEach(function (box) {
-                   box.classList.remove('active') ;
-                });
+        <div id="box1" class="box" x-show="flag == 'btn1'">區塊一</div>
+        <div id="box2" class="box" x-show="flag == 'btn2'">區塊二</div>
+        <div id="box3" class="box" x-show="flag == 'btn3'">區塊三</div>
+    </div>
 
-                // 新增目標的active
-                box.classList.add('active');
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
+
 </html>
