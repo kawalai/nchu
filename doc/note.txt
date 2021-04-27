@@ -151,3 +151,10 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         下載需要的vsix檔案後，使用cmd輸入下列指令
         code --install-extension ritwickdey.live-sass-3.0.0.vsix
         code --install-extension ritwickdey.LiveServer-5.6.1.vsix
+
+    未來趨勢
+        WebAssembly
+            web 使用的第四種語言(html、css、js)
+
+    設計大師的頻道
+        FZDSCHOOL
