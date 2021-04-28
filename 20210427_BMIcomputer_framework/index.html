@@ -23,28 +23,28 @@
         </tr>
         <tr>
             <td>體重過輕</td>
-            <td>20</td>
-            <td>19</td>
+            <td>BMI < 20</td>
+            <td>BMI < 19</td>
         </tr>
         <tr>
             <td>正常範圍</td>
-            <td>20-25</td>
-            <td>19-25</td>
+            <td>20 <= BMI < 25</td>
+            <td>19 <= BMI < 25</td>
         </tr>
         <tr>
             <td>體重過重</td>
-            <td>25-30</td>
-            <td>25-30</td>
+            <td>25 <= BMI < 30</td>
+            <td>25 <= BMI < 30</td>
         </tr>
         <tr>
             <td>肥胖</td>
-            <td>30-40</td>
-            <td>30-40</td>
+            <td>30 <= BMI < 40</td>
+            <td>30 <= BMI < 40</td>
         </tr>
         <tr>
             <td>病態肥胖</td>
-            <td>40</td>
-            <td>40</td>
+            <td>40 <= BMI</td>
+            <td>40 <= BMI</td>
         </tr>
     </table>
 
@@ -62,6 +62,7 @@
                     weight: '',
                     result: '',
                     resultStatus: '',
+                    gender: '',
                 };
 
                 this.heightProcess = this.heightProcess.bind(this);
@@ -82,16 +83,32 @@
                 el.preventDefault();
                 let bmiValue = Math.round((this.state.weight / ((this.state.height / 100) ** 2)) * 100) / 100;
                 this.setState({ result: bmiValue });
-                if (bmiValue < 20) {
-                    this.setState({ resultStatus: '體重過輕' });
-                } else if (bmiValue >= 20 && bmiValue < 25) {
-                    this.setState({ resultStatus: '正常範圍' });
-                } else if (bmiValue >= 25 && bmiValue < 30) {
-                    this.setState({ resultStatus: '體重過重' });
-                } else if (bmiValue >= 30 && bmiValue < 40) {
-                    this.setState({ resultStatus: '肥胖' });
-                } else if (bmiValue >= 40) {
-                    this.setState({ resultStatus: '病態肥胖' });
+                if (this.state.gender === 'male') {
+                    if (bmiValue < 20) {
+                        this.setState({ resultStatus: '體重過輕' });
+                    } else if (bmiValue >= 20 && bmiValue < 25) {
+                        this.setState({ resultStatus: '正常範圍' });
+                    } else if (bmiValue >= 25 && bmiValue < 30) {
+                        this.setState({ resultStatus: '體重過重' });
+                    } else if (bmiValue >= 30 && bmiValue < 40) {
+                        this.setState({ resultStatus: '肥胖' });
+                    } else if (bmiValue >= 40) {
+                        this.setState({ resultStatus: '病態肥胖' });
+                    }
+                } else if (this.state.gender === 'female') {
+                    if (bmiValue < 19) {
+                        this.setState({ resultStatus: '體重過輕' });
+                    } else if (bmiValue >= 19 && bmiValue < 25) {
+                        this.setState({ resultStatus: '正常範圍' });
+                    } else if (bmiValue >= 25 && bmiValue < 30) {
+                        this.setState({ resultStatus: '體重過重' });
+                    } else if (bmiValue >= 30 && bmiValue < 40) {
+                        this.setState({ resultStatus: '肥胖' });
+                    } else if (bmiValue >= 40) {
+                        this.setState({ resultStatus: '病態肥胖' });
+                    }
+                } else {
+                    this.setState({ resultStatus: '請選擇性別' });
                 }
             }
 
@@ -104,12 +121,22 @@
                 })
             }
 
+            setGender(e) {
+                this.setState({
+                    gender: e.target.value
+                })
+            }
+
             render() {
                 return (
                     <div className="main">
                         <h1>BMI 計算機</h1>
                         <h3>身體質量指數 (Body Mass Index ，簡稱BMI)是公認用來估計肥胖程度的方法</h3>
                         <h3>BMI = 體重(公斤) / 身高的平方(公尺)</h3>
+                        <div onChange={this.setGender.bind(this)}>
+                            <input type="radio" name="gender" value="male" />男
+                            <input type="radio" name="gender" value="female" />女
+                        </div>
                         <div className="calc-block">
                             <p>我的身高 : <input id="he" className="height" type="number" value={this.state.height} onChange={this.heightProcess} />公分</p>
                             <p>我的體重 : <input id="we" className="weight" type="number" value={this.state.weight} onChange={this.weightProcess} />公斤</p>
