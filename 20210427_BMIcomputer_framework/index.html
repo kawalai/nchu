@@ -58,10 +58,10 @@
                 super(props);
 
                 this.state = {
-                    height: Number,
-                    weight: Number,
-                    result: Number,
-                    resultStatus: String,
+                    height: '',
+                    weight: '',
+                    result: '',
+                    resultStatus: '',
                 };
 
                 this.heightProcess = this.heightProcess.bind(this);
@@ -95,12 +95,12 @@
                 }
             }
 
-            resetFunction(el){
+            resetFunction(el) {
                 this.setState({
-                    height: Number,
-                    weight: Number,
-                    result: Number,
-                    resultStatus: String,
+                    height: '',
+                    weight: '',
+                    result: '',
+                    resultStatus: '',
                 })
             }
 
