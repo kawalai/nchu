@@ -177,3 +177,4 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         1. compact()
             將"變數 = 值,...,..." 變成array[變數 => 值,...,...]
 
+    https://www.taiwan.net.tw/m1.aspx?sNo=0001001 回家切版作業
