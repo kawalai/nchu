@@ -158,3 +158,17 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 
     設計大師的頻道
         FZDSCHOOL
+
+20210504
+    1. laravel init 步驟
+        1. composer install
+            生成vendor
+        2. npm install
+            生成node_modules
+        3. php artisan key:gen
+            生成APP_KEY
+        4. 複製.env.example
+        5. 改名.env.example copy => .env
+        6. php artisan serve
+
+
