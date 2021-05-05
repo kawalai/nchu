@@ -1,13 +1,10 @@
-css 渲染有優先度的坑
-id > class > tag
+- css 渲染有優先度的坑
+    * id > class > tag
+    * line-height 可以調整文字高度(設定成該欄高度後)
+    * nth-child(x) 偽元素 https://www.w3schools.com/css/css_pseudo_classes.asp
+    * css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 
-line-height 可以調整文字高度(設定成該欄高度後)
-
-nth-child(x) 偽元素 https://www.w3schools.com/css/css_pseudo_classes.asp
-
-css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
-
-20210319
+- 20210319
     
     @media 英文單字 : 指定裝置(ex: screen...)
         ex @media print : 指定列印的版面
@@ -38,7 +35,7 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 
     material icon
 
-20210322
+- 20210322
     fluent design
         671以下是一版(min)
         768以下是一版
@@ -59,13 +56,13 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         text-align: center;
         以上兩個一起用能讓文字置中
 
-20210323
+- 20210323
     swipe : slide效果
 
-20210325
+- 20210325
     css content code list https://www.w3schools.com/cssref/css_entities.asp
 
-20210329
+- 20210329
     企劃規劃 site map
     design thinking
 
@@ -79,7 +76,7 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         7. 無障礙標章
         8. 投資人專區 (台灣公司法規定 上市櫃公司必備)
 
-20210331
+- 20210331
     ::before
     ::after
         一定要有content才有作用
@@ -89,11 +86,11 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
     js html dom style 參考頁面 https://www.w3schools.com/jsref/dom_obj_style.asp
 
 
-20210407
+- 20210407
     js 函式內使用到函式內未定義、未傳值的變數時，會往父層找
         此狀況發生時會改變父層的值
 
-20210408
+- 20210408
     google 整理的套件
     https://developers.google.com/speed/libraries
 
@@ -107,10 +104,10 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
     接下來四天的切版作業
     https://lesson-bootstrap.dev-hub.io/
 
-20210412
+- 20210412
     在div 增加tabindex="1" 後，才可以focus到此div
 
-20210419    
+- 20210419    
     https://www.qbittorrent.org/download.php
     開啟搜尋功能>更新
 
@@ -124,7 +121,7 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
 
     p5js js特效
 
-20210420
+- 20210420
     sass css預處理器
     套件
         Live Sass Compiler
@@ -146,7 +143,7 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
         @for $變數名稱 from start to end (小於end)
         @for $變數名稱 from start through end (小於等於end)
 
-20210427
+- 20210427
     手動安裝vscode的相關步驟
         下載需要的vsix檔案後，使用cmd在 C:\Users\user\Downloads 輸入下列指令
         code --install-extension ritwickdey.live-sass-3.0.0.vsix
@@ -159,7 +156,7 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
     設計大師的頻道
         FZDSCHOOL
 
-20210504
+- 20210504
     1. laravel init 步驟
         1. composer install
             生成vendor
@@ -178,3 +175,13 @@ css hover 更改其他欄位參考網址 https://www.devsong.org/article/73.html
             將"變數 = 值,...,..." 變成array[變數 => 值,...,...]
 
     https://www.taiwan.net.tw/m1.aspx?sNo=0001001 回家切版作業
+
+- 20210505
+    1. 建立controller
+        1. php artisan make:controller NameController
+        2. controller 命名規則
+            1. 大駝峰
+            2. 單數
+        3. 會建立在app > Http > Controllers
+        4. https://hackmd.io/@VsQ_Erf8QDS3ndjx9qWsYQ/ByDMsuhM-/https%3A%2F%2Fhackmd.io%2FCwYwhgzAbApgHFAtHAnAIzY4awBNkwCsA7ImFCBCHAIxwBMhhIQA%3Fboth?type=book
+

@@ -41,7 +41,7 @@
                                 <a class="nav-link" href="#">About</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="./checkout1.html">
+                                <a class="nav-link" href="/checkout1">
                                     <i class="fas fa-shopping-cart"></i>
                                 </a>
                             </li>

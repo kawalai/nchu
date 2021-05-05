@@ -21,3 +21,18 @@ Route::get('/test', function () {
     $data = '123';
     return view('test', ['data' => $data]);
 });
+
+Route::get('/checkout1', function () {
+    return view('checkout1');
+});
+
+Route::get('/news', 'NewsController@Index');
+Route::get('/news/create', 'NewsController@Insert');
+Route::get('/news/update/{id}', 'NewsController@Update');
+Route::get('/news/delete/{id}', 'NewsController@Delete');
+
+// Route::get('/news/content', function () {
+//     return view('news.layout_02');
+// });
+
+Route::get('/news/content/{id}', 'NewsController@Detail');
