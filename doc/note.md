@@ -197,4 +197,9 @@
     2. https://hackmd.io/5zEROHjsRW2SGnnjuXQxyg?view
         1. laravel 筆記
     3. php artisan make:model 大駝峰model 相關指令
-        1. 
+        1. php artisan make:controller **Name**Controller --resource --model=**Name**
+            * 使用上述指令可值接生成controller跟model相關檔案
+    4. 回家製作編輯、新增、刪除功能的一點筆記
+        1. 刪除功能使用jq 的ajax call 後端的php檔案，在PHP做資料刪除的動作，以下是難點紀錄
+            1. 使用POST call 後端時遇到csrf問題
+                - 後來是在ajax 中加入headers 且在底版頁面加入<meta name="csrf-token" content="{{ csrf_token() }}">
