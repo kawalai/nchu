@@ -24,6 +24,7 @@
         <img src="{{$item->img}}" alt="">
         <div class="context">
             <div class="category"><span>最新消息</span></div>
+            <a href="/news/edit/{{$item->id}}">編輯</a>
             <div class="title"><a href="news/content/{{$item->id}}">{{$item->title}}</a></div>
             <div class="date">{{$item->date}}</div>
             <div class="text">

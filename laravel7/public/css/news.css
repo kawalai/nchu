@@ -67,6 +67,7 @@ main .container section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 3rem;
 }
 
 main .container section img {
@@ -86,6 +87,12 @@ main .container section .context .category span {
   color: #fff;
   padding: 0.5rem 2rem;
   background-color: #c90ec9;
+}
+
+main .container section .context > a {
+  background-color: #00f;
+  border-radius: 5px;
+  color: #fff;
 }
 
 main .container section .context .title {

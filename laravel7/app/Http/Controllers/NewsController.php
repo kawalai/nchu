@@ -15,7 +15,8 @@ class NewsController extends Controller
     }
     public function Create()
     {
-        return view('news.create_news');
+        // $result = {};
+        return view('news.create_news', compact('result'));
     }
     public function Store(Request $request)
     {
@@ -29,8 +30,19 @@ class NewsController extends Controller
         //     'content' => $request->content,
         //     'views' => $request->views,
         // ]);
-        // 第二種 
+        // 第二種 會自動找相對應的欄位，所以欄位跟form 資料id 相對應比較好
         News::create($request->all());
+    }
+    public function Edit($id)
+    {
+        $result = News::find($id);
+        return view('news.create_news', compact('result'));
+    }
+    public function Update()
+    {
+
+        $result = News::all();
+        return view();
     }
     public function Insert()
     {
@@ -49,30 +61,30 @@ class NewsController extends Controller
         return compact('result');
     }
 
-    public function Update($id)
-    {
-        $w = mt_rand(400, 600);
-        $h = mt_rand(200, 400);
-        $img = 'https://placeholder.pics/svg/' . $w . 'x' . $h;
-        date_default_timezone_set('Asia/Taipei');
+    // public function Update($id)
+    // {
+    //     $w = mt_rand(400, 600);
+    //     $h = mt_rand(200, 400);
+    //     $img = 'https://placeholder.pics/svg/' . $w . 'x' . $h;
+    //     date_default_timezone_set('Asia/Taipei');
 
-        $result = News::where('id', $id)
-            ->update([
-                'title' => '更新過的標題',
-                'date' => date("Y-m-d", mt_rand(1262055681, 1790055681)),
-                'img' => $img,
-                'content' => '更新過的文件',
-                'views' => 7788,
-            ]);
-        return compact('result');
-    }
+    //     $result = News::where('id', $id)
+    //         ->update([
+    //             'title' => '更新過的標題',
+    //             'date' => date("Y-m-d", mt_rand(1262055681, 1790055681)),
+    //             'img' => $img,
+    //             'content' => '更新過的文件',
+    //             'views' => 7788,
+    //         ]);
+    //     return compact('result');
+    // }
 
-    public function Delete($id)
-    {
-        $result = News::where('id', $id)
-            ->delete();
-        return compact('result');
-    }
+    // public function Delete($id)
+    // {
+    //     $result = News::where('id', $id)
+    //         ->delete();
+    //     return compact('result');
+    // }
 
     public function Detail($id)
     {

@@ -31,10 +31,15 @@ Route::get('/news', 'NewsController@Index');
 Route::get('/news/create', 'NewsController@Create');
 Route::post('/news/store', 'NewsController@Store');
 
+Route::get('/news/edit/{id}', 'NewsController@Edit');
+Route::post('/news/update/{id}', 'NewsController@Update');
+
+// Route::get('/news/backend', 'NewsController@Backend');
+
 
 // Route::get('/news/create', 'NewsController@Insert');
-Route::get('/news/update/{id}', 'NewsController@Update');
-Route::get('/news/delete/{id}', 'NewsController@Delete');
+// Route::get('/news/update/{id}', 'NewsController@Update');
+// Route::get('/news/delete/{id}', 'NewsController@Delete');
 
 // Route::get('/news/content', function () {
 //     return view('news.layout_02');

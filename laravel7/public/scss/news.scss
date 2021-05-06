@@ -47,6 +47,7 @@ main {
 
         section {
             display: flex;
+            margin: 3rem;
 
             img {
                 width: 30%;
@@ -64,6 +65,12 @@ main {
                         padding: 0.5rem 2rem;
                         background-color: rgb(201, 14, 201);
                     }
+                }
+
+                >a {
+                    background-color: #00f;
+                    border-radius: 5px;
+                    color: #fff;
                 }
 
                 .title {
