@@ -19,13 +19,18 @@ class NewsController extends Controller
     }
     public function Store(Request $request)
     {
-        News::create([
-            'title' => $request->title,
-            'date' => $request->date,
-            'img' => $request->img,
-            'content' => $request->content,
-            'views' => $request->views,
-        ]);
+        date_default_timezone_set('Asia/Taipei');
+        // 兩種做法
+        // // 第一種
+        // News::create([
+        //     'title' => $request->title,
+        //     'date' => $request->date,
+        //     'img' => $request->img,
+        //     'content' => $request->content,
+        //     'views' => $request->views,
+        // ]);
+        // 第二種 
+        News::create($request->all());
     }
     public function Insert()
     {
