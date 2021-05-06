@@ -15,8 +15,7 @@ class NewsController extends Controller
     }
     public function Create()
     {
-        $result = [];
-        return view('news.create_news', compact('result'));
+        return view('news.create_news');
     }
     public function Store(Request $request)
     {

@@ -6,7 +6,8 @@
 @section('main')
 
 <div class="container">
-    @if ($result)
+    
+    @if (isset($result))
     <form action="/news/update" method="POST">
         @csrf
         <div class="form-group">
