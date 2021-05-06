@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="title">{{$result->title}}</div>
-    <div class="info">發布日期：{{$result->date}} 瀏覽次數：301</div>
+    <div class="info">發布日期：{{$result->date}} 瀏覽次數：{{$result->views}}</div>
     <hr>
     <section>
         {{$result->content}}

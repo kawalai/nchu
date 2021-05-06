@@ -185,3 +185,16 @@
         3. 會建立在app > Http > Controllers
         4. https://hackmd.io/@VsQ_Erf8QDS3ndjx9qWsYQ/ByDMsuhM-/https%3A%2F%2Fhackmd.io%2FCwYwhgzAbApgHFAtHAnAIzY4awBNkwCsA7ImFCBCHAIxwBMhhIQA%3Fboth?type=book
 
+- 20210506
+    1. php artisan migrate 相關指令
+        1. php artisan migrate : 依照database > migrations 裡面的資料在設定好的資料庫建立table
+        2. php artisan make:migration create_口口口s_table : 建立資料表
+        3. 新增欄位
+            1. php artisan make:migration add_口口口_to_口口口_table
+            2. 在新生出來的php檔案的up function 裡面
+        4. php artisan make:migration remove_口口口_from_口口口_table : 刪除欄位
+        5. php artisan make:migration update_口口口_to_口口口_table : 更新欄位
+    2. https://hackmd.io/5zEROHjsRW2SGnnjuXQxyg?view
+        1. laravel 筆記
+    3. php artisan make:model 大駝峰model 相關指令
+        1. 

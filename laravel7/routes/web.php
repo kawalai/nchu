@@ -27,7 +27,12 @@ Route::get('/checkout1', function () {
 });
 
 Route::get('/news', 'NewsController@Index');
-Route::get('/news/create', 'NewsController@Insert');
+
+Route::get('/news/create', 'NewsController@Create');
+Route::post('/news/store', 'NewsController@Store');
+
+
+// Route::get('/news/create', 'NewsController@Insert');
 Route::get('/news/update/{id}', 'NewsController@Update');
 Route::get('/news/delete/{id}', 'NewsController@Delete');
 

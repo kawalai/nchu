@@ -3,35 +3,59 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
+use App\News;
 
 class NewsController extends Controller
 {
     public function Index()
     {
-        $result = DB::select('select * from news');
+        $result = News::all();
         return view('news.layout_01', compact('result'));
+    }
+    public function Create()
+    {
+        return view('news.create_news');
+    }
+    public function Store(Request $request)
+    {
+        News::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'img' => $request->img,
+            'content' => $request->content,
+            'views' => $request->views,
+        ]);
     }
     public function Insert()
     {
-        $result = DB::table('news')->insert([
+        $w = mt_rand(400, 600);
+        $h = mt_rand(200, 400);
+        $img = 'https://placeholder.pics/svg/' . $w . 'x' . $h;
+        date_default_timezone_set('Asia/Taipei');
+
+        $result = News::create([
             'title' => '自動生成的標題',
-            'date' => date("Y-m-d"),
-            'img' => 'https://placeholder.pics/svg/250x250',
-            'content' => '自動生成的文件',
-            'views' => 5566,
+            'date' => date("Y-m-d", mt_rand(1262055681, 1790055681)),
+            'img' => $img,
+            'content' => file_get_contents('http://loripsum.net/api'),
+            'views' => rand(100, 10000),
         ]);
         return compact('result');
     }
 
     public function Update($id)
     {
-        $result = DB::table('news')
-            ->where('id', $id)
+        $w = mt_rand(400, 600);
+        $h = mt_rand(200, 400);
+        $img = 'https://placeholder.pics/svg/' . $w . 'x' . $h;
+        date_default_timezone_set('Asia/Taipei');
+
+        $result = News::where('id', $id)
             ->update([
                 'title' => '更新過的標題',
-                'date' => date("Y-m-d"),
-                'img' => 'https://placeholder.pics/svg/250x250',
+                'date' => date("Y-m-d", mt_rand(1262055681, 1790055681)),
+                'img' => $img,
                 'content' => '更新過的文件',
                 'views' => 7788,
             ]);
@@ -40,16 +64,14 @@ class NewsController extends Controller
 
     public function Delete($id)
     {
-        $result = DB::table('news')
-            ->where('id', $id)
+        $result = News::where('id', $id)
             ->delete();
         return compact('result');
     }
 
     public function Detail($id)
     {
-        $result = DB::table('news')
-            ->find($id);
+        $result = News::find($id);
         if ($result) {
             return view('news.layout_02', compact('result'));
         } else {

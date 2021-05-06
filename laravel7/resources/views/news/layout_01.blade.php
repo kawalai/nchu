@@ -12,7 +12,7 @@
         <h1>最新消息</h1>
     </div>
     <div class="data-infos">
-        <div class="data-info">資料總筆數：<span>175</span></div>
+        <div class="data-info">資料總筆數：<span>{{count($result)}}</span></div>
         <div class="data-info">每頁筆數：<span>10</span></div>
         <div class="data-info">總頁數：<span>18</span></div>
         <div class="data-info">目前頁次：<span>1</span></div>
