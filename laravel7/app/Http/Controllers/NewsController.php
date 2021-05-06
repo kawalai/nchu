@@ -49,6 +49,11 @@ class NewsController extends Controller
         ]);
         return redirect('news');
     }
+    public function Destroy(Request $request)
+    {
+        $resutl = News::Destroy($request->id);
+        return $resutl;
+    }
     public function Insert()
     {
         $w = mt_rand(400, 600);
