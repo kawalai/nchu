@@ -16,6 +16,7 @@
         <div class="data-info">每頁筆數：<span>10</span></div>
         <div class="data-info">總頁數：<span>18</span></div>
         <div class="data-info">目前頁次：<span>1</span></div>
+        <a href="/news/create">新增</a>
     </div>
     <hr>
 

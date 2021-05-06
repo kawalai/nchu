@@ -32,7 +32,7 @@ Route::get('/news/create', 'NewsController@Create');
 Route::post('/news/store', 'NewsController@Store');
 
 Route::get('/news/edit/{id}', 'NewsController@Edit');
-Route::post('/news/update/{id}', 'NewsController@Update');
+Route::post('/news/update', 'NewsController@Update');
 
 // Route::get('/news/backend', 'NewsController@Backend');
 

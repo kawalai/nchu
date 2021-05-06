@@ -15,7 +15,7 @@ class NewsController extends Controller
     }
     public function Create()
     {
-        // $result = {};
+        $result = [];
         return view('news.create_news', compact('result'));
     }
     public function Store(Request $request)
@@ -32,17 +32,23 @@ class NewsController extends Controller
         // ]);
         // 第二種 會自動找相對應的欄位，所以欄位跟form 資料id 相對應比較好
         News::create($request->all());
+        return redirect('news');
     }
     public function Edit($id)
     {
         $result = News::find($id);
         return view('news.create_news', compact('result'));
     }
-    public function Update()
+    public function Update(Request $request)
     {
-
-        $result = News::all();
-        return view();
+        $result = News::where('id', $request->id)->Update([
+            'title' => $request->title,
+            'date' => $request->date,
+            'img' => $request->img,
+            'content' => $request->content,
+            'views' => $request->views,
+        ]);
+        return redirect('news');
     }
     public function Insert()
     {
