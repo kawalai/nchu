@@ -18,10 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/test', function () {
-    $data = '123';
-    return view('test', ['data' => $data]);
-});
+Route::get('/test/{times}', 'HomeController@test');
 
 Route::get('/checkout1', function () {
     return view('checkout1');
