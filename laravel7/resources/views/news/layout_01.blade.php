@@ -16,7 +16,7 @@
         <div class="data-info">每頁筆數：<span>10</span></div>
         <div class="data-info">總頁數：<span>18</span></div>
         <div class="data-info">目前頁次：<span>1</span></div>
-        <a href="/news/create">新增</a>
+        <a href="{{url('news/create')}}">新增</a>
     </div>
     <hr>
     @foreach ($result as $item)
@@ -24,13 +24,13 @@
         <img src="{{$item->img}}" alt="">
         <div class="context">
             <div class="category"><span>最新消息</span></div>
-            <a href="/news/edit/{{$item->id}}">編輯</a>
+            <a href="{{url('news/edit')}}/{{$item->id}}">編輯</a>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger btn-destroy" data-toggle="modal" data-target="#exampleModal"
+            <button type="button" class="btn-destroy" data-toggle="modal" data-target="#exampleModal"
                 data-id="{{$item->id}}">
                 刪除
             </button>
-            <div class="title"><a href="news/content/{{$item->id}}">{{$item->title}}</a></div>
+            <div class="title"><a href="{{url('news/content')}}/{{$item->id}}">{{$item->title}}</a></div>
             <div class="date">{{$item->date}}</div>
             <div class="text">
                 {{$item->content}}

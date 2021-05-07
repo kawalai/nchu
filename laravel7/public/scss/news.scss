@@ -23,7 +23,7 @@ main {
                 width: 75px;
             }
 
-            h1 {}
+            // h1 {}
         }
 
         .data-infos {
@@ -68,9 +68,19 @@ main {
                 }
 
                 >a {
+                    // display: inline-block;
+                    padding: 10px;
                     background-color: #00f;
                     border-radius: 5px;
                     color: #fff;
+                }
+
+                >button {
+                    padding: 10px;
+                    background-color: #f00;
+                    border-radius: 5px;
+                    color: #fff;
+                    border-style: none;
                 }
 
                 .title {

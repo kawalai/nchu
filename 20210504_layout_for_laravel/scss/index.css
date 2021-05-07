@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container {
+  width: 75%;
+}
+
+main .container .title-bar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container .title-bar img {
+  width: 75px;
+}
+
+main .container .data-infos {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 18px;
+}
+
+main .container .data-infos .data-info {
+  margin: 0 2rem 0 0;
+}
+
+main .container .data-infos .data-info span {
+  color: #c58a1e;
+}
+
+main .container hr {
+  margin: 0 0 60px 0;
+}
+
+main .container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .container section img {
+  width: 30%;
+  margin: 30px;
+}
+
+main .container section .context {
+  width: 70%;
+}
+
+main .container section .context .category {
+  padding: 0 0 2rem 0;
+}
+
+main .container section .context .category span {
+  color: #fff;
+  padding: 0.5rem 2rem;
+  background-color: #c90ec9;
+}
+
+main .container section .context .title {
+  padding: 0 0 1.5rem 0;
+}
+
+main .container section .context .title a {
+  text-decoration: none;
+  color: #000;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+main .container section .context .title a:hover {
+  color: #c24f03;
+}
+
+main .container section .context .date {
+  font-size: 24px;
+  color: #c24f03;
+  padding: 0 0 1rem 0;
+}
+
+main .container section .context .text {
+  font-size: 20px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+}
+/*# sourceMappingURL=index.css.map */

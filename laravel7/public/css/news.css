@@ -90,9 +90,18 @@ main .container section .context .category span {
 }
 
 main .container section .context > a {
+  padding: 10px;
   background-color: #00f;
   border-radius: 5px;
   color: #fff;
+}
+
+main .container section .context > button {
+  padding: 10px;
+  background-color: #f00;
+  border-radius: 5px;
+  color: #fff;
+  border-style: none;
 }
 
 main .container section .context .title {

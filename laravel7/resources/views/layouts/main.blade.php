@@ -569,7 +569,7 @@
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1082.596886314835!2d120.67392969735228!3d24.122328109361828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d027b7fa99d%3A0x5d9b8791c315ba11!2z5ZyL56uL5Lit6IiI5aSn5a24IOeglOeZvOiZlSDosrTph43lhIDlmajkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1617954895867!5m2!1szh-TW!2stw"
       width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <div class="main-map-div bg-light">
+    {{-- <div class="main-map-div bg-light">
       <div class="row">
         <div class="col-12 text-left">
           Feedback
@@ -613,6 +613,20 @@
       </div>
 
 
+    </div> --}}
+
+    <div class="main-map-div">
+      <form action="{{url('contact')}}" method="POST">
+        @csrf
+        <h2>聯絡我們 Contact Us</h2>
+        <div>姓名<input type="text" name="name" id="" /></div>
+        <div>信箱<input type="mail" name="mail" id="" /></div>
+        <div>電話<input type="text" name="tel" id="" /></div>
+        <div>主旨<input type="text" name="title" id="" /></div>
+        <div>內文<textarea name="content" id="" cols="30" rows="10"></textarea></div>
+        <button>送出</button>
+      </form>
     </div>
+
   </div>
 </div>

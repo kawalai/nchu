@@ -40,13 +40,17 @@ class NewsController extends Controller
     }
     public function Update(Request $request)
     {
-        $result = News::where('id', $request->id)->Update([
-            'title' => $request->title,
-            'date' => $request->date,
-            'img' => $request->img,
-            'content' => $request->content,
-            'views' => $request->views,
-        ]);
+        // $result = News::where('id', $request->id)->Update([
+        //     'title' => $request->title,
+        //     'date' => $request->date,
+        //     'img' => $request->img,
+        //     'content' => $request->content,
+        //     'views' => $request->views,
+        // ]);
+
+        $result = News::where('id', $request->id)->first()->Update($request->all());
+        // $result = News::find($request->id)->Update($request->all());
+
         return redirect('news');
     }
     public function Destroy(Request $request)
@@ -70,31 +74,6 @@ class NewsController extends Controller
         ]);
         return compact('result');
     }
-
-    // public function Update($id)
-    // {
-    //     $w = mt_rand(400, 600);
-    //     $h = mt_rand(200, 400);
-    //     $img = 'https://placeholder.pics/svg/' . $w . 'x' . $h;
-    //     date_default_timezone_set('Asia/Taipei');
-
-    //     $result = News::where('id', $id)
-    //         ->update([
-    //             'title' => '更新過的標題',
-    //             'date' => date("Y-m-d", mt_rand(1262055681, 1790055681)),
-    //             'img' => $img,
-    //             'content' => '更新過的文件',
-    //             'views' => 7788,
-    //         ]);
-    //     return compact('result');
-    // }
-
-    // public function Delete($id)
-    // {
-    //     $result = News::where('id', $id)
-    //         ->delete();
-    //     return compact('result');
-    // }
 
     public function Detail($id)
     {

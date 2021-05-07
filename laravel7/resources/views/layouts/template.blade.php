@@ -21,7 +21,7 @@
             <div class="header-content">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="logo-div">
-                        <a href="https://lesson-bootstrap.dev-hub.io/">
+                        <a href="{{url('')}}">
                             <img src="{{asset('img/logo.svg')}}" alt="" class="logo-img">
                         </a>
                     </div>
@@ -32,6 +32,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{url('news')}}">News</a>
+                            </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Blog</a>
                             </li>

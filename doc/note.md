@@ -203,3 +203,10 @@
         1. 刪除功能使用jq 的ajax call 後端的php檔案，在PHP做資料刪除的動作，以下是難點紀錄
             1. 使用POST call 後端時遇到csrf問題
                 - 後來是在ajax 中加入headers 且在底版頁面加入<meta name="csrf-token" content="{{ csrf_token() }}">
+
+- 20210507
+    1. 老師的筆記 https://hackmd.io/cf3-PB13Rvm6MWCl5pJsPA
+    2. model : where return 的東西是array
+    3. 製作後台的回家作業
+        1. https://datatables.net/ 後台表格用的插件
+        2. https://startbootstrap.com/theme/sb-admin-2 希望能套用的樣式插件
