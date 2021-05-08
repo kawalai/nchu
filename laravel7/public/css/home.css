@@ -1,0 +1,63 @@
+.long-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 150px;
+}
+
+#componentModal .modal-content {
+  padding: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#componentModal .modal-content .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#componentModal .modal-content .component-modal-body {
+  padding-bottom: 1rem;
+}
+
+#componentModal .modal-content .component-modal-body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#componentModal .modal-content .component-modal-body div input,
+#componentModal .modal-content .component-modal-body div textarea {
+  width: 80%;
+  border: 1px solid #00f;
+  border-radius: 10px;
+}
+
+#componentModal .modal-content .component-modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#componentModal .modal-content .component-modal-footer button {
+  margin: 5px;
+}
+/*# sourceMappingURL=home.css.map */

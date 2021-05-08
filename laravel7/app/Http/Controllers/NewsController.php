@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use App\News;
 
+use function Psy\debug;
+
 class NewsController extends Controller
 {
     public function Index()
@@ -33,11 +35,13 @@ class NewsController extends Controller
         News::create($request->all());
         return redirect('news');
     }
+    
     public function Edit($id)
     {
         $result = News::find($id);
         return view('news.create_news', compact('result'));
     }
+
     public function Update(Request $request)
     {
         // $result = News::where('id', $request->id)->Update([
@@ -83,5 +87,10 @@ class NewsController extends Controller
         } else {
             return redirect('news');
         }
+    }
+    public function getNewNews()
+    {
+        $result = News::all();
+        return $result;
     }
 }

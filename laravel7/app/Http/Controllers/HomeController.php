@@ -42,4 +42,30 @@ class HomeController extends Controller
         }
         return redirect('news');
     }
+
+    public function getModal(Request $request)
+    {
+        $result = News::find($request->id);
+        $otherData = [
+            'modalTitle' => '編輯資料',
+            'mainBtn' => '確認',
+            'cancelBtn' => '取消',
+        ];
+        return view('php_component.modal', compact('result', 'otherData'));
+    }
+
+    public function homeUpdate(Request $request)
+    {
+        $target = News::find($request->id);
+
+        if (isset($target)) {
+
+            $target->Update($request->all());
+
+            return true;
+        } else {
+            # code...
+            return false;
+        }
+    }
 }

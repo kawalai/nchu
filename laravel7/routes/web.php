@@ -34,6 +34,8 @@ Route::prefix('news')->group(function () {
         Route::get('/edit/{id}', 'NewsController@Edit');
         Route::post('/update', 'NewsController@Update');
         Route::post('/destroy', 'NewsController@Destroy');
+        Route::post('/home_edit', 'HomeController@getModal');
+        Route::post('/home_update', 'HomeController@homeUpdate');
     });
 });
 
@@ -41,8 +43,4 @@ Route::prefix('news')->group(function () {
 Route::post('/contact', 'IndexController@store');
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,0 +1,47 @@
+.long-text {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 150px;
+}
+
+#componentModal {
+    .modal-content {
+        padding: 1rem;
+        justify-content: center;
+
+        .modal-header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .component-modal-body {
+            padding-bottom: 1rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+                font-size: 20px;
+
+                input,
+                textarea {
+                    width: 80%;
+                    border: 1px solid #00f;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .component-modal-footer {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                margin: 5px;
+            }
+        }
+    }
+}
