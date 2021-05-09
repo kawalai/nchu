@@ -191,6 +191,10 @@
                     };
                     updateData(dataUpdate);
                 })
+                // hidden event remove modal
+                $(`#componentModal`).on('hidden.bs.modal', function (e) {
+                    document.querySelector(`#componentModal`).remove()
+                    })
                 $('#componentModal').modal('show');
             }
         });
