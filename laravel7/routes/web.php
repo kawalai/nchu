@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test/{times}', 'HomeController@test');
+Route::get('/test', 'HomeController@getAllData');
 
 Route::get('/checkout1', function () {
     return view('checkout1');
@@ -34,6 +35,9 @@ Route::prefix('news')->group(function () {
         Route::get('/edit/{id}', 'NewsController@Edit');
         Route::post('/update', 'NewsController@Update');
         Route::post('/destroy', 'NewsController@Destroy');
+
+
+        Route::post('/home_all_data', 'HomeController@getAllData');
         Route::post('/home_edit', 'HomeController@getModal');
         Route::post('/home_update', 'HomeController@homeUpdate');
     });

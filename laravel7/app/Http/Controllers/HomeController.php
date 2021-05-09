@@ -43,6 +43,27 @@ class HomeController extends Controller
         return redirect('news');
     }
 
+    public function getAllData()
+    {
+        $result = News::all();
+
+        $data = [];
+
+        foreach ($result as $i) {
+            $data[] = [
+                'title' => $i->title,
+                'date' => $i->date,
+                'views' => $i->views,
+                'img' => $i->img,
+                'content' => $i->content,
+            ];
+        }
+
+        $data = ['data' => $data];
+
+        return $data;
+    }
+
     public function getModal(Request $request)
     {
         $result = News::find($request->id);

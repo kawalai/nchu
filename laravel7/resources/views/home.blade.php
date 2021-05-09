@@ -34,31 +34,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $item)
-                            <tr>
-                                <td>{{$item->title}}</td>
-                                <td>{{$item->date}}</td>
-                                <td><span class="long-text">{{$item->content}}</span></td>
-                                <td><span class="long-text">{{$item->img}}</span></td>
-                                <td>{{$item->views}}</td>
-                                <td><button class="btn btn-primary btn-edit" data-id="{{$item->id}}" data-toggle="modal"
-                                        data-target="#editModal">編輯</button></td>
-                                <td><button class="btn btn-danger btn-destroy" data-id="{{$item->id}}"
-                                        data-toggle="modal" data-target="#destroyModal">刪除</button></td>
-                            </tr>
-                            @endforeach
+
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>標題</th>
-                                <th>日期</th>
-                                <th>內文</th>
-                                <th>圖片</th>
-                                <th>觀看數</th>
-                                <th>編輯</th>
-                                <th>刪除</th>
-                            </tr>
-                        </tfoot>
+
                     </table>
 
 
@@ -97,8 +75,40 @@
 @section('js')
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js"></script>
 <script>
+    
+    function afterAjax(){
+        dataTable.data = response;
+        dataTable.ajax.reload();
+    }
+
     const dataTable = $('#example').DataTable({
-            "language": {
+        "ajax": {
+            "url": "/news/home_all_data", //要抓哪個地方的資料
+            "type": "POST", //使用什麼方式抓
+            "headers": {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            "dataType": 'json', //回傳資料的類型
+            // "success": function(response){
+            //     console.log("你是右邊!!")
+            //     dataTable.ajax.reload(null, false);
+            //     // afterAjax();
+            //     // dataTable.data = response;
+            //     // dataTable.draw();
+            // }, //成功取得回傳時的事件
+            // "error": function(){
+            //     console.log("資料取得失敗 回去檢討檢討")
+            //     } //失敗事件
+            },
+        "columns": [
+            { "data": "title" },
+            { "data": "date" },
+            { "data": "content" },
+            { "data": "img" },
+            { "data": "views" },
+            // { "data": "salary" }
+            ],
+        "language": {
                 "processing": "處理中...",
                 "loadingRecords": "載入中...",
                 "lengthMenu": "顯示 _MENU_ 項結果",
@@ -119,9 +129,9 @@
                     "sortDescending": ": 降冪排列"
                 }
             },
-            "dom": `<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>
-                    <'row'<'col-sm-12'tr>>
-                    <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
+        "dom": `<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>
+                <'row'<'col-sm-12'tr>>
+                <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
             
         });
 
@@ -166,7 +176,9 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response) {
-                location.reload();
+                $(`#componentModal`).modal('hide');
+                $('#example').DataTable().ajax.reload();
+                // location.reload();
             }
         });
     }
