@@ -6,21 +6,24 @@
 @endsection
 
 @section('content')
+
+
 <div class="container">
+    <button class="btn btn-success create-btn">新增</button>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-
+                
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-
+                    
                     {{-- {{ __('You are logged in!') }} --}}
-
+                    
                     <table id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -75,11 +78,8 @@
 @section('js')
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js"></script>
 <script>
-    
-    function afterAjax(){
-        dataTable.data = response;
-        dataTable.ajax.reload();
-    }
+
+    let editBtn = `<button class="btn btn-primary btn-edit" >編輯</button>`
 
     const dataTable = $('#example').DataTable({
         "ajax": {
@@ -100,13 +100,15 @@
             //     console.log("資料取得失敗 回去檢討檢討")
             //     } //失敗事件
             },
+        "order": [[ 1, "desc" ]],
         "columns": [
             { "data": "title" },
             { "data": "date" },
             { "data": "content" },
             { "data": "img" },
             { "data": "views" },
-            // { "data": "salary" }
+            { "data": "editBtn" },
+            { "data": "destroyBtn" }
             ],
         "language": {
                 "processing": "處理中...",
@@ -147,8 +149,8 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(msg) {
-                    location.reload();
-                    // dataTable.draw(true);
+                $('#example').DataTable().ajax.reload();
+                $(`#destroyModal`).modal('hide');
                 }
             });
         }
@@ -159,11 +161,6 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
             <button type="button" class="btn btn-primary" onclick="destroyData(${id});">確定</button>`
         }
-        let btnDestroy = document.querySelectorAll('.btn-destroy')
-        btnDestroy.forEach((i)=>{
-            let btnId = i.getAttribute('data-id')
-            i.setAttribute('onclick',`callModal(${btnId})`)
-        })
 
 </script>
 <script>
@@ -176,8 +173,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response) {
-                $(`#componentModal`).modal('hide');
                 $('#example').DataTable().ajax.reload();
+                $(`#componentModal`).modal('hide');
                 // location.reload();
             }
         });
@@ -210,17 +207,55 @@
                 $('#componentModal').modal('show');
             }
         });
-        
-
     }
-    $(document).ready(function(){
-    // 編輯功能
-        let btnEdit = document.querySelectorAll('.btn-edit')
-        btnEdit.forEach((i)=>{
-            let btnId = i.getAttribute('data-id')
-            i.setAttribute('onclick',`callEditModal(${btnId})`)
-        })
-    });
-    
+    // ----------------------------
+
+    // create function
+    function createData(dataCreate){
+        $.ajax({
+            data: dataCreate,
+            url: 'news/home_create',
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('#example').DataTable().ajax.reload();
+                $(`#componentModal`).modal('hide');
+                // location.reload();
+            }
+        });
+    }
+
+    // 新增按鈕
+    $('.create-btn').on('click', function(){
+        $.ajax({
+            data: {},
+            url: 'news/home_create_modal',
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('.ajax-modal').html(response);
+                $('#component-modal-btn-sumbit').on('click', function(){
+                    let dataUpdate = {
+                        'title':document.querySelector('input[name=title]').value,
+                        'date':document.querySelector('input[name=date]').value,
+                        'views':document.querySelector('input[name=views]').value,
+                        'img':document.querySelector('input[name=img]').value,
+                        'content':document.querySelector('textarea[name=content]').value,
+                    };
+                    createData(dataUpdate);
+                })
+                // hidden event remove modal
+                $(`#componentModal`).on('hidden.bs.modal', function (e) {
+                    document.querySelector(`#componentModal`).remove()
+                    })
+                $('#componentModal').modal('show');
+            }
+        });
+    })
+
 </script>
 @endsection

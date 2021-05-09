@@ -16,7 +16,6 @@
         <div class="data-info">每頁筆數：<span>10</span></div>
         <div class="data-info">總頁數：<span>18</span></div>
         <div class="data-info">目前頁次：<span>1</span></div>
-        <a href="{{url('news/create')}}">新增</a>
     </div>
     <hr>
     @foreach ($result as $item)
@@ -24,12 +23,6 @@
         <img src="{{$item->img}}" alt="">
         <div class="context">
             <div class="category"><span>最新消息</span></div>
-            <a href="{{url('news/edit')}}/{{$item->id}}">編輯</a>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn-destroy" data-toggle="modal" data-target="#exampleModal"
-                data-id="{{$item->id}}">
-                刪除
-            </button>
             <div class="title"><a href="{{url('news/content')}}/{{$item->id}}">{{$item->title}}</a></div>
             <div class="date">{{$item->date}}</div>
             <div class="text">
@@ -69,33 +62,5 @@
 @endsection
 
 @section('js')
-<script>
-    function destroyData(id){
-        $.ajax({
-            data: {id:id},
-            url: 'news/destroy',
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(msg) {
-                location.reload();
-            }
-        });
-    }
-    function callModal(id){
-        // let rawData = '{{json_encode($result)}}'
-        // console.log(rawData);
-        document.querySelector('.modal-body').innerHTML = `ID 為 ${id} 的資料`
-        document.querySelector('.modal-footer').innerHTML = `
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary" onclick="destroyData(${id});">確定</button>`
-    }
-    let btnDestroy = document.querySelectorAll('.btn-destroy')
-    btnDestroy.forEach((i)=>{
-        let btnId = i.getAttribute('data-id')
-        i.setAttribute('onclick',`callModal(${btnId})`)
-    })
 
-</script>
 @endsection

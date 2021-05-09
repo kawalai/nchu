@@ -39,7 +39,9 @@ Route::prefix('news')->group(function () {
 
         Route::post('/home_all_data', 'HomeController@getAllData');
         Route::post('/home_edit', 'HomeController@getModal');
+        Route::post('/home_create_modal', 'HomeController@createModal');
         Route::post('/home_update', 'HomeController@homeUpdate');
+        Route::post('/home_create', 'HomeController@create');
     });
 });
 

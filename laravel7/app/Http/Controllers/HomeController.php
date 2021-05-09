@@ -56,6 +56,8 @@ class HomeController extends Controller
                 'views' => $i->views,
                 'img' => $i->img,
                 'content' => $i->content,
+                'editBtn' => "<button class='btn btn-primary btn-edit' onclick='callEditModal($i->id)'>編輯</button>",
+                'destroyBtn' => "<button class='btn btn-danger btn-destroy' onclick='callModal($i->id)' data-toggle='modal' data-target='#destroyModal'>刪除</button>",
             ];
         }
 
@@ -75,6 +77,17 @@ class HomeController extends Controller
         return view('php_component.modal', compact('result', 'otherData'));
     }
 
+    public function createModal(Request $request)
+    {
+        $result = News::find($request->id);
+        $otherData = [
+            'modalTitle' => '新增資料',
+            'mainBtn' => '新增',
+            'cancelBtn' => '取消',
+        ];
+        return view('php_component.modal', compact('result', 'otherData'));
+    }
+
     public function homeUpdate(Request $request)
     {
         $target = News::find($request->id);
@@ -88,5 +101,19 @@ class HomeController extends Controller
             # code...
             return false;
         }
+    }
+
+    public function create(Request $request)
+    {
+        date_default_timezone_set('Asia/Taipei');
+
+        $result = News::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'img' => $request->img,
+            'content' => $request->content,
+            'views' => $request->views,
+        ]);
+        return $result;
     }
 }
