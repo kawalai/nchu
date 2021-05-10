@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
 @endsection
 
@@ -24,7 +24,7 @@
                     
                     {{-- {{ __('You are logged in!') }} --}}
                     
-                    <table id="example" class="display" style="width:100%">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>標題</th>
@@ -36,12 +36,7 @@
                                 <th>刪除</th>
                             </tr>
                         </thead>
-                        <tbody>
-
-                        </tbody>
-
                     </table>
-
 
                 </div>
             </div>
@@ -89,16 +84,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             "dataType": 'json', //回傳資料的類型
-            // "success": function(response){
-            //     console.log("你是右邊!!")
-            //     dataTable.ajax.reload(null, false);
-            //     // afterAjax();
-            //     // dataTable.data = response;
-            //     // dataTable.draw();
-            // }, //成功取得回傳時的事件
-            // "error": function(){
-            //     console.log("資料取得失敗 回去檢討檢討")
-            //     } //失敗事件
             },
         "order": [[ 1, "desc" ]],
         "columns": [
