@@ -3,6 +3,14 @@
 @section('css')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
+<style>
+    .truncate {
+        max-width: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -14,16 +22,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-                
+
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-                    
+
                     {{-- {{ __('You are logged in!') }} --}}
-                    
+
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
@@ -73,7 +81,6 @@
 @section('js')
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js"></script>
 <script>
-
     let editBtn = `<button class="btn btn-primary btn-edit" >編輯</button>`
 
     const dataTable = $('#example').DataTable({
@@ -89,12 +96,16 @@
         "columns": [
             { "data": "title" },
             { "data": "date" },
-            { "data": "content" },
-            { "data": "img" },
+            { "data": "content"},
+            { "data": "img"},
             { "data": "views" },
             { "data": "editBtn" },
             { "data": "destroyBtn" }
             ],
+        columnDefs:[
+            {targets:0,className:"truncate"},
+            {targets:2,className:"truncate"},
+            {targets:3,className:"truncate"}],
         "language": {
                 "processing": "處理中...",
                 "loadingRecords": "載入中...",
@@ -221,24 +232,47 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response) {
-                $('.ajax-modal').html(response);
+                $('.ajax-modal').html(response);                    
                 $('#component-modal-btn-sumbit').on('click', function(){
-                    let dataUpdate = {
-                        'title':document.querySelector('input[name=title]').value,
-                        'date':document.querySelector('input[name=date]').value,
-                        'views':document.querySelector('input[name=views]').value,
-                        'img':document.querySelector('input[name=img]').value,
-                        'content':document.querySelector('textarea[name=content]').value,
-                    };
-                    createData(dataUpdate);
+                    $('#component-form').submit();
+                    $("#idForm").submit(function(e) {
+                        e.preventDefault(); // avoid to execute the actual submit of the form.
+                        var form = $(this);
+                        var url = form.attr('action');
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: form.serialize(), // serializes the form's elements.
+                            success: function(data)
+                            {
+                                alert(data); // show response from the php script.
+                            }
+                        });
+                    });
+                    
+
+
+                    // let dataUpdate = {
+                    //     'title':document.querySelector('input[name=title]').value,
+                    //     'date':document.querySelector('input[name=date]').value,
+                    //     'views':document.querySelector('input[name=views]').value,
+                    //     'img':$('input[name=img]').val(),
+                    //     'content':document.querySelector('textarea[name=content]').value,
+                    // };
+                    // console.log(dataUpdate['img']);
+                    // createData(dataUpdate);
                 })
-                // hidden event remove modal
                 $(`#componentModal`).on('hidden.bs.modal', function (e) {
                     document.querySelector(`#componentModal`).remove()
                     })
                 $('#componentModal').modal('show');
             }
         });
+    })
+
+    $('#component-form').on('submit', function(e){
+        console.log('post');
+        e.preventDefault()
     })
 
 </script>

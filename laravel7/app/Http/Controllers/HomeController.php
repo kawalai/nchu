@@ -107,15 +107,15 @@ class HomeController extends Controller
     {
         date_default_timezone_set('Asia/Taipei');
 
-        $result = News::create($request->all());
-  
+        $result = $request->all();
+        
         if($request->hasFile('img')) {
             $file = $request->file('img');
             $path = $this->fileUpload($file,'product');
             $result['img'] = $path;
         }
-
-        return $result;
+        $result = News::create($result);
+        return redirect('home');
     }
 
     private function fileUpload($file,$dir){
