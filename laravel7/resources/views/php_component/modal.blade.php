@@ -14,7 +14,7 @@
           <div>標題<input name="title" type="text" value="{{$result->title}}" /></div>
           <div>日期<input name="date" type="date" value="{{$result->date}}" /></div>
           <div>觀看數<input name="views" type="number" value="{{$result->views}}" /></div>
-          <div>圖片<input name="img" type="text" value="{{$result->img}}" /></div>
+          <div>圖片<input name="img" type="file" value="{{$result->img}}" /></div>
           <div>內文<textarea name="content" name="" id="" cols="30" rows="10">{{$result->content}}</textarea></div>
         </form>
       </div>
@@ -41,7 +41,7 @@
           <div>標題<input name="title" type="text" value="" /></div>
           <div>日期<input name="date" type="date" value="" /></div>
           <div>觀看數<input name="views" type="number" value="" /></div>
-          <div>圖片<input name="img" type="text" value="" /></div>
+          <div>圖片<input name="img" type="file" value="" /></div>
           <div>內文<textarea name="content" name="" id="" cols="30" rows="10"></textarea></div>
         </form>
       </div>

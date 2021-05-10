@@ -1,9 +1,12 @@
-.long-text {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 150px;
+table#example {
+
+    td {
+        // display: block;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        // width: 150px;
+    }
 }
 
 #componentModal {

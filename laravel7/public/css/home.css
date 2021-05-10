@@ -1,11 +1,3 @@
-.long-text {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 150px;
-}
-
 #componentModal .modal-content {
   padding: 1rem;
   -webkit-box-pack: center;
