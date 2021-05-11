@@ -213,3 +213,18 @@
 
 - 20210510 
     1. https://hackmd.io/o_O0BuOcR_-rxbcjQIqOHA?view#%E6%AA%94%E6%A1%88%E4%B8%8A%E5%82%B3
+
+- 20210511
+    1. 尋找可用的主題
+        * 臺中市公私協力及私立托嬰中心
+            - https://opendata.taichung.gov.tw/dataset/1b38f3b2-1b54-11e8-8f43-00155d021202
+        * 臺中市公私協力托育資源中心
+            - https://opendata.taichung.gov.tw/dataset/3abb88d9-1a9f-11e8-8f43-00155d021202
+        * 臺中市空氣品質監測站資料
+            - https://opendata.taichung.gov.tw/dataset/6e9dc490-a9a0-4cef-85a6-31f21a00eda0
+        * 臺中市食物銀行聯盟店
+            - https://opendata.taichung.gov.tw/dataset/ed2e361c-4f65-435f-aca8-c1dbb96fe6ec
+        * 台北市資料大平台
+            - https://data.taipei/#/dataset?keyword=&type=dataset
+
+

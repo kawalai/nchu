@@ -48,9 +48,15 @@ Route::prefix('news')->group(function () {
 
 Route::prefix('products')->group(function () {
     Route::get('', 'ProductController@index');
+
     
 });
 
+Route::middleware('auth')->group(function(){
+    Route::get('admin', function(){
+        return 'hello';
+    });
+});
 
 Route::post('/contact', 'IndexController@store');
 
