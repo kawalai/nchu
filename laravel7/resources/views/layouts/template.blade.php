@@ -36,6 +36,9 @@
                                 <a class="nav-link" href="{{url('news')}}">News</a>
                             </li>
                             <li class="nav-item active">
+                                <a class="nav-link" href="{{url('products')}}">Products</a>
+                            </li>
+                            <li class="nav-item active">
                                 <a class="nav-link" href="#">Blog</a>
                             </li>
                             <li class="nav-item active">

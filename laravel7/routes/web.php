@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,11 @@ Route::prefix('news')->group(function () {
         Route::post('/home_update', 'HomeController@homeUpdate');
         Route::post('/home_create', 'HomeController@create');
     });
+});
+
+Route::prefix('products')->group(function () {
+    Route::get('', 'ProductController@index');
+    
 });
 
 
