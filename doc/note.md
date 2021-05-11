@@ -220,10 +220,6 @@
             - https://opendata.taichung.gov.tw/dataset/1b38f3b2-1b54-11e8-8f43-00155d021202
         * 臺中市公私協力托育資源中心
             - https://opendata.taichung.gov.tw/dataset/3abb88d9-1a9f-11e8-8f43-00155d021202
-        * 臺中市空氣品質監測站資料
-            - https://opendata.taichung.gov.tw/dataset/6e9dc490-a9a0-4cef-85a6-31f21a00eda0
-        * 臺中市食物銀行聯盟店
-            - https://opendata.taichung.gov.tw/dataset/ed2e361c-4f65-435f-aca8-c1dbb96fe6ec
         * 台北市資料大平台
             - https://data.taipei/#/dataset?keyword=&type=dataset
 
