@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.app')
 
 @section('css')
 
@@ -6,7 +6,7 @@
 
 @section('main')
 
-@include('products.component.list')
+目前沒東西
 
 @endsection
 

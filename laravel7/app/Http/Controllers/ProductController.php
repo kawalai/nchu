@@ -18,6 +18,18 @@ class ProductController extends Controller
         return view('products.index', compact('data'));
     }
 
+    public function productContent($id)
+    {
+        $data = Product::find($id);
+        return view('products.content', compact('data'));
+    }
+
+    public function productList()
+    {
+        $data = Product::all();
+        return view('admin.product.index', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +48,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    }
+    public function storetest($times, Request $request)
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $data = $request->all();
+            $size = mt_rand(200, 400);
+            $data['img'] = 'https://via.placeholder.com/' . $size;
+            Product::create($data);
+        }
+        return redirect()->route('admin');
     }
 
     /**
@@ -56,9 +77,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $data = Product::find($id);
+        return view('products.edit', compact('data'));
     }
 
     /**

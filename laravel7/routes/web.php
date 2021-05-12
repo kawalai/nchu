@@ -48,14 +48,17 @@ Route::prefix('news')->group(function () {
 
 Route::prefix('products')->group(function () {
     Route::get('', 'ProductController@index');
+    Route::get('/content/{id}', 'ProductController@content');
 
     
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('admin', function(){
-        return 'hello';
-    });
+    Route::get('admin/product', 'ProductController@productList')->name('admin');
+    Route::get('admin/product/{id}', 'ProductController@productContent')->name('prodContent');
+    Route::get('admin/edit/{id}', 'ProductController@edit')->name('edit');
+    Route::get('admin/update/{id}', 'ProductController@update')->name('update');
+    Route::get('admininsert/{times}', 'ProductController@storetest');
 });
 
 Route::post('/contact', 'IndexController@store');
