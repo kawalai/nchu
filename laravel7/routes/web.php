@@ -62,10 +62,6 @@ Route::middleware('auth')->group(function(){
     Route::post('admin/update/{id}', 'ProductController@update')->name('update');
     Route::get('admin/destroy/{id}', 'ProductController@destroy')->name('destroy');
 
-
-
-
-
     Route::get('admininsert/{times}', 'ProductController@storetest');
 });
 
