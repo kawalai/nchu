@@ -1,5 +1,5 @@
 <div class="container">
-
+    <a href="{{route('create')}}"><button class="btn btn-success">新增</button></a>
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
                 <td>{{$i->id}}</td>
                 <td>{{$i->name}}</td>
                 <td>{{$i->price}}</td>
-                <td><img src="{{$i->img}}" alt=""></td>
+                <td><img src="{{asset($i->img)}}" alt=""></td>
                 <td>{{$i->description}}</td>
                 <td>{{$i->created_at}}</td>
                 <td>

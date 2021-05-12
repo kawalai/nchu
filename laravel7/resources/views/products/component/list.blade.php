@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container">    
     @foreach ($data as $i)
     <div>
         <a href="{{url('products/content')}}/{{$i->id}}">

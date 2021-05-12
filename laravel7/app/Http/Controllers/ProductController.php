@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -37,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product.create');
     }
 
     /**
@@ -48,7 +49,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $data =$request->all();
+        if($request->hasFile('img')) {
+            $file = $request->file('img');
+            $path = Storage::disk('myfile')->putfile('p', $file);
+            // dd(Storage::disk('myfile')->url($path));
+            $data['img'] = Storage::disk('myfile')->url($path);
+        }
+        // $path =  Storage::disk('myfile')->putfile('upload', $data);
+        // Storage::disk('myfile')->url($path);
+        Product::create($data);
+        return redirect()->route('admin');
     }
+
+
     public function storetest($times, Request $request)
     {
         for ($i = 0; $i < $times; $i++) {
@@ -80,6 +94,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $data = Product::find($id);
+        // $path =  Storage::disk('myfile')->putfile('upload', $data);
+        // Storage::url($path);
         return view('products.edit', compact('data'));
     }
 
@@ -92,7 +108,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        // $path =  Storage::disk('myfile')->putfile('upload', $data);
+        // Storage::url($path);
     }
 
     /**

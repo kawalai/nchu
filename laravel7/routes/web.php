@@ -56,6 +56,8 @@ Route::prefix('products')->group(function () {
 Route::middleware('auth')->group(function(){
     Route::get('admin/product', 'ProductController@productList')->name('admin');
     Route::get('admin/product/{id}', 'ProductController@productContent')->name('prodContent');
+    Route::get('admin/create', 'ProductController@create')->name('create');
+    Route::post('admin/store', 'ProductController@store')->name('store');
     Route::get('admin/edit/{id}', 'ProductController@edit')->name('edit');
     Route::get('admin/update/{id}', 'ProductController@update')->name('update');
     Route::get('admininsert/{times}', 'ProductController@storetest');
