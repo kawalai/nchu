@@ -51,15 +51,23 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        // if ($request->hasFile('img')) {
+        //     $file = $request->file('img');
+        //     $path = Storage::disk('myfile')->putfile('product', $file);
+        //     $data['img'] = Storage::disk('myfile')->url($path);
+        // }
+        // Product::create($data);
+
         if ($request->hasFile('img')) {
+            $local = Storage::disk('local');
+
             $file = $request->file('img');
-            $path = Storage::disk('myfile')->putfile('product', $file);
-            // dd(Storage::disk('myfile')->url($path));
-            $data['img'] = Storage::disk('myfile')->url($path);
+            $path = $local->putFile('public', $file);
+            $data['img'] = $local->url($path);
         }
-        // $path =  Storage::disk('myfile')->putfile('upload', $data);
-        // Storage::disk('myfile')->url($path);
         Product::create($data);
+
         return redirect()->route('admin');
     }
 
@@ -111,18 +119,14 @@ class ProductController extends Controller
     {
         $data = $request->all();
         $dbData = Product::find($id);
-        $myfile = Storage::disk('myfile');
-
+        $myfile = Storage::disk('local');
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $path = $myfile->putfile('product', $file);
+            $path = $myfile->putFile('public', $file);
             $data['img'] = $myfile->url($path);
-            File::delete(public_path() . '/' . $dbData->img);
+            File::delete(public_path($dbData->img));
         }
-
         $dbData->update($data);
-        // $path =  $myfile->putfile('upload', $data);
-        // Storage::url($path);
 
         return redirect()->route('admin');
     }
@@ -137,8 +141,8 @@ class ProductController extends Controller
     {
         $dbData = Product::find($id);
 
-        if ($dbData->img) {
-            File::delete(public_path() . '/' . $dbData->img);
+        if (isset($dbData->img)) {
+            File::delete(public_path($dbData->img));
         }
 
         Product::destroy($id);
