@@ -59,7 +59,13 @@ Route::middleware('auth')->group(function(){
     Route::get('admin/create', 'ProductController@create')->name('create');
     Route::post('admin/store', 'ProductController@store')->name('store');
     Route::get('admin/edit/{id}', 'ProductController@edit')->name('edit');
-    Route::get('admin/update/{id}', 'ProductController@update')->name('update');
+    Route::post('admin/update/{id}', 'ProductController@update')->name('update');
+    Route::get('admin/destroy/{id}', 'ProductController@destroy')->name('destroy');
+
+
+
+
+
     Route::get('admininsert/{times}', 'ProductController@storetest');
 });
 

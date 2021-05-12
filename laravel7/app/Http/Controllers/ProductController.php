@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -49,10 +50,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data =$request->all();
-        if($request->hasFile('img')) {
+        $data = $request->all();
+        if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $path = Storage::disk('myfile')->putfile('p', $file);
+            $path = Storage::disk('myfile')->putfile('product', $file);
             // dd(Storage::disk('myfile')->url($path));
             $data['img'] = Storage::disk('myfile')->url($path);
         }
@@ -106,10 +107,24 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update($id, Request $request)
     {
-        // $path =  Storage::disk('myfile')->putfile('upload', $data);
+        $data = $request->all();
+        $dbData = Product::find($id);
+        $myfile = Storage::disk('myfile');
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $path = $myfile->putfile('product', $file);
+            $data['img'] = $myfile->url($path);
+            File::delete(public_path() . '/' . $dbData->img);
+        }
+
+        $dbData->update($data);
+        // $path =  $myfile->putfile('upload', $data);
         // Storage::url($path);
+
+        return redirect()->route('admin');
     }
 
     /**
@@ -118,8 +133,18 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $dbData = Product::find($id);
+
+        if ($dbData->img) {
+            File::delete(public_path() . '/' . $dbData->img);
+        }
+
+        Product::destroy($id);
+        // $path =  $myfile->putfile('upload', $data);
+        // Storage::url($path);
+
+        return redirect()->route('admin');
     }
 }
