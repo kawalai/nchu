@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::all();
+        $data = Product::with('productType')->all();
         return view('products.index', compact('data'));
     }
 
@@ -39,7 +40,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $productTypes = ProductType::all();
+        return view('admin.product.create', compact('productTypes'));
     }
 
     /**
@@ -102,10 +104,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $data = Product::find($id);
-        // $path =  Storage::disk('myfile')->putfile('upload', $data);
-        // Storage::url($path);
-        return view('products.edit', compact('data'));
+        $data = Product::with('productType')->find($id);
+        $productTypes = ProductType::all();
+        return view('admin.product.edit', compact('data', 'productTypes'));
     }
 
     /**

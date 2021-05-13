@@ -49,18 +49,27 @@ Route::prefix('news')->group(function () {
 Route::prefix('products')->group(function () {
     Route::get('', 'ProductController@index');
     Route::get('/content/{id}', 'ProductController@content');
-
-    
 });
 
-Route::middleware('auth')->group(function(){
-    Route::get('admin/product', 'ProductController@productList')->name('admin');
-    Route::get('admin/product/{id}', 'ProductController@productContent')->name('prodContent');
-    Route::get('admin/create', 'ProductController@create')->name('create');
-    Route::post('admin/store', 'ProductController@store')->name('store');
-    Route::get('admin/edit/{id}', 'ProductController@edit')->name('edit');
-    Route::post('admin/update/{id}', 'ProductController@update')->name('update');
-    Route::get('admin/destroy/{id}', 'ProductController@destroy')->name('destroy');
+Route::middleware('auth')->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('product', 'ProductController@productList')->name('admin');
+        Route::get('product/{id}', 'ProductController@productContent')->name('prodContent');
+        Route::get('create', 'ProductController@create')->name('create');
+        Route::post('store', 'ProductController@store')->name('store');
+        Route::get('edit/{id}', 'ProductController@edit')->name('edit');
+        Route::post('update/{id}', 'ProductController@update')->name('update');
+        Route::get('destroy/{id}', 'ProductController@destroy')->name('destroy');
+
+        Route::prefix('product_type')->group(function () {
+            Route::get('', 'ProductTypeController@index')->name('product_type');
+            Route::get('create', 'ProductTypeController@create')->name('product_type_create');
+            Route::post('store', 'ProductTypeController@store')->name('product_type_store');
+            Route::get('edit/{id}', 'ProductTypeController@edit')->name('product_type_edit');
+            Route::post('update/{id}', 'ProductTypeController@update')->name('product_type_update');
+            Route::get('destroy/{id}', 'ProductTypeController@destroy')->name('product_type_destroy');
+        });
+    });
 
     Route::get('admininsert/{times}', 'ProductController@storetest');
 });

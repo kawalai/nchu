@@ -3,7 +3,7 @@
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>類型</th>
                 <th>名稱</th>
                 <th>價錢</th>
                 <th>圖片</th>
@@ -15,7 +15,7 @@
         <tbody>
             @foreach ($data as $i)
             <tr>
-                <td>{{$i->id}}</td>
+                <td>{{$i->productType->name}}</td>
                 <td>{{$i->name}}</td>
                 <td>{{$i->price}}</td>
                 <td><img src="{{asset($i->img)}}" alt=""></td>

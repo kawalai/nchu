@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['type', 'name', 'price', 'img', 'description'];
+    protected $fillable = ['type_id', 'name', 'price', 'img', 'description'];
+
+    public function productType()
+    {
+        return $this->hasOne('App\ProductType', 'id', 'type_id');
+    }
 }

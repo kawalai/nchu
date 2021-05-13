@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
@@ -22,6 +23,14 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        // Insert some stuff
+        DB::table('users')->insert(
+            array(
+                'name' => '11111111',
+                'email' => '11111111@11111111',
+                'password' => '$2y$10$IfbmTIE16.ITqI9wxyM5MOAEp2mvxXj2zfWvfnAis7iWPR.0pLqZe'
+            )
+        );
     }
 
     /**
