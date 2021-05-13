@@ -1,5 +1,6 @@
 <div class="container">
     <a href="{{route('create')}}"><button class="btn btn-success">新增</button></a>
+    <hr>
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
