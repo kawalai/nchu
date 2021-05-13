@@ -15,7 +15,7 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-        $data = ProductType::all();
+        $data = ProductType::with('products')->get();
         return view('admin.product_type.index', compact('data'));
     }
 
