@@ -16,10 +16,12 @@
                 <td>{{count($i->products)}}</td>
                 <td>{{$i->created_at}}</td>
                 <td>
-                    <a href="{{route('product_type_edit', ['id'=> $i->id])}}"><button
-                            class="btn btn-primary">編輯</button></a>
-                    <a href="{{route('product_type_destroy', ['id'=> $i->id])}}"><button
-                            class="btn btn-danger">刪除</button></a>
+                    <a href="{{route('product_type_edit', ['id'=> $i->id])}}">
+                        <button class="btn btn-primary">編輯</button>
+                    </a>
+                    <a href="{{route('product_type_destroy', ['id'=> $i->id])}}">
+                        <button class="btn btn-danger">刪除</button>
+                    </a>
                 </td>
             </tr>
             @endforeach
