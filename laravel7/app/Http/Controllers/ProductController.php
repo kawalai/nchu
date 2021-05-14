@@ -70,6 +70,8 @@ class ProductController extends Controller
             $path = $local->putFile('public', $file);
             $data['img'] = $local->url($path);
         }
+        $mainData = Product::create($data);
+        
         if ($request->hasFile('imgs')) {
             $localS = Storage::disk('local');
 
@@ -80,8 +82,6 @@ class ProductController extends Controller
                 $imgs[] = $localS->url($pathS);
             }
         }
-        $mainData = Product::create($data);
-
         foreach ($imgs as $img) {
             ProductImg::create([
                 'product_id' => $mainData->id,
@@ -127,7 +127,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $data = Product::with('productType')->find($id);
+        $data = Product::with('productType', 'productImgs')->find($id);
         $productTypes = ProductType::all();
         return view('admin.product.edit', compact('data', 'productTypes'));
     }
@@ -152,6 +152,25 @@ class ProductController extends Controller
             File::delete(public_path($dbData->img));
         }
         $dbData->update($data);
+        
+        // dd($request->file('imgs'));
+        if ($request->hasFile('imgs')) {
+            $this->fetchDestroyByProdId($id);
+            $localS = Storage::disk('local');
+
+            $fileS = $request->file('imgs');
+            $imgs = [];
+            foreach ($fileS as $i) {
+                $pathS = $localS->putFile('public', $i);
+                $imgs[] = $localS->url($pathS);
+            }
+            foreach ($imgs as $img) {
+                ProductImg::create([
+                    'product_id' => $id,
+                    'img' => $img
+                ]);
+            }
+        }
 
         return redirect()->route('admin');
     }
@@ -179,7 +198,6 @@ class ProductController extends Controller
 
         Product::destroy($id);
         $imgs = ProductImg::where('product_id', $id)->get();
-        // dd($imgs);
         foreach ($imgs as $img) {
             $img->delete();
         }
@@ -187,5 +205,30 @@ class ProductController extends Controller
         // Storage::url($path);
 
         return redirect()->route('admin');
+    }
+
+    public function fetchDestroy($id)
+    {
+        $data = ProductImg::find($id);
+        if (ProductImg::destroy($id)) {
+            File::delete(public_path($data->img));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function fetchDestroyByProdId($productId)
+    {
+        $productImgs = ProductImg::where('product_id', $productId)->get();
+        if (isset($productImgs)) {
+            foreach ($productImgs as $productImg) {
+                File::delete(public_path($productImg->img));
+                $productImg->delete();
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }
