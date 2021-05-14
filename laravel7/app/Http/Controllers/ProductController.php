@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::with('productType')->all();
+        $data = Product::with('productType', 'productImgs')->all();
         return view('products.index', compact('data'));
     }
 
@@ -153,7 +153,6 @@ class ProductController extends Controller
         }
         $dbData->update($data);
         
-        // dd($request->file('imgs'));
         if ($request->hasFile('imgs')) {
             $this->fetchDestroyByProdId($id);
             $localS = Storage::disk('local');

@@ -85,6 +85,7 @@
             formData.append('id', imgId);
             formData.append('_token', '{{ csrf_token() }}');
 
+
             if (confirm('是否刪除此圖片?')) {
                 // alert('123');
                 fetch(`/admin/fetchDestroy`, {
@@ -102,6 +103,7 @@
                     // 錯誤處理
                 });
             }
+
         })
     })
 

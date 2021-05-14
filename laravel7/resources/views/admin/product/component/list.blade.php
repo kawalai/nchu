@@ -7,7 +7,8 @@
                 <th>類型</th>
                 <th>名稱</th>
                 <th>價錢</th>
-                <th>圖片</th>
+                <th>主要圖片</th>
+                <th>其他圖片數</th>
                 <th>敘述</th>
                 <th>建立時間</th>
                 <th>動作</th>                
@@ -20,6 +21,7 @@
                 <td>{{$i->name}}</td>
                 <td>{{$i->price}}</td>
                 <td><img src="{{asset($i->img)}}" alt=""></td>
+                <td>{{count($i->productImgs)}}</td>
                 <td>{{$i->description}}</td>
                 <td>{{$i->created_at}}</td>
                 <td>
