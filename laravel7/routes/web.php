@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'ProductController@edit')->name('edit');
         Route::post('update/{id}', 'ProductController@update')->name('update');
         Route::get('destroy/{id}', 'ProductController@destroy')->name('destroy');
-        Route::get('fetchDestroy/{id}', 'ProductController@fetchDestroy')->name('fetchDestroy');
+        Route::post('fetchDestroy', 'ProductController@fetchDestroy')->name('fetchDestroy');
 
         Route::prefix('product_type')->group(function () {
             Route::get('', 'ProductTypeController@index')->name('product_type');

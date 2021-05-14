@@ -207,10 +207,10 @@ class ProductController extends Controller
         return redirect()->route('admin');
     }
 
-    public function fetchDestroy($id)
+    public function fetchDestroy(Request $request)
     {
-        $data = ProductImg::find($id);
-        if (ProductImg::destroy($id)) {
+        $data = ProductImg::find($request->id);
+        if (ProductImg::destroy($request->id)) {
             File::delete(public_path($data->img));
             return true;
         } else {
