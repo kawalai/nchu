@@ -27,8 +27,12 @@
             <input class="form-control" id="price" name="price" type="text" />
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="img">圖片</label>
+            <label class="col-sm-2 col-form-label" for="img">主要圖片</label>
             <input class="form-control" id="img" name="img" type="file" accept="image/*" />
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="imgs">其他圖片</label>
+            <input class="form-control" id="imgs" name="imgs[]" type="file" accept="image/*" multiple />
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="description">敘述</label>

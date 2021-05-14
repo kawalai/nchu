@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\ProductImg;
 use App\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -53,6 +54,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        date_default_timezone_set('Asia/Taipei');
 
         // if ($request->hasFile('img')) {
         //     $file = $request->file('img');
@@ -68,7 +70,26 @@ class ProductController extends Controller
             $path = $local->putFile('public', $file);
             $data['img'] = $local->url($path);
         }
-        Product::create($data);
+        if ($request->hasFile('imgs')) {
+            $localS = Storage::disk('local');
+
+            $fileS = $request->file('imgs');
+            $imgs = [];
+            foreach ($fileS as $i) {
+                $pathS = $localS->putFile('public', $i);
+                $imgs[] = $localS->url($pathS);
+            }
+        }
+        $mainData = Product::create($data);
+
+        foreach ($imgs as $img) {
+            ProductImg::create([
+                'product_id' => $mainData->id,
+                'img' => $img
+            ]);
+        }
+
+        // dd($fileS,$mainData->id, $imgs);
 
         return redirect()->route('admin');
     }
@@ -76,6 +97,8 @@ class ProductController extends Controller
 
     public function storetest($times, Request $request)
     {
+
+        date_default_timezone_set('Asia/Taipei');
         for ($i = 0; $i < $times; $i++) {
             $data = $request->all();
             $size = mt_rand(200, 400);
@@ -118,6 +141,7 @@ class ProductController extends Controller
      */
     public function update($id, Request $request)
     {
+        date_default_timezone_set('Asia/Taipei');
         $data = $request->all();
         $dbData = Product::find($id);
         $myfile = Storage::disk('local');
@@ -140,13 +164,25 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $dbData = Product::find($id);
+        $dbData = Product::with('productImgs')->find($id);
 
         if (isset($dbData->img)) {
+            // dd($dbData->img);
             File::delete(public_path($dbData->img));
+            if (isset($dbData->productImgs)) {
+                foreach ($dbData->productImgs as $i) {
+                    File::delete(public_path($i->img));
+                    // dd(public_path($dbData->img), public_path($i->img));
+                }
+            }
         }
 
         Product::destroy($id);
+        $imgs = ProductImg::where('product_id', $id)->get();
+        // dd($imgs);
+        foreach ($imgs as $img) {
+            $img->delete();
+        }
         // $path =  $myfile->putfile('upload', $data);
         // Storage::url($path);
 
