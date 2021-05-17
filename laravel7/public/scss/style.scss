@@ -107,6 +107,31 @@ footer {
     height: 60px;
 }
 
+.img-container {
+    display: flex;
+}
+
+.div-img {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-list{
+    display: flex;
+}
+
+.product-container{
+    min-height: 600px;
+}
+
+article{
+    border: 1px solid #000;
+    margin: 5px;
+    padding: 5px;
+}
+
 @media screen and (max-width:1280px) {
     .main-map-div {
         width: 300px;

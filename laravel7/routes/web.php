@@ -47,8 +47,9 @@ Route::prefix('news')->group(function () {
 });
 
 Route::prefix('products')->group(function () {
-    Route::get('', 'ProductController@index');
-    Route::get('/content/{id}', 'ProductController@content');
+    Route::get('', 'FrontendProductController@index')->name('products');
+    Route::get('/{typeId}', 'FrontendProductController@typeSearch')->name('products.type.search');
+    Route::get('/content/{id}', 'FrontendProductController@content');
 });
 
 Route::middleware('auth')->group(function () {

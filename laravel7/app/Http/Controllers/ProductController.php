@@ -71,7 +71,7 @@ class ProductController extends Controller
             $data['img'] = $local->url($path);
         }
         $mainData = Product::create($data);
-        
+
         if ($request->hasFile('imgs')) {
             $localS = Storage::disk('local');
 
@@ -152,9 +152,9 @@ class ProductController extends Controller
             File::delete(public_path($dbData->img));
         }
         $dbData->update($data);
-        
+
         if ($request->hasFile('imgs')) {
-            $this->fetchDestroyByProdId($id);
+            // $this->fetchDestroyByProdId($id);
             $localS = Storage::disk('local');
 
             $fileS = $request->file('imgs');
@@ -196,6 +196,7 @@ class ProductController extends Controller
         }
 
         Product::destroy($id);
+        $this->fetchDestroyByProdId($id);
         $imgs = ProductImg::where('product_id', $id)->get();
         foreach ($imgs as $img) {
             $img->delete();
