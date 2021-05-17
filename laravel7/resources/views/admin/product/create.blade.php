@@ -38,6 +38,10 @@
             <label class="col-sm-2 col-form-label" for="description">敘述</label>
             <textarea class="form-control" id="description" name="description" cols="30" rows="10"></textarea>
         </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="sort">排序</label>
+            <input class="form-control" id="sort" name="sort" type="number" />
+        </div>
         <button type="submit" class="btn btn-primary">新增</button>
     </form>
 </div>

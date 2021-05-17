@@ -16,14 +16,14 @@ class FrontendProductController extends Controller
     public function index()
     {
         $types = ProductType::get();
-        $data = Product::with('productType')->get();
+        $data = Product::with('productType')->orderBy('sort', 'desc')->get();
         return view('products.index', compact('data', 'types'));
     }
 
     public function typeSearch($typeId)
     {
         $types = ProductType::get();
-        $data = Product::with('productType', 'productImgs')->where('type_id', $typeId)->get();
+        $data = Product::with('productType', 'productImgs')->where('type_id', $typeId)->orderBy('sort', 'desc')->get();
         return view('products.index', compact('data', 'types'));
     }
 

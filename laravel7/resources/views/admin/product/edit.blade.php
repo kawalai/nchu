@@ -68,6 +68,10 @@
             <textarea class="form-control" id="description" name="description" cols="30"
                 rows="10">{{$data->description}}</textarea>
         </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="sort">排序</label>
+            <input class="form-control" id="sort" name="sort" type="number" value="{{$data->sort}}" />
+        </div>
         <button type="submit" class="btn btn-primary">修改</button>
     </form>
 </div>
