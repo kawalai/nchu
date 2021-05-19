@@ -29,25 +29,24 @@ class FrontendProductController extends Controller
         }
 
 
-        // 處理要顯示在頁面上的資料
-        $dataString = '';
-        foreach ($data as $item) {
-            // dd($item->created_at);
-            $dataString .= "<article>
-            <a href='/products/content/{$item->id}'>
-                <h3>{$item->productType->name}</h3>
-                <div>{$item->name}</div>
-                <div>{$item->price}</div>
-                <div>
-                    <div class='div-img' style='background-image: url({$item->img})'></div>
-                </div>
-                <div>{$item->description}</div>
-                <div>{$item->created_at}</div>
-            </a>
-        </article>";
-        }
+        // // 處理要顯示在頁面上的資料
+        // $dataString = '';
+        // foreach ($data as $item) {
+        //     $dataString .= "<article>
+        //     <a href='/products/content/{$item->id}'>
+        //         <h3>{$item->productType->name}</h3>
+        //         <div>{$item->name}</div>
+        //         <div>{$item->price}</div>
+        //         <div>
+        //             <div class='div-img' style='background-image: url({$item->img})'></div>
+        //         </div>
+        //         <div>{$item->description}</div>
+        //         <div>{$item->created_at}</div>
+        //     </a>
+        // </article>";
+        // }
 
-        return $dataString;
+        return $data;
     }
 
     public function content($id)
