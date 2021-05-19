@@ -12,22 +12,22 @@ function resetProduct(typeId) {
         .then(function (response) {
             return response.json()
         }).then(function (result) {
-            let resultString = ''
-            result.forEach((e) => {
-                // console.log(e.name,e.price,e.img,e.description,e.created_at);
-                resultString += `<article>
-                                    <a href="/products/content/${e['id']}">
-                                        <h3>${e.product_type.name}</h3>
-                                        <div>${e.name}</div>
-                                        <div>${e.price}</div>
+            // 在前台處理資料，遇到關連資料大寫被變換成_小寫的問題
+            let resultString = result.reduce((pre, cur) => {
+                processed = `<article>
+                                    <a href="/products/content/${cur.id}">
+                                        <h3>${cur.product_type.name}</h3>
+                                        <div>${cur.name}</div>
+                                        <div>${cur.price}</div>
                                         <div>
-                                            <div class="div-img" style="background-image: url(${e.img})"></div>
+                                            <div class="div-img" style="background-image: url(${cur.img})"></div>
                                         </div>
-                                        <div>${e.description}</div>
-                                        <div>${e.created_at}</div>
+                                        <div>${cur.description}</div>
+                                        <div>${cur.created_at}</div>
                                     </a>
                                 </article>`
-            })
+                return pre + processed
+            }, '')
             container.innerHTML = resultString
         })
         .catch(function (err) {

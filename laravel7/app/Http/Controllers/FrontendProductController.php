@@ -29,7 +29,7 @@ class FrontendProductController extends Controller
         }
 
 
-        // // 處理要顯示在頁面上的資料
+        // // 在後端處理要顯示在頁面上的資料
         // $dataString = '';
         // foreach ($data as $item) {
         //     $dataString .= "<article>
