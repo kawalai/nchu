@@ -1,10 +1,11 @@
 <div class="container product-container">
 
     <div class="product-category">
-        <a class="btn btn-success" href="{{route('products')}}">所有產品</a>
+        {{-- <a class="btn btn-success" href="{{route('products')}}">所有產品</a> --}}
+        <button class="btn btn-success btn-type" data-id="0">所有產品</button>
         @foreach ($types as $type)
-        <a class="btn btn-success" href="{{route('products.type.search', ['typeId' => $type->id])}}">{{$type->name}}</a>
-        {{-- <button data-id="{{$type->id}}">{{$type->name}}</button> --}}
+        {{-- <a class="btn btn-success" href="{{route('products.type.search', ['typeId' => $type->id])}}">{{$type->name}}</a> --}}
+        <button class="btn btn-success btn-type" data-id="{{$type->id}}">{{$type->name}}</button>
         @endforeach
     </div>
 

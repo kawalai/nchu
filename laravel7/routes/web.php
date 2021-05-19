@@ -48,7 +48,7 @@ Route::prefix('news')->group(function () {
 
 Route::prefix('products')->group(function () {
     Route::get('', 'FrontendProductController@index')->name('products');
-    Route::get('/{typeId}', 'FrontendProductController@typeSearch')->name('products.type.search');
+    Route::post('/products_type_search', 'FrontendProductController@typeSearch')->name('products.type.search');
     Route::get('/content/{id}', 'FrontendProductController@content');
 });
 

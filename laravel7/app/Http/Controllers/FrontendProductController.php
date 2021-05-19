@@ -20,11 +20,34 @@ class FrontendProductController extends Controller
         return view('products.index', compact('data', 'types'));
     }
 
-    public function typeSearch($typeId)
+    public function typeSearch(Request $request)
     {
-        $types = ProductType::get();
-        $data = Product::with('productType', 'productImgs')->where('type_id', $typeId)->orderBy('sort', 'desc')->get();
-        return view('products.index', compact('data', 'types'));
+        if ($request->id == 0) {
+            $data = Product::with('productType', 'productImgs')->orderBy('sort', 'desc')->get();
+        } else {
+            $data = Product::with('productType', 'productImgs')->where('type_id', $request->id)->orderBy('sort', 'desc')->get();
+        }
+
+
+        // 處理要顯示在頁面上的資料
+        $dataString = '';
+        foreach ($data as $item) {
+            // dd($item->created_at);
+            $dataString .= "<article>
+            <a href='/products/content/{$item->id}'>
+                <h3>{$item->productType->name}</h3>
+                <div>{$item->name}</div>
+                <div>{$item->price}</div>
+                <div>
+                    <div class='div-img' style='background-image: url({$item->img})'></div>
+                </div>
+                <div>{$item->description}</div>
+                <div>{$item->created_at}</div>
+            </a>
+        </article>";
+        }
+
+        return $dataString;
     }
 
     public function content($id)
