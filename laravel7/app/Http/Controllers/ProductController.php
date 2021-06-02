@@ -8,6 +8,7 @@ use App\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -56,6 +57,12 @@ class ProductController extends Controller
         $data = $request->all();
         date_default_timezone_set('Asia/Taipei');
 
+        request()['description'] = $this->summernote_base64_to_file(request()['description']);
+
+        // dd(request()['description']);
+
+        // $data = $this->summernote_base64_to_file($data['description']);
+
         // if ($request->hasFile('img')) {
         //     $file = $request->file('img');
         //     $path = Storage::disk('myfile')->putfile('product', $file);
@@ -70,6 +77,7 @@ class ProductController extends Controller
             $path = $local->putFile('public', $file);
             $data['img'] = $local->url($path);
         }
+        $data['description'] = request()['description'];
         $mainData = Product::create($data);
 
         if ($request->hasFile('imgs')) {
@@ -183,6 +191,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $dbData = Product::with('productImgs')->find($id);
+        // $pattern='/src="(\S*)"/';
+        // preg_match_all($pattern, $dbData['description'], $matches);
+        // dd($dbData['description'],$matches);
 
         if (isset($dbData->img)) {
             // dd($dbData->img);
@@ -229,6 +240,51 @@ class ProductController extends Controller
             return true;
         } else {
             return false;
+        }
+    }
+
+    public function summernote_base64_to_file($content)
+    {
+        if (!($content && Str::contains($content, ['src="data:image', 'src=\'data:image']))) {
+            return $content;
+        }
+
+        $pattern = '/(data:image\/)([^;]+)(;base64,)([^\"]+)/';
+        $res = preg_replace_callback($pattern, function ($matches) {
+            // 生成路径
+            $public_path = public_path();
+            $folder_path = '/summernote/' . date('Ym') . '/' . date('d') . '/';
+            if (!is_dir($dir = $public_path . $folder_path)) {
+                mkdir($dir, 0777, true);
+            }
+
+            // 生成文件名
+            $matches[2] = $matches[2] === 'jpeg' ? 'jpg' : $matches[2];
+            $filename = md5(time() . \Illuminate\Support\Str::random()) . '.' . $matches[2];
+            $file = $dir . $filename;
+
+            // 保存文件
+            file_put_contents($file, base64_decode($matches[4])); // base64 转图片
+
+            // 返回相对路径
+            return $folder_path . $filename;
+        }, $content);
+
+        return $res;
+    }
+
+    public function summernote_delete_image($content)
+    {
+        if (!($content && Str::contains($content, ['summernote']))) {
+            return null;
+        }
+
+        $pattern = '/(\/summernote[^\'\"]+)/';
+        $times = preg_match_all($pattern, $content, $matches);
+        if ($times) {
+            foreach ($matches[0] as $value) {
+                unlink(public_path() . $value);
+            }
         }
     }
 }

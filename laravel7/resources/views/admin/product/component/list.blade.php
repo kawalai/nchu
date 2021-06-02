@@ -11,7 +11,7 @@
                 <th>其他圖片數</th>
                 <th>敘述</th>
                 <th>建立時間</th>
-                <th>動作</th>                
+                <th>動作</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
                 <td>{{$i->price}}</td>
                 <td><img src="{{asset($i->img)}}" alt=""></td>
                 <td>{{count($i->productImgs)}}</td>
-                <td>{{$i->description}}</td>
+                <td>{!!$i->description!!}</td>
                 <td>{{$i->created_at}}</td>
                 <td>
                     <a href="{{route('edit', ['id'=> $i->id])}}"><button class="btn btn-primary">編輯</button></a>

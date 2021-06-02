@@ -20,7 +20,7 @@
             @endforeach
         </div>
     </li>
-    <li>{{$data->description}}</li>
+    <li>{!!$data->description!!}</li>
 </ul>
 
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 
 @section('main')
@@ -29,6 +29,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="img">主要圖片</label>
             <input class="form-control" id="img" name="img" type="file" accept="image/*" />
+            <img id="test" />
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="imgs">其他圖片</label>
@@ -49,5 +50,25 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#description').summernote({
+            // callbacks: {
+            //     onImageUpload: function(files) {
+            //         console.log(files);
+            //         $('#description').summernote('insertImage', 'create');
+            //     }
+            // }
+        });
 
+        // 當要放預覽圖的input選取圖片後
+        document.querySelector('#img').addEventListener('change',function(e){
+            const file = this.files[0]
+            const fr = new FileReader()
+            fr.onload=e=> document.querySelector('#test').setAttribute('src', e.target.result)
+            fr.readAsDataURL(file)
+        })
+    });
+</script>
 @endsection

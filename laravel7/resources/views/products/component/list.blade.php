@@ -19,7 +19,7 @@
                 <div>
                     <div class="div-img" style="background-image: url({{$i->img}})"></div>
                 </div>
-                <div>{{$i->description}}</div>
+                <div>{!!$i->description!!}</div>
                 <div>{{$i->created_at}}</div>
             </a>
         </article>
