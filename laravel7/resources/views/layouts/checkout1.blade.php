@@ -129,7 +129,7 @@
         <a href="./main.html">返回購物</a>
       </div>
       <div class="offset-8 col-2">
-        <a href="./checkout2.html">
+        <a href="/checkout2">
           <button class="btn-next">
             下一步
           </button>

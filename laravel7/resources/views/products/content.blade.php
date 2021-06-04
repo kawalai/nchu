@@ -5,24 +5,26 @@
 @endsection
 
 @section('main')
+<div class="container">
+    <ul>
+        <li>{{$data->productType->name}}</li>
+        <li>{{$data->name}}</li>
+        <li>{{$data->price}}</li>
+        <li>
+            <div class="div-img" style="background-image: url({{$data->img}})"></div>
+        </li>
+        <li>
+            <div class="img-container">
+                @foreach ($data->productImgs as $item)
+                <div class="div-img" style="background-image: url({{$item->img}})"></div>
+                @endforeach
+            </div>
+        </li>
+        <li>{!!$data->description!!}</li>
+        <li><button class="btn btn-success">加入購物車</button></li>
+    </ul>
 
-<ul>
-    <li>{{$data->productType->name}}</li>
-    <li>{{$data->name}}</li>
-    <li>{{$data->price}}</li>
-    <li>
-        <div class="div-img" style="background-image: url({{$data->img}})"></div>
-    </li>
-    <li>
-        <div class="img-container">
-            @foreach ($data->productImgs as $item)
-            <div class="div-img" style="background-image: url({{$item->img}})"></div>
-            @endforeach
-        </div>
-    </li>
-    <li>{!!$data->description!!}</li>
-</ul>
-
+</div>
 @endsection
 
 @section('js')

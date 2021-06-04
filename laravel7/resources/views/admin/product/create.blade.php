@@ -64,6 +64,7 @@
 
         // 當要放預覽圖的input選取圖片後
         document.querySelector('#img').addEventListener('change',function(e){
+            console.log(this.files[0]);
             const file = this.files[0]
             const fr = new FileReader()
             fr.onload=e=> document.querySelector('#test').setAttribute('src', e.target.result)

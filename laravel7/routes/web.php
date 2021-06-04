@@ -15,16 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'FrontendProductController@rootIndex');
 
 Route::get('/test/{times}', 'HomeController@test');
 Route::get('/test', 'HomeController@getAllData');
 
-Route::get('/checkout1', function () {
-    return view('checkout1');
-});
+Route::get('/checkout1', 'FrontendProductController@checkout1');
+Route::get('/checkout2', 'FrontendProductController@checkout2');
+Route::get('/checkout3', 'FrontendProductController@checkout3');
+Route::get('/checkout4', 'FrontendProductController@checkout4');
 
 Route::prefix('news')->group(function () {
     Route::get('', 'NewsController@Index');
