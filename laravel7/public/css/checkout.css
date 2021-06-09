@@ -28,9 +28,21 @@ main .btn-next:hover {
 }
 
 .col-1 input.product-quantity {
-  width: 50px;
+  width: 80px;
   height: 2rem;
   margin: auto 0.5rem;
+}
+
+.delBtn {
+  top: 5px;
+  left: 5px;
+  padding: 2px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #940000;
 }
 
 main {

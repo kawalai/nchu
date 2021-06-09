@@ -1,0 +1,210 @@
+@import 'variable';
+@import 'template';
+
+.col-1 {
+    img {
+        border-radius: 50%;
+    }
+
+    input.product-quantity {
+        width: 80px;
+        height: 2rem;
+        margin: auto 0.5rem;
+    }
+}
+
+.delBtn {
+    top: 5px;
+    left: 5px;
+    padding: 2px;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(148, 0, 0);
+}
+
+main {
+
+    a {
+        display: block;
+    }
+
+    padding: 40px 0;
+    background-color: rgb(210, 210, 210);
+
+    .checkout1 {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    button.product-quantity {
+        margin: auto auto;
+    }
+
+    .progess-bar {
+        @include size(20%, 10px, 10px, gray);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(65, 174, 225);
+            border-radius: 10px;
+        }
+    }
+
+
+    .progess-bar-full {
+        @include size(20%, 10px, 10px, rgb(65, 174, 225));
+    }
+
+    .progess-bar-empty {
+        @include size(20%, 10px, 10px, gray);
+    }
+
+    .progess-point {
+        p {
+            color: #000;
+            position: relative;
+
+            &::before {
+                content: '';
+                @include posAbsCenter();
+                @include size(50px, 50px, 50%, rgb(30, 210, 255));
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .progess-point-yet {
+        p {
+            color: #000;
+            position: relative;
+
+            &::before {
+                content: '';
+                @include posAbsCenter();
+                @include size(50px, 50px, 50%, rgb(0, 0, 0));
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .btn-previous {
+        @extend %btn-previous;
+    }
+
+    .btn-next {
+        @extend %btn-next;
+    }
+
+    .pay-way,
+    .deliver-way {
+        text-align: start;
+    }
+
+    .address-data {
+        text-align: start;
+
+        * {
+            padding: 10px;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .order-end-title {
+        font-size: 3rem;
+        font-weight: 800;
+    }
+
+    .member-data {
+        text-align: start;
+        font-size: 1.5rem;
+
+        * {
+            padding: 5px 2rem;
+        }
+    }
+
+    .main-title {
+        padding: 245px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+        height: 100vh;
+        background-color: #005;
+        position: absolute;
+        left: 50%;
+        overflow: hidden;
+
+        .main-svg {
+            width: 245px;
+        }
+
+        .main-social {
+            width: 100%;
+
+            span {
+                position: relative;
+                color: #fff;
+                margin: 15px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: 20px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .account,
+        .password {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            input {
+                width: 60%;
+                background-color: #000;
+                margin: 10px;
+                border-style: none;
+            }
+        }
+
+        .sign-in-btn {
+            width: 100%;
+            margin: 0 21%;
+            border-style: none;
+            border-radius: 50px;
+            background-color: #66f;
+            color: #fff;
+
+            &:hover {
+                background-color: #44f;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            width: 100%;
+            left: 0;
+            padding: 100px auto 10px;
+
+        }
+    }
+}

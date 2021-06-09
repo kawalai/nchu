@@ -20,10 +20,16 @@ Route::get('/', 'FrontendProductController@rootIndex');
 Route::get('/test/{times}', 'HomeController@test');
 Route::get('/test', 'HomeController@getAllData');
 
-Route::get('/checkout1', 'FrontendProductController@checkout1');
-Route::get('/checkout2', 'FrontendProductController@checkout2');
-Route::get('/checkout3', 'FrontendProductController@checkout3');
-Route::get('/checkout4', 'FrontendProductController@checkout4');
+Route::get('/checkout1', 'ShoppingCartController@checkout1');
+Route::get('/checkout2', 'ShoppingCartController@checkout2');
+Route::get('/checkout3', 'ShoppingCartController@checkout3');
+Route::get('/checkout4', 'ShoppingCartController@checkout4');
+
+Route::prefix('shopping_cart')->group(function(){
+    Route::post('/add', 'ShoppingCartController@add');
+    Route::get('/content', 'ShoppingCartController@content');
+    Route::post('/remove_specific_product', 'ShoppingCartController@removeSpecificProduct');
+});
 
 Route::prefix('news')->group(function () {
     Route::get('', 'NewsController@Index');
