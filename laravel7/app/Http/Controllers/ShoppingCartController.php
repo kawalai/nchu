@@ -128,11 +128,6 @@ class ShoppingCartController extends Controller
         }
     }
 
-    public function checkout3()
-    {
-        return view('checkout3');
-    }
-
     public function checkout4()
     {
         return view('checkout4');
