@@ -80,7 +80,8 @@
                         </div>
                         <div class="col-1 offset-4 d-flex">
                             <button class="product-quantity" onclick="minus(this);">減</button>
-                            <input class="product-quantity" type="number" id="" value="{{$item->quantity}}">
+                            <input class="product-quantity" data-id="{{$item->id}}" type="number" id=""
+                                value="{{$item->quantity}}">
                             <button class="product-quantity" onclick="plus(this);">加</button>
                         </div>
                         <input type="number" value="{{$item->price}}" hidden>
@@ -136,7 +137,7 @@
         <!-- btn-block -->
         <div class="row">
             <div class="col-2">
-                <a href="./main.html">返回購物</a>
+                <a href="/products">返回購物</a>
             </div>
             <div class="offset-8 col-2">
                 <a href="/checkout2">
@@ -187,12 +188,24 @@
         let prodPrice = element.parentElement.nextElementSibling.value
         // 修改頁面上的總價並加上千分位
         let sumOnPage = element.parentElement.nextElementSibling.nextElementSibling
-        sumOnPage.innerHTML = (prodPrice*element.parentElement.querySelector('input').value).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+        // 取得當前element input欄位
+        let inputColumn = element.parentElement.querySelector('input')
 
-        calcResult()
+        var formData = new FormData();
+        formData.append('productId', inputColumn.getAttribute('data-id'));
+        formData.append('qty', inputColumn.value);
+        formData.append('_token', '{{ csrf_token() }}');
+        fetch('/shopping_cart/update_product_quantity',{
+            method:'POST',
+            body:formData
+            }).then(response=>response.text())
+            .then(result=>{
+                sumOnPage.innerHTML = (prodPrice*inputColumn.value).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                calcResult()
+            })
     }
 
-    function calcResult() {
+    function calcResult() { // 把依照input內的value變更最下方數額的功能拉出來
         
         // 取得每項商品的數量input
         let inputValue = document.querySelectorAll('input.product-quantity')
@@ -238,7 +251,6 @@
 
     function deleteBtn(event, productId){
         let theProductRow = event.parentElement.parentElement.parentElement
-        // console.log(event);
         if (confirm(`是否要刪除此項商品`)) {
             var formData = new FormData();
             formData.append('productId', productId);

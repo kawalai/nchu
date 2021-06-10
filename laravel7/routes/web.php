@@ -29,6 +29,8 @@ Route::prefix('shopping_cart')->group(function(){
     Route::post('/add', 'ShoppingCartController@add');
     Route::get('/content', 'ShoppingCartController@content');
     Route::post('/remove_specific_product', 'ShoppingCartController@removeSpecificProduct');
+    Route::post('/update_product_quantity', 'ShoppingCartController@updateProductQuantity');
+    Route::post('/address', 'ShoppingCartController@paymentShipment');
 });
 
 Route::prefix('news')->group(function () {
